@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth Acre Investments &middot; Direct offers on houses in Alberta</title>
+<meta name="description" content="Sell your freehold house in Alberta without listing it. No agents, no listing fees, no repairs.">
+<meta property="og:title" content="Hearth Acre Investments">
+<meta property="og:description" content="Direct offers on freehold houses in Alberta. No agents, no listing fees, no repairs.">
+<meta name="theme-color" content="#1E3B30">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+@font-face{font-family:"Fraunces";src:url(fonts/Fraunces.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/Inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--pine:#1E3B30;--pine2:#2B4F41;--bone:#F3EBDD;--bone2:#FAF6EF;--ember:#C65D3A;--ember2:#A94B2C;--ink:#1B2420;--ink2:#4A554F;--line:rgba(30,59,48,.16)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bone2);color:var(--ink);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--pine)}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01em;color:var(--pine);line-height:1.15}
+/* hero */
+.hero{background:var(--pine);color:var(--bone);padding:40px 0 58px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:repeating-linear-gradient(180deg,rgba(243,235,221,.08) 0 6px,transparent 6px 12px)}
+.hero img{width:96px;height:96px;border-radius:50%;display:block;margin:0 auto 14px}
+.hero h1{color:var(--bone);font-size:30px;margin:0}
+.hero .sub{margin:6px 0 0;font-size:16px;color:rgba(243,235,221,.85)}
+.hero .loc{display:inline-block;margin-top:12px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,235,221,.7)}
+/* link buttons */
+.links{display:grid;gap:12px;margin:-18px auto 0;position:relative;z-index:1}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;font-size:17px;box-shadow:0 10px 24px -18px rgba(30,59,48,.45);transition:transform .15s,box-shadow .15s}
+.btn small{display:block;font-weight:400;font-size:13.5px;color:var(--ink2);margin-top:2px}
+.btn .ar{font-size:20px;color:var(--ember)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -18px rgba(30,59,48,.55)}
+.btn.primary{background:var(--ember);border-color:var(--ember);color:#fff}
+.btn.primary small{color:rgba(255,255,255,.85)}.btn.primary .ar{color:#fff}
+.contact{display:flex;justify-content:center;gap:10px;margin-top:4px;flex-wrap:wrap}
+.contact a{font-size:14px;font-weight:600;text-decoration:none;padding:8px 14px;border:1px solid var(--line);background:#fff;color:var(--pine)}
+section{padding:40px 0 8px}
+section h2{font-size:25px;margin:0 0 14px}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);padding:16px}
+.step::before{counter-increment:s;content:counter(s);width:40px;height:40px;display:grid;place-items:center;background:var(--pine);color:var(--bone);font:600 18px Fraunces,Georgia,serif}
+.step b{display:block;color:var(--ink)}.step span{font-size:14.5px;color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border:1px solid var(--line);padding:16px}
+.card h3{font-size:18px;margin:0 0 8px}
+.card ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink2)}
+.honest{border-left:3px solid var(--ember);background:#fff;padding:14px 16px;font-size:14.5px;color:var(--ink2);margin-top:12px}
+/* forms */
+.form{background:#fff;border:1px solid var(--line);padding:20px;margin-top:6px}
+.form .lead{margin:0 0 16px;color:var(--ink2);font-size:14.5px}
+.prog{display:flex;gap:6px;margin-bottom:16px}.prog i{flex:1;height:4px;background:var(--line)}.prog i.on{background:var(--ember)}
+fieldset{border:0;padding:0;margin:0}
+.q{margin:0 0 16px}
+.q>label,.q>.lab{display:block;font-weight:600;font-size:15px;margin-bottom:7px;color:var(--ink)}
+.q .opt{font-weight:400;color:var(--ink2);font-size:13px}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{width:100%;font:400 16px Inter,system-ui,sans-serif;color:var(--ink);background:var(--bone2);border:1px solid rgba(30,59,48,.28);padding:12px 13px;border-radius:0;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pine);background:#fff}
+textarea{min-height:84px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:10px 14px;border:1px solid rgba(30,59,48,.28);background:var(--bone2);font-size:15px;font-weight:500}
+.chips input:checked+span{background:var(--pine);border-color:var(--pine);color:var(--bone)}
+.chips input:focus-visible+span{outline:2px solid var(--ember);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:13.5px;color:var(--ink2);margin:10px 0;line-height:1.5}
+.consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--pine)}
+.consent.opt{background:var(--bone2);padding:10px;border:1px dashed rgba(30,59,48,.28)}
+.nav{display:flex;gap:10px;margin-top:6px}
+.go,.back{font:600 16px Inter,system-ui,sans-serif;padding:14px 18px;border:0;cursor:pointer}
+.go{flex:1;background:var(--ember);color:#fff}.go:hover{background:var(--ember2)}
+.back{background:transparent;color:var(--pine);border:1px solid var(--line)}
+.err{color:#B3261E;font-size:13.5px;min-height:18px;margin-top:8px}
+.js .step-hide{display:none}
+.hp{position:absolute;left:-9999px}
+details{background:#fff;border:1px solid var(--line);padding:14px 16px;margin-bottom:8px}
+details summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details p{margin:8px 0 0;font-size:14.5px;color:var(--ink2)}
+footer{margin-top:40px;background:var(--pine);color:rgba(243,235,221,.8);font-size:13px;padding:26px 0 34px}
+footer a{color:var(--bone)}
+footer p{margin:0 0 10px}
+@media (max-width:420px){.two,.row2{grid-template-columns:1fr}.hero h1{font-size:27px}}
+
+/* v1.1 soft look (T, 2026-09-28): rounded corners, light pastel tints, white consent rows */
+:root{--sage:#E8F0EB;--sage2:#D5E4DA;--peach:#FBEAE2;--sand:#FBF8F3;--r:16px}
+body{background:var(--sand)}
+.hero{background:linear-gradient(180deg,#24453A,#1E3B30);border-radius:0 0 28px 28px}
+.hero::after{display:none}
+.hero img{box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
+.links{margin-top:-22px}
+.btn{border-radius:var(--r);border-color:rgba(30,59,48,.10);box-shadow:0 12px 30px -20px rgba(30,59,48,.45)}
+.btn.primary{background:linear-gradient(180deg,#CF6A47,#C65D3A)}
+.btn .ar{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--peach);font-size:17px}
+.btn.primary .ar{background:rgba(255,255,255,.18)}
+.contact a{border-radius:999px;background:var(--sage);border-color:transparent}
+.step{border-radius:var(--r);background:var(--sage);border-color:transparent}
+.step::before{border-radius:50%;background:#fff;color:var(--pine)}
+.card{border-radius:var(--r);border-color:transparent}
+.two .card:first-child{background:var(--peach)}.two .card:last-child{background:var(--sage)}
+.honest{border-radius:var(--r);border-left:0;background:#fff;box-shadow:inset 4px 0 0 var(--ember)}
+.form{border-radius:20px;border-color:rgba(30,59,48,.08);box-shadow:0 18px 40px -30px rgba(30,59,48,.4);padding:22px}
+.prog i{border-radius:999px;height:6px;background:var(--sage2)}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{border-radius:12px;background:#F7F5F0;border-color:rgba(30,59,48,.14)}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px rgba(30,59,48,.08)}
+.chips span{border-radius:999px;background:#F7F5F0;border-color:rgba(30,59,48,.14);padding:10px 16px}
+.chips input:checked+span{background:var(--pine);border-color:var(--pine)}
+.consent{background:transparent;border:0;padding:0}
+.go,.back{border-radius:14px}
+.go{background:linear-gradient(180deg,#CF6A47,#C65D3A)}
+details{border-radius:14px;border-color:transparent;box-shadow:0 8px 24px -22px rgba(30,59,48,.5)}
+footer{border-radius:28px 28px 0 0}
+
+/* v2 additions (2026-10-29): 16px gutters, chooser buttons, disclosure card, notes */
+.wrap{padding:0 16px}
+.big{padding:24px 20px;font-size:19px}
+.big small{font-size:14.5px}
+.disc{background:#fff;border-radius:var(--r);box-shadow:inset 4px 0 0 var(--pine);padding:16px 18px;margin:12px 0}
+.disc p{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--ink);line-height:1.5}.disc p:last-child{margin:0}
+.intro{color:var(--ink2);font-size:15px;margin:0 0 12px}
+.cnote{font-size:13.5px;color:var(--ink2);margin:10px 0 14px;line-height:1.5}
+h3.sec{font-size:20px;margin:28px 0 8px}
+.cap{font-size:13px;color:var(--ink2);margin:4px 0 0}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img src="logo.svg" alt="Hearth Acre Investments logo: a sun rising over a field inside a house outline" width="96" height="96">
+    <h1>Hearth Acre Investments</h1>
+    <p class="sub">Direct offers on houses in Alberta</p>
+    <span class="loc">Alberta &middot; Freehold houses</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="links" aria-label="Main links">
+    <a class="btn primary" href="#offer-ab"><span>Get an offer: Alberta<small>Freehold houses. About 60 seconds.</small></span><span class="ar">&rarr;</span></a>
+    <a class="btn" href="#offer-on"><span>Ontario houses: coming soon<small>Leave your name and email</small></span><span class="ar">&rarr;</span></a>
+    <a class="btn" href="#buyers"><span>Buyers &amp; investors list<small>Off-market houses, private list</small></span><span class="ar">&rarr;</span></a>
+    <a class="btn" href="#call"><span>Book a 15-min call<small>Pick a time that works; Thiep calls you</small></span><span class="ar">&rarr;</span></a>
+    <a class="btn" href="#how"><span>How it works<small>3 steps, a lawyer handles closing</small></span><span class="ar">&rarr;</span></a>
+    <div class="contact" id="contact"></div>
+  </nav>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div><b>Tell us about the house</b><span>The short form below, a message or a call. Any condition.</span></div></div>
+      <div class="step"><div><b>Get a written offer</b><span>We look at recent sales nearby and send a clear number with no obligation.</span></div></div>
+      <div class="step"><div><b>Close on your date</b><span>A real estate lawyer handles the closing paperwork and holds the funds in trust.</span></div></div>
+    </div>
+    <div class="two" style="margin-top:12px">
+      <div class="card"><h3>Good fits</h3><ul><li>Inherited or vacant</li><li>Needs repairs</li><li>Tenant trouble</li><li>Behind on property taxes</li></ul></div>
+      <div class="card"><h3>What we buy</h3><ul><li>Freehold houses</li><li>Alberta</li><li>As-is, any condition</li></ul></div>
+    </div>
+    <p class="honest">Straight talk: listing with an agent can get a higher price. A direct offer trades some of that for speed, no repairs, no showings and no commissions. We'll tell you which one fits your situation.</p>
+    <p class="honest">We buy as a principal. Where we may assign our purchase agreement, we say so in writing in the agreement.</p>
+  </section>
+
+  <section id="offer-ab">
+    <h2>Get an offer: Alberta houses</h2>
+    <form class="form" name="offer-ab" method="POST" action="thanks-ca.html" data-netlify="true" netlify-honeypot="bot-field" data-steps="1">
+      <input type="hidden" name="form-name" value="offer-ab">
+      <input type="hidden" name="province" value="Alberta">
+      <input type="hidden" name="wording_version" value="Hearth Acre Canada contact wording v1 2026-10-29">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Freehold houses in Alberta. No obligation, no fees to you. Your details stay with us; we never sell them.</p>
+      <fieldset data-step="1">
+        <div class="q"><label for="ab_addr">Property address</label><input type="text" id="ab_addr" name="property" autocomplete="street-address" required></div>
+        <div class="row2"><div class="q"><label for="ab_name">Your name</label><input type="text" id="ab_name" name="name" autocomplete="name" required></div>
+          <div class="q"><label for="ab_phone">Best phone</label><input type="tel" id="ab_phone" name="phone" autocomplete="tel" required></div></div>
+        <div class="q"><label for="ab_email">Email</label><input type="email" id="ab_email" name="email" autocomplete="email" required></div>
+        <div class="q"><label for="ab_note">Anything we should know? <span class="opt">(optional)</span></label><textarea id="ab_note" name="note" placeholder="Inherited it, needs work, tenants, taxes, moving..."></textarea></div>
+        <p class="cnote">By submitting this form you ask Hearth Acre Investments to contact you about your property.</p>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Get my offer</button></div>
+    </form>
+  </section>
+
+  <section id="offer-on">
+    <h2>Ontario houses: coming soon</h2>
+    <p class="intro">We are not making offers in Ontario yet. Leave your name and email and we will write to you once when it opens. This is not an offer and it is not a request to talk about a property.</p>
+    <form class="form" name="notify-on" method="POST" action="thanks-ca.html?notify=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="1">
+      <input type="hidden" name="form-name" value="notify-on">
+      <input type="hidden" name="province" value="Ontario">
+      <input type="hidden" name="wording_version" value="Hearth Acre Canada notify v1 2026-10-29">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <fieldset data-step="1">
+        <div class="row2"><div class="q"><label for="on_name">Your name</label><input type="text" id="on_name" name="name" autocomplete="name" required></div>
+          <div class="q"><label for="on_email">Email</label><input type="email" id="on_email" name="email" autocomplete="email" required></div></div>
+        <p class="cnote">By submitting this form you ask Hearth Acre Investments to email you once when Ontario opens. You can ask to be removed at any time by replying to that email.</p>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Email me when it opens</button></div>
+    </form>
+  </section>
+
+  <section id="call">
+    <h2>Book a 15-min call</h2>
+    <form class="form" name="call-ca" method="POST" action="thanks-ca.html?call=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="call-ca">
+      <input type="hidden" name="wording_version" value="Hearth Acre Canada contact wording v1 2026-10-29">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Pick a day and a time. Thiep contacts you to confirm, then calls you. No obligation.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">Province</span>
+          <div class="chips"><label><input type="radio" name="province" value="Alberta" required checked><span>Alberta</span></label></div></div>
+        <div class="q"><span class="lab">Day</span><div class="chips callDays"></div></div>
+        <div class="q"><span class="lab">Time (Mountain time)</span><div class="chips callTimes"></div><p class="cap">Mountain time.</p></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="row2"><div class="q"><label for="cc_name">Your name</label><input type="text" id="cc_name" name="name" autocomplete="name" required></div>
+          <div class="q"><label for="cc_phone">Phone</label><input type="tel" id="cc_phone" name="phone" autocomplete="tel" required></div></div>
+        <div class="q"><label for="cc_email">Email</label><input type="email" id="cc_email" name="email" autocomplete="email" required></div>
+        <div class="q"><label for="cc_prop">Property address <span class="opt">(optional)</span></label><input type="text" id="cc_prop" name="property"></div>
+        <div class="q"><label for="cc_note">Note <span class="opt">(optional)</span></label><textarea id="cc_note" name="note"></textarea></div>
+        <p class="cnote">By submitting this form you ask Hearth Acre Investments to contact you about your property.</p>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Request this time</button></div>
+    </form>
+  </section>
+
+  <section id="buyers">
+    <h2>Buyers &amp; investors list</h2>
+    <form class="form" name="buyers-ca" method="POST" action="thanks-ca.html?list=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="buyers-ca">
+      <input type="hidden" name="wording_version" value="Hearth Acre Canada contact wording v1 2026-10-29">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Investors and renovators: off-market freehold houses go to this private list first. Tell us your buy box so you only hear about deals that fit.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">Where? <span class="opt">(pick any)</span></span>
+          <div class="chips"><label><input type="checkbox" name="areas" value="Alberta"><span>Alberta</span></label></div>
+          <input type="text" name="areas_other" placeholder="Regions or postal code areas" style="margin-top:8px"></div>
+        <div class="row2"><div class="q"><label for="cb_min">Price from (CAD)</label><input type="text" id="cb_min" name="price_min" inputmode="decimal" placeholder="$"></div><div class="q"><label for="cb_max">Price to (CAD)</label><input type="text" id="cb_max" name="price_max" inputmode="decimal" placeholder="$"></div></div>
+        <div class="q"><label for="cb_box">House type</label><input type="text" id="cb_box" name="buy_box" placeholder="e.g. 3-bed rehabs, rental-ready"></div>
+        <div class="row2"><div class="q"><label for="cb_fund">How you close</label><select id="cb_fund" name="funding"><option>Cash</option><option>Hard money</option><option>Conventional</option><option>Other</option></select></div>
+          <div class="q"><label for="cb_days">How fast</label><select id="cb_days" name="close_days"><option>7 days</option><option>14 days</option><option>30 days</option><option>30+ days</option></select></div></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="row2"><div class="q"><label for="cb_name">Your name</label><input type="text" id="cb_name" name="name" autocomplete="name" required></div><div class="q"><label for="cb_co">Company <span class="opt">(optional)</span></label><input type="text" id="cb_co" name="company" autocomplete="organization"></div></div>
+        <div class="row2"><div class="q"><label for="cb_phone">Phone</label><input type="tel" id="cb_phone" name="phone" autocomplete="tel" required></div><div class="q"><label for="cb_email">Email</label><input type="email" id="cb_email" name="email" autocomplete="email" required></div></div>
+        <div class="q"><label for="cb_pof">Proof of funds available?</label><select id="cb_pof" name="proof_of_funds"><option>Yes, on request</option><option>Not yet</option></select></div>
+        <div class="q"><label for="cb_note">Note <span class="opt">(optional)</span></label><textarea id="cb_note" name="note"></textarea></div>
+        <p class="cnote">By submitting this form you ask Hearth Acre Investments to contact you about properties that fit your buy box.</p>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Join the list</button></div>
+    </form>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>Do I pay any fees?</summary><p>No commissions and no listing fees. Who pays closing costs is written into the offer before you sign anything.</p></details>
+    <details><summary>Who handles the money and paperwork?</summary><p>A real estate lawyer handles the closing paperwork, holds the funds in trust and registers the transfer.</p></details>
+    <details><summary>Do you buy as-is?</summary><p>Yes. No repairs, no cleaning, no showings.</p></details>
+    <details><summary>Will you buy it yourselves?</summary><p>We buy as a principal. Where we may assign our purchase agreement, we say so in writing in the agreement.</p></details>
+    <details><summary>How fast can you close?</summary><p>It depends on the title search and the property. You pick the date that works for you.</p></details>
+    <details><summary>What happens to my information?</summary><p>We use it only to talk with you about your property or the deal list. We never sell it. See the <a href="privacy-ca.html">privacy page</a>.</p></details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--bone)">Hearth Acre Investments</b> &middot; Thiep Weang, real estate investor &middot; Alberta</p>
+    <p><a href="mailto:hearthacrehomes@gmail.com">hearthacrehomes@gmail.com</a></p>
+    <p>We buy as a principal and do not list properties. We make offers to buy. Nothing on this page is a public offer of any property.</p>
+    <p><a href="privacy-ca.html">Privacy</a> &middot; <a href="index.html">Change country</a></p>
+  </div>
+</footer>
+
+<script>
+/* Public contacts. Leave "" to hide a button. */
+var HEARTHACRE = { phone: "", email: "hearthacrehomes@gmail.com", booking: "" };
+var CALL_SLOTS=["11:15 AM", "11:30 AM", "11:45 AM", "12:00 PM", "12:15 PM", "12:30 PM", "12:45 PM", "1:00 PM", "5:00 PM", "5:15 PM", "5:30 PM", "5:45 PM"];
+(function(){ var ds=document.querySelectorAll(".callDays"); if(!ds.length) return;
+  var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Edmonton",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()), base=new Date(p+"T12:00:00Z"), out=[];
+  for(var i=1;out.length<6&&i<14;i++){ var x=new Date(base.getTime()+i*864e5), wd=x.getUTCDay(); if(wd===0||wd===6) continue;
+    var iso=x.toISOString().slice(0,10), lab=x.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",timeZone:"UTC"}); out.push([iso,lab]); }
+  [].forEach.call(ds,function(d){ var t=d.closest("fieldset").querySelector(".callTimes");
+    d.innerHTML=out.map(function(o,k){ return '<label><input type="radio" name="call_date" value="'+o[0]+'"'+(k?'':' required')+'><span>'+o[1]+'</span></label>'; }).join("");
+    t.innerHTML=CALL_SLOTS.map(function(s,k){ return '<label><input type="radio" name="call_time" value="'+s+' MT"'+(k?'':' required')+'><span>'+s+'</span></label>'; }).join(""); });
+})();
+(function(){
+  document.documentElement.className+=" js";
+  var c=document.getElementById("contact"), h="";
+  if(HEARTHACRE.email) h+='<a href="mailto:'+HEARTHACRE.email+'">Email</a>';
+  c.innerHTML=h; if(!h) c.remove();
+  document.querySelectorAll("form[data-steps]").forEach(function(f){
+    var steps=[].slice.call(f.querySelectorAll("fieldset[data-step]")), bars=[].slice.call(f.querySelectorAll(".prog i")), cur=0,
+        go=f.querySelector(".go"), back=f.querySelector(".back"), err=f.querySelector(".err"), last=go.textContent;
+    function show(i){ cur=i; steps.forEach(function(s,k){ s.classList.toggle("step-hide",k!==i); }); bars.forEach(function(b,k){ b.classList.toggle("on",k<=i); });
+      back.style.display=i?"":"none"; go.textContent=i<steps.length-1?"Next":last; err.textContent=""; }
+    function valid(i){ var bad=null; steps[i].querySelectorAll("input,select,textarea").forEach(function(el){ if(!bad&&!el.checkValidity()) bad=el; });
+      if(bad){ err.textContent=bad.type==="checkbox"?"Please check the consent box to continue.":bad.type==="radio"?"Please pick one option.":"Please fill in: "+(bad.labels&&bad.labels[0]?bad.labels[0].textContent.replace(/\(optional\)/,"").trim():"this field"); try{ bad.focus({preventScroll:false}); }catch(e){} return false; } return true; }
+    back.onclick=function(){ if(cur>0) show(cur-1); };
+    f.addEventListener("submit",function(e){ if(!valid(cur)){ e.preventDefault(); return; }
+      if(cur<steps.length-1){ e.preventDefault(); show(cur+1); f.scrollIntoView({behavior:"smooth",block:"start"}); return; }
+      f.querySelector('[name="submitted_at"]').value=new Date().toISOString(); go.disabled=true; go.textContent="Sending..."; });
+    f.setAttribute("novalidate",""); show(0);
+  });
+})();
+</script>
+</body>
+</html>

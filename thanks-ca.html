@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks &middot; Hearth Acre Investments</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Fraunces";src:url(fonts/Fraunces.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:"Inter";src:url(fonts/Inter.woff2) format("woff2");font-weight:100 900}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#FAF6EF;color:#1B2420;font:400 16px/1.6 Inter,system-ui,sans-serif;padding:16px;box-sizing:border-box}
+.box{max-width:460px;background:#fff;border:1px solid rgba(30,59,48,.16);padding:30px;text-align:center}
+img{width:72px;height:72px;border-radius:50%}
+h1{font:650 26px Fraunces,Georgia,serif;color:#1E3B30;margin:14px 0 8px}
+p{color:#4A554F;margin:0 0 14px}
+a{display:inline-block;margin-top:6px;padding:12px 18px;background:#C65D3A;color:#fff;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="box">
+  <img src="logo.svg" alt="Hearth Acre Investments logo">
+  <h1 id="t">Got it. Thank you.</h1>
+  <p id="m">Thiep will reach out personally, usually within one business day, to ask a few questions and then send a written offer.</p>
+  <a id="bk" href="canada.html#call" style="margin-right:6px">Pick a time for a 15-min call</a><a href="canada.html">Back to Hearth Acre Investments</a>
+</div>
+<script>
+var bk=document.getElementById("bk");
+if(/notify=1/.test(location.search)){ bk.style.display="none"; document.getElementById("t").textContent="You are on the list."; document.getElementById("m").textContent="We will email you once when Ontario opens. Reply to that email to be removed any time."; }
+else if(/call=1/.test(location.search)){ bk.style.display="none"; document.getElementById("t").textContent="Time requested."; document.getElementById("m").textContent="Thiep will contact you to confirm the time, usually within a few hours on weekdays."; }
+else if(/list=1/.test(location.search)){ document.getElementById("t").textContent="You're on the list."; document.getElementById("m").textContent="Deals that fit your buy box come to you first. Email us any time to be removed."; }
+</script>
+</body>
+</html>

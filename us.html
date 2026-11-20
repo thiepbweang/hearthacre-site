@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hearth Acre Investments · Direct cash offers on Houston and Dallas-Fort Worth houses and Texas land</title>
+<meta name="description" content="Hearth Acre Investments makes direct cash offers on houses in Houston, Southeast Texas and Dallas-Fort Worth (Dallas and Tarrant counties), and on land. Any condition, no repairs, no commissions, a local title company closes.">
+<meta name="theme-color" content="#1E3B30">
+<meta property="og:title" content="Hearth Acre Investments">
+<meta property="og:description" content="Direct cash offers on Houston and Dallas-Fort Worth houses and Texas land. A written offer, a title company closing, your date.">
+<meta property="og:image" content="og.png">
+<link rel="icon" href="logo.svg">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+
+@font-face{font-family:"Fraunces";src:url(fonts/Fraunces.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Inter";src:url(fonts/Inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--pine:#1E3B30;--pine2:#2B4F41;--bone:#F3EBDD;--bone2:#FAF6EF;--ember:#C65D3A;--ember2:#A94B2C;--ink:#1B2420;--ink2:#4A554F;--line:rgba(30,59,48,.16)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bone2);color:var(--ink);font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--pine)}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01em;color:var(--pine);line-height:1.15}
+/* hero */
+.hero{background:var(--pine);color:var(--bone);padding:40px 0 58px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:repeating-linear-gradient(180deg,rgba(243,235,221,.08) 0 6px,transparent 6px 12px)}
+.hero img{width:96px;height:96px;border-radius:50%;display:block;margin:0 auto 14px}
+.hero h1{color:var(--bone);font-size:30px;margin:0}
+.hero .sub{margin:6px 0 0;font-size:16px;color:rgba(243,235,221,.85)}
+.hero .loc{display:inline-block;margin-top:12px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,235,221,.7)}
+/* link buttons */
+.links{display:grid;gap:12px;margin:-18px auto 0;position:relative;z-index:1}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;font-size:17px;box-shadow:0 10px 24px -18px rgba(30,59,48,.45);transition:transform .15s,box-shadow .15s}
+.btn small{display:block;font-weight:400;font-size:13.5px;color:var(--ink2);margin-top:2px}
+.btn .ar{font-size:20px;color:var(--ember)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -18px rgba(30,59,48,.55)}
+.btn.primary{background:var(--ember);border-color:var(--ember);color:#fff}
+.btn.primary small{color:rgba(255,255,255,.85)}.btn.primary .ar{color:#fff}
+.contact{display:flex;justify-content:center;gap:10px;margin-top:4px;flex-wrap:wrap}
+.contact a{font-size:14px;font-weight:600;text-decoration:none;padding:8px 14px;border:1px solid var(--line);background:#fff;color:var(--pine)}
+section{padding:40px 0 8px}
+section h2{font-size:25px;margin:0 0 14px}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);padding:16px}
+.step::before{counter-increment:s;content:counter(s);width:40px;height:40px;display:grid;place-items:center;background:var(--pine);color:var(--bone);font:600 18px Fraunces,Georgia,serif}
+.step b{display:block;color:var(--ink)}.step span{font-size:14.5px;color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border:1px solid var(--line);padding:16px}
+.card h3{font-size:18px;margin:0 0 8px}
+.card ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink2)}
+.honest{border-left:3px solid var(--ember);background:#fff;padding:14px 16px;font-size:14.5px;color:var(--ink2);margin-top:12px}
+/* forms */
+.form{background:#fff;border:1px solid var(--line);padding:20px;margin-top:6px}
+.form .lead{margin:0 0 16px;color:var(--ink2);font-size:14.5px}
+.prog{display:flex;gap:6px;margin-bottom:16px}.prog i{flex:1;height:4px;background:var(--line)}.prog i.on{background:var(--ember)}
+fieldset{border:0;padding:0;margin:0}
+.q{margin:0 0 16px}
+.q>label,.q>.lab{display:block;font-weight:600;font-size:15px;margin-bottom:7px;color:var(--ink)}
+.q .opt{font-weight:400;color:var(--ink2);font-size:13px}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{width:100%;font:400 16px Inter,system-ui,sans-serif;color:var(--ink);background:var(--bone2);border:1px solid rgba(30,59,48,.28);padding:12px 13px;border-radius:0;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pine);background:#fff}
+textarea{min-height:84px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:10px 14px;border:1px solid rgba(30,59,48,.28);background:var(--bone2);font-size:15px;font-weight:500}
+.chips input:checked+span{background:var(--pine);border-color:var(--pine);color:var(--bone)}
+.chips input:focus-visible+span{outline:2px solid var(--ember);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:13.5px;color:var(--ink2);margin:10px 0;line-height:1.5}
+.consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--pine)}
+.consent.opt{background:var(--bone2);padding:10px;border:1px dashed rgba(30,59,48,.28)}
+.nav{display:flex;gap:10px;margin-top:6px}
+.go,.back{font:600 16px Inter,system-ui,sans-serif;padding:14px 18px;border:0;cursor:pointer}
+.go{flex:1;background:var(--ember);color:#fff}.go:hover{background:var(--ember2)}
+.back{background:transparent;color:var(--pine);border:1px solid var(--line)}
+.err{color:#B3261E;font-size:13.5px;min-height:18px;margin-top:8px}
+.js .step-hide{display:none}
+.hp{position:absolute;left:-9999px}
+details{background:#fff;border:1px solid var(--line);padding:14px 16px;margin-bottom:8px}
+details summary{cursor:pointer;font-weight:600;color:var(--ink)}
+details p{margin:8px 0 0;font-size:14.5px;color:var(--ink2)}
+footer{margin-top:40px;background:var(--pine);color:rgba(243,235,221,.8);font-size:13px;padding:26px 0 34px}
+footer a{color:var(--bone)}
+footer p{margin:0 0 10px}
+@media (max-width:420px){.two,.row2{grid-template-columns:1fr}.hero h1{font-size:27px}}
+
+/* v1.1 soft look (T, 2026-09-28): rounded corners, light pastel tints, white consent rows */
+:root{--sage:#E8F0EB;--sage2:#D5E4DA;--peach:#FBEAE2;--sand:#FBF8F3;--r:16px}
+body{background:var(--sand)}
+.hero{background:linear-gradient(180deg,#24453A,#1E3B30);border-radius:0 0 28px 28px}
+.hero::after{display:none}
+.hero img{box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
+.links{margin-top:-22px}
+.btn{border-radius:var(--r);border-color:rgba(30,59,48,.10);box-shadow:0 12px 30px -20px rgba(30,59,48,.45)}
+.btn.primary{background:linear-gradient(180deg,#CF6A47,#C65D3A)}
+.btn .ar{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--peach);font-size:17px}
+.btn.primary .ar{background:rgba(255,255,255,.18)}
+.contact a{border-radius:999px;background:var(--sage);border-color:transparent}
+.step{border-radius:var(--r);background:var(--sage);border-color:transparent}
+.step::before{border-radius:50%;background:#fff;color:var(--pine)}
+.card{border-radius:var(--r);border-color:transparent}
+.two .card:first-child{background:var(--peach)}.two .card:last-child{background:var(--sage)}
+.honest{border-radius:var(--r);border-left:0;background:#fff;box-shadow:inset 4px 0 0 var(--ember)}
+.form{border-radius:20px;border-color:rgba(30,59,48,.08);box-shadow:0 18px 40px -30px rgba(30,59,48,.4);padding:22px}
+.prog i{border-radius:999px;height:6px;background:var(--sage2)}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{border-radius:12px;background:#F7F5F0;border-color:rgba(30,59,48,.14)}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px rgba(30,59,48,.08)}
+.chips span{border-radius:999px;background:#F7F5F0;border-color:rgba(30,59,48,.14);padding:10px 16px}
+.chips input:checked+span{background:var(--pine);border-color:var(--pine)}
+.consent{background:transparent;border:0;padding:0}
+.go,.back{border-radius:14px}
+.go{background:linear-gradient(180deg,#CF6A47,#C65D3A)}
+details{border-radius:14px;border-color:transparent;box-shadow:0 8px 24px -22px rgba(30,59,48,.5)}
+footer{border-radius:28px 28px 0 0}
+
+/* v2 additions (2026-10-29): 16px gutters, chooser buttons, disclosure card, notes */
+.wrap{padding:0 16px}
+.big{padding:24px 20px;font-size:19px}
+.big small{font-size:14.5px}
+.disc{background:#fff;border-radius:var(--r);box-shadow:inset 4px 0 0 var(--pine);padding:16px 18px;margin:12px 0}
+.disc p{margin:0 0 10px;font-size:17px;font-weight:700;color:var(--ink);line-height:1.5}.disc p:last-child{margin:0}
+.intro{color:var(--ink2);font-size:15px;margin:0 0 12px}
+.cnote{font-size:13.5px;color:var(--ink2);margin:10px 0 14px;line-height:1.5}
+h3.sec{font-size:20px;margin:28px 0 8px}
+.cap{font-size:13px;color:var(--ink2);margin:4px 0 0}
+
+</style>
+<style>
+@font-face{font-family:"HA Serif";src:url(fonts/InstrumentSerif.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:"HA Serif";src:url(fonts/InstrumentSerif-Italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"HA Sans";src:url(fonts/Manrope.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--pine:#1E3B30;--pine2:#2C5244;--pine3:#163026;--bone:#F3EBDD;--bone2:#FAF6EE;--ember:#C65D3A;--ember2:#A94A2B;--ink:#1A2620;--mute:#5E6A63;--line:#E4D9C6;
+ --serif:"HA Serif","Instrument Serif",Georgia,serif;--sans:"HA Sans",Manrope,system-ui,-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bone2);color:var(--ink);font:16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.x-wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.x-kick{font:700 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ember)}
+.x-h2{font:600 clamp(32px,4.4vw,52px)/1.08 var(--serif);color:var(--pine);letter-spacing:-.02em;margin:14px 0 14px}
+.x-lede{font-size:18px;color:var(--mute);max-width:62ch;margin:0}
+.x-sec{padding:110px 0}
+.x-btn{display:inline-flex;align-items:center;gap:10px;font:600 15.5px/1 var(--sans);padding:17px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.x-btn.pri{background:var(--ember);color:#fff;box-shadow:0 10px 30px rgba(198,93,58,.35)}.x-btn.pri:hover{background:var(--ember2);transform:translateY(-2px)}
+.x-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}.x-btn.ghost:hover{background:rgba(255,255,255,.2)}
+.x-btn.line{border:1.5px solid var(--pine);color:var(--pine)}.x-btn.line:hover{background:var(--pine);color:var(--bone)}
+/* nav */
+.x-nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s}
+.x-nav .x-wrap{display:flex;align-items:center;gap:22px;height:78px}
+.x-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.x-brand img{width:40px;height:40px;border-radius:10px}
+.x-brand b{font:600 20px/1.05 var(--serif);display:block}.x-brand small{font:600 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;opacity:.75}
+.x-nav nav{margin-left:auto;display:flex;gap:26px}.x-nav nav a{color:#fff;opacity:.88;text-decoration:none;font:500 14.5px var(--sans)}.x-nav nav a:hover{opacity:1}
+.x-nav .x-btn{padding:12px 20px;font-size:14px}
+.x-nav.solid{background:rgba(250,246,238,.94);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.x-nav.solid .x-brand,.x-nav.solid nav a{color:var(--pine)}
+@media(max-width:900px){.x-nav nav{display:none}}
+/* hero */
+.x-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.x-hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover;transform:scale(1.06);animation:kb 22s ease-out forwards}
+@keyframes kb{to{transform:scale(1)}}
+.x-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,24,.55) 0%,rgba(15,30,24,.25) 38%,rgba(15,30,24,.88) 100%)}
+.x-hero .x-wrap{position:relative;z-index:2;padding-bottom:110px;padding-top:160px;width:100%}
+.x-hero h1{font:500 clamp(44px,7vw,92px)/1.0 var(--serif);letter-spacing:-.03em;margin:18px 0 22px;max-width:15ch}
+.x-hero h1 em{font-style:italic;color:#F2C9B6}
+.x-hero p{font-size:clamp(17px,1.6vw,20px);max-width:56ch;opacity:.92;margin:0 0 34px}
+.x-hero .x-kick{color:#F2C9B6}
+.x-cta{display:flex;gap:14px;flex-wrap:wrap}
+.x-facts{display:flex;gap:42px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid rgba(255,255,255,.22)}
+.x-facts div b{display:block;font:500 30px/1 var(--serif)}.x-facts div span{font-size:13px;opacity:.78}
+/* promise strip */
+.x-strip{background:var(--pine);color:var(--bone)}
+.x-strip .x-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.x-strip div{padding:30px 22px;border-left:1px solid rgba(243,235,221,.14)}.x-strip div:first-child{border-left:0}
+.x-strip b{display:block;font:600 17px var(--serif);color:#fff;margin-bottom:4px}.x-strip span{font-size:14px;opacity:.75}
+@media(max-width:820px){.x-strip .x-wrap{grid-template-columns:1fr 1fr}.x-strip div:nth-child(3){border-left:0}}
+/* situations */
+.x-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+@media(max-width:900px){.x-grid3{grid-template-columns:1fr}}
+.x-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;transition:transform .25s,box-shadow .25s}
+.x-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(30,59,48,.10)}
+.x-card .ic{width:46px;height:46px;border-radius:14px;background:#F8E6DD;display:grid;place-items:center;margin-bottom:18px}
+.x-card .ic svg{width:22px;height:22px;stroke:var(--ember2);fill:none;stroke-width:1.8}
+.x-card h3{font:600 21px var(--serif);color:var(--pine);margin:0 0 6px}.x-card p{margin:0;color:var(--mute);font-size:15.5px}
+/* photo split */
+.x-split{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+@media(max-width:900px){.x-split{grid-template-columns:1fr;gap:40px}}
+.x-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px rgba(30,59,48,.18)}
+.x-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.x-photo .tag{position:absolute;left:20px;bottom:20px;background:rgba(250,246,238,.95);border-radius:16px;padding:14px 18px;font-size:14px;color:var(--pine);max-width:75%}
+.x-photo .tag b{display:block;font:600 18px var(--serif)}
+.x-steps{counter-reset:s;list-style:none;padding:0;margin:34px 0 0}
+.x-steps li{counter-increment:s;position:relative;padding:0 0 30px 74px}
+.x-steps li:before{content:"0" counter(s);position:absolute;left:0;top:-4px;font:500 34px/1 var(--serif);color:var(--ember)}
+.x-steps li:after{content:"";position:absolute;left:20px;top:44px;bottom:6px;width:1px;background:var(--line)}.x-steps li:last-child:after{display:none}
+.x-steps b{display:block;font:600 20px var(--serif);color:var(--pine);margin-bottom:4px}.x-steps span{color:var(--mute)}
+/* compare */
+.x-dark{background:var(--pine3);color:var(--bone)}
+.x-dark .x-h2{color:#fff}.x-dark .x-lede{color:rgba(243,235,221,.72)}
+.x-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:46px;font-size:15.5px;background:rgba(255,255,255,.04);border:1px solid rgba(243,235,221,.14);border-radius:22px;overflow:hidden}
+.x-table th,.x-table td{padding:18px 22px;text-align:left;border-bottom:1px solid rgba(243,235,221,.1)}
+.x-table th{font:700 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(243,235,221,.6)}
+.x-table th.us{color:#F2C9B6}.x-table td.us{color:#fff;font-weight:600;background:rgba(198,93,58,.12)}
+.x-table tr:last-child td{border-bottom:0}.x-table td:first-child{color:rgba(243,235,221,.8)}
+.x-note{margin-top:22px;font-size:14.5px;color:rgba(243,235,221,.65);max-width:80ch}
+/* markets */
+.x-mk{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px}
+@media(max-width:900px){.x-mk{grid-template-columns:1fr}}
+.x-mk a{position:relative;display:block;border-radius:24px;overflow:hidden;min-height:420px;color:#fff;text-decoration:none}
+.x-mk img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.x-mk a:hover img{transform:scale(1.05)}
+.x-mk a:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(12,24,19,.85))}
+.x-mk div{position:absolute;left:26px;right:26px;bottom:24px;z-index:2}
+.x-mk span{font:700 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#F2C9B6}
+.x-mk h3{font:500 28px/1.15 var(--serif);margin:8px 0 6px}.x-mk p{margin:0;font-size:14.5px;opacity:.85}
+/* founder */
+.x-founder{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:center}
+@media(max-width:900px){.x-founder{grid-template-columns:1fr}}
+.x-founder figure{margin:0;position:relative}
+.x-founder figure img{width:100%;border-radius:26px;filter:grayscale(1) contrast(1.05);display:block}
+.x-founder figure:before{content:"";position:absolute;inset:-14px;border:1px solid var(--line);border-radius:34px}
+.x-founder figcaption{position:absolute;left:18px;bottom:18px;background:var(--pine);color:var(--bone);border-radius:14px;padding:12px 16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.x-founder figcaption b{display:block;font:600 18px var(--serif);letter-spacing:0;text-transform:none;color:#fff}
+.x-quote{font:400 italic clamp(24px,2.6vw,32px)/1.35 var(--serif);color:var(--pine);margin:0 0 22px}
+/* forms area */
+.x-forms{background:var(--bone)}
+.x-forms section{background:#fff;border:1px solid var(--line);border-radius:28px;padding:44px;margin:0 0 30px;box-shadow:0 30px 60px rgba(30,59,48,.06)}
+.x-forms section h2{font:600 34px/1.1 var(--serif);color:var(--pine);margin:0 0 10px}
+@media(max-width:700px){.x-forms section{padding:26px}}
+/* cta band */
+.x-band{position:relative;color:#fff;overflow:hidden;border-radius:32px;margin:0 28px;}
+.x-band .bg{position:absolute;inset:0;background:url(img/land1.jpg) center/cover}
+.x-band:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,30,24,.92),rgba(15,30,24,.45))}
+.x-band .in{position:relative;z-index:2;padding:90px 70px;max-width:760px}
+.x-band h2{font:500 clamp(34px,4.6vw,56px)/1.05 var(--serif);margin:12px 0 18px}
+@media(max-width:700px){.x-band{margin:0 12px}.x-band .in{padding:56px 28px}}
+/* footer */
+.x-foot{background:var(--pine3);color:rgba(243,235,221,.72);padding:80px 0 36px;margin-top:110px;font-size:14.5px}
+.x-foot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+@media(max-width:820px){.x-foot .cols{grid-template-columns:1fr 1fr}}
+.x-foot h4{font:700 11.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#F2C9B6;margin:0 0 14px}
+.x-foot a{color:rgba(243,235,221,.85);text-decoration:none;display:block;margin-bottom:8px}.x-foot a:hover{color:#fff}
+.x-foot .word{font:600 30px var(--serif);color:#fff;margin-bottom:10px}
+.x-foot .legal{margin-top:56px;padding-top:26px;border-top:1px solid rgba(243,235,221,.12);font-size:13px;line-height:1.7}
+.x-foot .legal a{display:inline}
+/* mobile call bar */
+.x-mbar{display:none}
+@media(max-width:700px){.x-mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px}.x-mbar a{flex:1;justify-content:center}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s,transform .9s}.reveal.in{opacity:1;transform:none}
+.x-hero h1,.x-mk h3,.x-band h2{color:#fff!important}.x-foot .word{color:#fff}
+
+/* v4 type: Instrument Serif display (one weight), Manrope body */
+body,.x-forms,.x-forms input,.x-forms textarea,.x-forms select,.x-forms button,.x-forms label,.x-forms p{font-family:var(--sans)!important}
+.x-h2,.x-hero h1,.x-card h3,.x-steps b,.x-mk h3,.x-band h2,.x-foot .word,.x-brand b,.x-forms section h2,.x-forms h2,.x-forms h3,.x-photo .tag b,.x-strip b,.x-facts div b,.x-founder figcaption b,.x-quote,.x-calc h3,.x-calc .big,.x-steps li:before,#faq h2,#faq summary{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.01em}
+.x-hero h1{font-size:clamp(52px,8vw,110px)!important;line-height:.96!important}
+.x-h2{font-size:clamp(38px,5vw,64px)!important;line-height:1.02!important}
+.x-card h3{font-size:25px!important}.x-steps b{font-size:24px!important}.x-mk h3{font-size:34px!important}
+.x-strip b{font-size:21px!important}.x-facts div b{font-size:34px!important}
+.x-kick{font-weight:700;letter-spacing:.22em}
+.x-hero:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.x-card{border-radius:26px}
+/* interactive: see your numbers */
+.x-calc{display:grid;grid-template-columns:380px 1fr;gap:36px;margin-top:50px;align-items:start}
+@media(max-width:960px){.x-calc{grid-template-columns:1fr}}
+.x-panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:0 30px 60px rgba(30,59,48,.06)}
+.x-sl{margin-bottom:24px}.x-sl label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:var(--pine);margin-bottom:10px}
+.x-sl label output{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ember2)}
+.x-sl input[type=range]{width:100%;accent-color:var(--ember);height:6px}
+.x-sl small{display:block;color:var(--mute);font-size:12.5px;margin-top:6px}
+.x-cond{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.x-cond button{font:600 13px var(--sans);padding:11px 6px;border-radius:12px;border:1px solid var(--line);background:var(--bone2);color:var(--pine);cursor:pointer}
+.x-cond button.on{background:var(--pine);border-color:var(--pine);color:var(--bone)}
+.x-viz h3{font-size:30px;color:var(--pine);margin:0 0 6px}
+.x-bar{display:flex;height:64px;border-radius:16px;overflow:hidden;margin:18px 0 12px;background:#EDE4D4}
+.x-bar div{height:100%;transition:width .5s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:center;color:#fff;font:700 12px var(--sans);white-space:nowrap;overflow:hidden}
+.x-legend{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;color:var(--mute)}
+.x-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.x-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+@media(max-width:600px){.x-kpis{grid-template-columns:1fr}}
+.x-kpis div{background:var(--bone2);border:1px solid var(--line);border-radius:18px;padding:18px}
+.x-kpis .big{display:block;font-size:34px;color:var(--pine);line-height:1.1}
+.x-kpis span{font-size:13px;color:var(--mute)}
+.x-tl{margin-top:30px}.x-tl .row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-bottom:12px;font-size:14px;color:var(--pine);font-weight:600}
+.x-tl .track{height:16px;border-radius:99px;background:#EDE4D4;position:relative;overflow:hidden}
+.x-tl .fill{position:absolute;left:0;top:0;bottom:0;border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.x-tl .fill b{position:absolute;right:10px;top:-1px;font:700 11px/18px var(--sans);color:#fff}
+.x-fine{font-size:12.5px;color:var(--mute);margin-top:18px}
+
+/* hide the old v2 hero/nav blocks and footer */
+header.hero,nav.links,footer:not(.x-foot){display:none!important}
+main.wrap{max-width:none;padding:0}
+</style>
+</head>
+<body>
+<div class="x-nav" id="xnav"><div class="x-wrap">
+ <a class="x-brand" href="#top"><img src="logo.svg" alt=""><div><b>Hearth Acre</b><small>Investments</small></div></a>
+ <nav><a href="#how-x">How it works</a><a href="#compare">Why direct</a><a href="#numbers">Your numbers</a><a href="#markets">Where we buy</a><a href="#about">About</a><a href="#buyers">Buyers</a></nav>
+ <a class="x-btn pri" href="#offer">Get my offer</a>
+</div></div>
+
+<header class="x-hero" id="top"><div class="bg"></div><div class="x-wrap">
+ <div class="x-kick">Houston · Dallas-Fort Worth · Direct buyer</div>
+ <h1>Sell your house <em>as is</em>, on your timeline.</h1>
+ <p>Hearth Acre Investments makes direct cash offers on houses and land. No repairs, no showings, no agent commissions. You get a clear written offer, and a local title company handles the closing.</p>
+ <div class="x-cta"><a class="x-btn pri" href="#offer">Get my written offer</a><a class="x-btn ghost" href="tel:+17139791939">Call (713) 979-1939</a></div>
+ <div class="x-facts"><div><b>Any condition</b><span>We buy as is</span></div><div><b>$0</b><span>Commissions or fees to you</span></div><div><b>Your date</b><span>Close fast or wait for you</span></div><div><b>Title company</b><span>Holds the money and closes</span></div></div>
+</div></header>
+
+<div class="x-strip"><div class="x-wrap">
+ <div><b>Written offer</b><span>A real number on paper, no pressure</span></div>
+ <div><b>No repairs</b><span>Leave what you don't want</span></div>
+ <div><b>Behind on taxes?</b><span>We work before the sale date</span></div>
+ <div><b>One person</b><span>You deal with Thiep start to finish</span></div>
+</div></div>
+
+<section class="x-sec" id="situations"><div class="x-wrap">
+ <div class="x-kick reveal">Situations we help with</div>
+ <h2 class="x-h2 reveal">Whatever is going on with the property, there is a way forward.</h2>
+ <p class="x-lede reveal">Most of the owners we talk to are dealing with something they did not plan for. We keep it simple and honest.</p>
+ <div class="x-grid3">
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div><h3>Inherited a house</h3><p>Probate, siblings to agree with, a house full of belongings. We buy it as it sits.</p></div>
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Behind on property taxes</h3><p>On the county tax sale list? We can often close before the sale date.</p></div>
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Facing foreclosure</h3><p>A posted sale date is stressful. A fast sale can protect your equity and your credit.</p></div>
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-10 10H4v-6z"/></svg></div><h3>Needs major repairs</h3><p>Foundation, roof, fire or water damage. You don't fix anything.</p></div>
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M17 8h5M19.5 5.5v5"/></svg></div><h3>Tired landlord</h3><p>Problem tenants or a vacant rental. We can buy with tenants in place.</p></div>
+  <div class="x-card reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l7-5 7 5v10"/><path d="M3 15c3-2 6 2 9 0s6 2 9 0"/></svg></div><h3>Land you never use</h3><p>Lots and acreage you pay taxes on but never visit. Inherited land too.</p></div>
+ </div>
+</div></section>
+
+<section class="x-sec" id="how-x" style="background:var(--bone);padding-top:110px"><div class="x-wrap x-split">
+ <div class="x-photo reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div class="tag"><b>Houston houses</b>Brick ranches, two-stories, rentals and fixer-uppers.</div></div>
+ <div>
+  <div class="x-kick reveal">How it works</div>
+  <h2 class="x-h2 reveal">Three steps. No surprises.</h2>
+  <p class="x-lede reveal">You stay in control the whole way. If our number doesn't work for you, you say no and that's the end of it.</p>
+  <ol class="x-steps">
+   <li class="reveal"><b>Tell us about the property</b><span>The short form below, a text or a call. Two minutes is enough to start.</span></li>
+   <li class="reveal"><b>Get a written offer</b><span>We look at the house and recent sales nearby, then send a clear number in writing.</span></li>
+   <li class="reveal"><b>Close on your date</b><span>A local Texas title company checks the paperwork, holds the money and pays you at closing.</span></li>
+  </ol>
+  <a class="x-btn line reveal" href="#offer" style="margin-top:8px">Start in 2 minutes</a>
+ </div>
+</div></section>
+
+<section class="x-sec x-dark" id="compare"><div class="x-wrap">
+ <div class="x-kick reveal" style="color:#F2C9B6">Straight talk</div>
+ <h2 class="x-h2 reveal">Selling direct vs. listing with an agent</h2>
+ <p class="x-lede reveal">Listing can bring a higher price. A direct sale trades some of that for speed and certainty. Here is the honest comparison.</p>
+ <table class="x-table reveal">
+  <tr><th></th><th class="us">Hearth Acre (direct)</th><th>Listing with an agent</th></tr>
+  <tr><td>Repairs and cleaning</td><td class="us">None. Sold as is</td><td>Usually expected before listing</td></tr>
+  <tr><td>Showings and open houses</td><td class="us">One walkthrough</td><td>Many, on buyers' schedules</td></tr>
+  <tr><td>Commissions</td><td class="us">$0 to you</td><td>Often 5 to 6 percent</td></tr>
+  <tr><td>Closing costs</td><td class="us">Discussed up front in the offer</td><td>Usually paid by the seller</td></tr>
+  <tr><td>Timeline</td><td class="us">Your date, often 2 to 3 weeks</td><td>Often 2 to 4 months</td></tr>
+  <tr><td>Financing risk</td><td class="us">No bank approval needed</td><td>Buyer loans can fall through</td></tr>
+ </table>
+ <p class="x-note reveal">We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing. We are not real estate agents and we do not list properties.</p>
+</div></section>
+
+
+<section class="x-sec" id="numbers" style="background:var(--bone)"><div class="x-wrap">
+ <div class="x-kick reveal">See your numbers</div>
+ <h2 class="x-h2 reveal">What listing really costs, before you decide.</h2>
+ <p class="x-lede reveal">Move the sliders to match your house. This shows what usually comes out of a traditional sale, and how long it takes. Then compare it with our written offer.</p>
+ <div class="x-calc">
+  <div class="x-panel reveal">
+   <div class="x-sl"><label>Home value if fixed up <output id="o-v">$250,000</output></label><input type="range" id="c-v" min="80000" max="600000" step="5000" value="250000"></div>
+   <div class="x-sl"><label>Condition</label><div class="x-cond" id="c-c"><button data-r="0.02">Good</button><button data-r="0.08" class="on">Dated</button><button data-r="0.18">Major repairs</button></div><small>Repairs buyers or agents usually expect before listing (Estimate).</small></div>
+   <div class="x-sl"><label>Still owed on the house <output id="o-o">$90,000</output></label><input type="range" id="c-o" min="0" max="500000" step="5000" value="90000"></div>
+   <div class="x-sl"><label>Monthly holding costs <output id="o-h">$1,800</output></label><input type="range" id="c-h" min="300" max="5000" step="100" value="1800"><small>Mortgage, taxes, insurance, utilities while it sits.</small></div>
+   <div class="x-sl" style="margin:0"><label>Months to sell by listing <output id="o-m">4</output></label><input type="range" id="c-m" min="1" max="9" step="1" value="4"></div>
+  </div>
+  <div class="x-panel x-viz reveal">
+   <h3>Where a listing price goes</h3>
+   <div class="x-bar" id="c-bar"></div>
+   <div class="x-legend"><span><i style="background:#1E3B30"></i>You keep</span><span><i style="background:#C65D3A"></i>Commissions 6%</span><span><i style="background:#D99A6C"></i>Seller closing 2%</span><span><i style="background:#8A9A8F"></i>Repairs</span><span><i style="background:#B8AE9C"></i>Holding costs</span><span><i style="background:#3F4A43"></i>Loan payoff</span></div>
+   <div class="x-kpis"><div><b class="big" id="k-net">$0</b><span>Estimated cash to you by listing</span></div><div><b class="big" id="k-cost">$0</b><span>Costs before you get paid</span></div><div><b class="big" id="k-days">0</b><span>Days, list to closing</span></div></div>
+   <div class="x-tl"><div class="row"><span>Listing</span><div class="track"><div class="fill" id="t-l" style="background:#C65D3A"><b id="t-lb"></b></div></div></div><div class="row"><span>Hearth Acre</span><div class="track"><div class="fill" id="t-d" style="background:#1E3B30"><b>14 to 21 days</b></div></div></div></div>
+   <div class="x-cta" style="margin-top:26px"><a class="x-btn pri" href="#offer">Compare with my written offer</a></div>
+   <p class="x-fine">Illustration only, not an offer or an appraisal. Uses typical Texas costs: 6% commissions, about 2% seller closing costs, your repair and holding figures, and about 45 days from contract to closing. Your real numbers will differ.</p>
+  </div>
+ </div>
+</div></section>
+<script>
+(function(){var $=function(i){return document.getElementById(i)},r=0.08,f=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
+document.querySelectorAll("#c-c button").forEach(function(b){b.onclick=function(){document.querySelectorAll("#c-c button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");r=+b.dataset.r;go()}});
+["c-v","c-o","c-h","c-m"].forEach(function(i){$(i).oninput=go});
+function go(){var v=+$("c-v").value,o=+$("c-o").value,h=+$("c-h").value,m=+$("c-m").value;
+ var com=v*.06,cl=v*.02,rep=v*r,hold=h*(m+1.5),pay=Math.min(o,v),net=Math.max(0,v-com-cl-rep-hold-pay),cost=com+cl+rep+hold;
+ $("o-v").textContent=f(v);$("o-o").textContent=f(o);$("o-h").textContent=f(h);$("o-m").textContent=m;
+ var parts=[[net,"#1E3B30","You keep"],[com,"#C65D3A","6%"],[cl,"#D99A6C","2%"],[rep,"#8A9A8F","Repairs"],[hold,"#B8AE9C","Holding"],[pay,"#3F4A43","Payoff"]],tot=parts.reduce(function(a,p){return a+p[0]},0)||1;
+ $("c-bar").innerHTML=parts.map(function(p){var w=p[0]/tot*100;return '<div style="width:'+w+'%;background:'+p[1]+'">'+(w>9?p[2]:"")+'</div>'}).join("");
+ $("k-net").textContent=f(net);$("k-cost").textContent=f(cost);var d=Math.round(m*30+45);$("k-days").textContent=d;
+ $("t-l").style.width=Math.min(100,d/330*100)+"%";$("t-lb").textContent=d+" days";$("t-d").style.width="20%"}
+go()})();
+</script>
+
+<section class="x-sec" id="markets"><div class="x-wrap">
+ <div class="x-kick reveal">Where we buy</div>
+ <h2 class="x-h2 reveal">Houses in Houston and Dallas-Fort Worth. Land across Texas. Memphis through partners.</h2>
+ <div class="x-mk">
+  <a href="#offer" class="reveal"><img src="img/house2.jpg" alt="A house with a front porch" loading="lazy"><div><span>Houses</span><h3>Houston</h3><p>Harris, Fort Bend, Montgomery, Brazoria and Galveston counties. Any condition, any situation.</p></div></a>
+   <a href="#offer" class="reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div><span>Houses</span><h3>Dallas-Fort Worth</h3><p>Dallas and Tarrant counties. Any condition, any situation.</p></div></a>
+  <a href="#offer" class="reveal"><img src="img/land1.jpg" alt="Open Texas field at sunset" loading="lazy"><div><span>Land</span><h3>Texas acreage and lots</h3><p>Rural and edge-of-town land around Houston and Southeast Texas (Liberty, Montgomery and San Jacinto counties) and around Dallas-Fort Worth.</p></div></a>
+  <a href="#call" class="reveal"><img src="img/land2.jpg" alt="A home on open land" loading="lazy"><div><span>Houses</span><h3>Memphis, Tennessee</h3><p>Through our partner network. Book a call to start.</p></div></a>
+ </div>
+</div></section>
+
+<section class="x-sec" id="about" style="background:var(--bone)"><div class="x-wrap x-founder">
+ <figure class="reveal"><img src="img/thiep.jpg" alt="Thiep Weang, founder of Hearth Acre Investments"><figcaption>Founder<b>Thiep Weang</b></figcaption></figure>
+ <div>
+  <div class="x-kick reveal">Meet the buyer</div>
+  <p class="x-quote reveal">"You deal with one person from the first message to the closing table. If we can't help, I'll tell you straight."</p>
+  <p class="x-lede reveal">Hearth Acre Investments is run by Thiep Weang. We buy as a principal, not as an agent, so no commission comes out of your price and the offer you get is the offer in writing.</p>
+  <div class="x-cta reveal" style="margin-top:28px"><a class="x-btn pri" href="#offer">Get my offer</a><a class="x-btn line" href="#call">Book a 15-min call</a><a class="x-btn line" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener">Book a video walkthrough</a></div>
+ </div>
+</div></section>
+
+<div class="x-forms x-sec"><div class="x-wrap">
+<main class="wrap">
+  
+
+  
+
+  <section id="offer">
+    <h2>Get an offer</h2>
+    <form class="form" name="offer" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-steps="3">
+      <input type="hidden" name="form-name" value="offer">
+      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">No obligation, no fees to you. Your details stay with us; we never sell them.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">What are you selling?</span>
+          <div class="chips"><label><input type="radio" name="property_type" value="House" required><span>House</span></label><label><input type="radio" name="property_type" value="Land"><span>Land</span></label><label><input type="radio" name="property_type" value="Both"><span>Both</span></label></div></div>
+        <div class="q"><label for="o_addr">Property address or county parcel number</label><input type="text" id="o_addr" name="property" autocomplete="street-address" required></div>
+        <div class="q"><label for="o_city">City or county</label><input type="text" id="o_city" name="city_county" required></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="q"><span class="lab">How soon would you like to sell?</span>
+          <div class="chips"><label><input type="radio" name="timeline" value="ASAP" required><span>ASAP</span></label><label><input type="radio" name="timeline" value="1-3 months"><span>1-3 months</span></label><label><input type="radio" name="timeline" value="3+ months"><span>3+ months</span></label><label><input type="radio" name="timeline" value="Just curious"><span>Just curious</span></label></div></div>
+        <div class="q"><label for="o_why">What's going on with it? <span class="opt">(optional)</span></label><textarea id="o_why" name="situation" placeholder="Inherited it, needs work, tenants, taxes, moving..."></textarea></div>
+         <div class="q"><label for="o_src">How did you hear about us? <span class="opt">(optional)</span></label><select id="o_src" name="heard_from"><option value="">Choose one</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>A friend or family member</option><option>Letter or flyer</option><option>Phone call or text from us</option><option>Other</option></select></div>
+         <input type="hidden" name="referrer" class="ha-ref"><input type="hidden" name="landing_utm" class="ha-utm">
+        <div class="row2"><div class="q"><label for="o_size">Acres or beds/baths <span class="opt">(optional)</span></label><input type="text" id="o_size" name="size"></div>
+          <div class="q"><label for="o_num">A number in mind? <span class="opt">(optional)</span></label><input type="text" id="o_num" name="asking" inputmode="decimal"></div></div>
+      </fieldset>
+      <fieldset data-step="3">
+        <div class="q"><label for="o_name">Your name</label><input type="text" id="o_name" name="name" autocomplete="name" required></div>
+        <div class="row2"><div class="q"><label for="o_phone">Best phone</label><input type="tel" id="o_phone" name="phone" autocomplete="tel" required></div>
+          <div class="q"><label for="o_email">Email <span class="opt">(optional)</span></label><input type="email" id="o_email" name="email" autocomplete="email"></div></div>
+        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me automated texts or use a recorded or AI voice for updates about my property. Not required to get an offer; reply STOP anytime.</span></label>
+        <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>I agree that Thiep Weang (Hearth Acre Investments) may call or text me at the number above about my property. Consent isn't required to sell. I can say or reply STOP anytime.</span></label>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Get my offer</button></div>
+    </form>
+  </section>
+
+  <section id="call">
+    <h2>Book a call or a video walkthrough</h2>
+    <p class="lead" style="margin-bottom:14px">Prefer to show us the property on video? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline">Pick a time for a 30-min Google Meet</a> and the link comes to your email. Or use the form below for a phone call.</p>
+    <form class="form" name="call" method="POST" action="thanks.html?call=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="call">
+      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Pick a day and a time (Texas time). Thiep texts you to confirm, then calls you. No obligation.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">Day</span><div class="chips callDays"></div></div>
+        <div class="q"><span class="lab">Time (Texas, Central)</span><div class="chips callTimes"></div></div>
+        <div class="q"><span class="lab">About</span>
+          <div class="chips"><label><input type="radio" name="topic" value="Selling a house" required><span>Selling a house</span></label><label><input type="radio" name="topic" value="Selling land"><span>Selling land</span></label><label><input type="radio" name="topic" value="Buying (builder or investor)"><span>Buying</span></label></div></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="q"><label for="c_name">Your name</label><input type="text" id="c_name" name="name" autocomplete="name" required></div>
+        <div class="row2"><div class="q"><label for="c_phone">Phone</label><input type="tel" id="c_phone" name="phone" autocomplete="tel" required></div>
+          <div class="q"><label for="c_prop">Property or area <span class="opt">(optional)</span></label><input type="text" id="c_prop" name="property"></div></div>
+        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me automated texts or use a recorded or AI voice for updates about my property. Not required to book; reply STOP anytime.</span></label>
+        <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>I agree that Thiep Weang (Hearth Acre Investments) may call or text me at the number above to confirm and hold this call. Consent isn't required to sell. I can say or reply STOP anytime.</span></label>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Request this time</button></div>
+    </form>
+  </section>
+
+  
+
+  <section id="buyers">
+    <h2>Buyers &amp; builders list</h2>
+    <form class="form" name="buyers" method="POST" action="thanks.html?list=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="buyers">
+      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Builders, investors and land buyers: off-market houses and lots go to this private list first. Tell us your buy box so you only hear about deals that fit.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">What do you buy?</span>
+          <div class="chips"><label><input type="radio" name="buys" value="Houses" required><span>Houses</span></label><label><input type="radio" name="buys" value="Land"><span>Land</span></label><label><input type="radio" name="buys" value="Both"><span>Both</span></label></div></div>
+        <div class="q"><span class="lab">Where? <span class="opt">(pick any)</span></span>
+          <div class="chips"><label><input type="checkbox" name="areas" value="Harris (Houston)"><span>Harris (Houston)</span></label><label><input type="checkbox" name="areas" value="Fort Bend"><span>Fort Bend</span></label><label><input type="checkbox" name="areas" value="Dallas"><span>Dallas</span></label><label><input type="checkbox" name="areas" value="Tarrant (Fort Worth)"><span>Tarrant (Fort Worth)</span></label><label><input type="checkbox" name="areas" value="Montgomery"><span>Montgomery</span></label><label><input type="checkbox" name="areas" value="Brazoria"><span>Brazoria</span></label><label><input type="checkbox" name="areas" value="Galveston"><span>Galveston</span></label><label><input type="checkbox" name="areas" value="Liberty"><span>Liberty</span></label><label><input type="checkbox" name="areas" value="Memphis, TN"><span>Memphis, TN</span></label></div>
+          <input type="text" name="areas_other" placeholder="Other counties, states or ZIP codes" style="margin-top:8px"></div>
+        <div class="row2"><div class="q"><label for="b_min">Price from</label><input type="text" id="b_min" name="price_min" inputmode="decimal" placeholder="$"></div><div class="q"><label for="b_max">Price to</label><input type="text" id="b_max" name="price_max" inputmode="decimal" placeholder="$"></div></div>
+        <div class="q"><label for="b_box">Lot size or house type</label><input type="text" id="b_box" name="buy_box" placeholder="e.g. 3-bed rehabs, duplex, triplex or quad, or 1-5 acre lots"></div>
+        <div class="row2"><div class="q"><label for="b_fund">How you close</label><select id="b_fund" name="funding"><option>Cash</option><option>Hard money</option><option>Conventional</option><option>Other</option></select></div>
+          <div class="q"><label for="b_days">How fast</label><select id="b_days" name="close_days"><option>7 days</option><option>14 days</option><option>30 days</option><option>30+ days</option></select></div></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="row2"><div class="q"><label for="b_name">Your name</label><input type="text" id="b_name" name="name" autocomplete="name" required></div><div class="q"><label for="b_co">Company <span class="opt">(optional)</span></label><input type="text" id="b_co" name="company" autocomplete="organization"></div></div>
+        <div class="row2"><div class="q"><label for="b_phone">Phone</label><input type="tel" id="b_phone" name="phone" autocomplete="tel" required></div><div class="q"><label for="b_email">Email</label><input type="email" id="b_email" name="email" autocomplete="email" required></div></div>
+        <div class="q"><label for="b_pof">Proof of funds available?</label><select id="b_pof" name="proof_of_funds"><option>Yes, on request</option><option>Not yet</option></select></div>
+        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me deal alerts by automated text. Not required to join; reply STOP anytime.</span></label>
+        <label class="consent"><input type="checkbox" name="consent_list" value="yes" required><span>Add me to the Hearth Acre Investments private deal list. Thiep Weang (Hearth Acre Investments) may email, call or text me about properties that fit my buy box. I can ask to be removed anytime.</span></label>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Join the list</button></div>
+    </form>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>Do I pay any fees?</summary><p>No commissions and no listing fees. Who pays closing costs is written into the offer before you sign anything.</p></details>
+    <details><summary>Who handles the money and paperwork?</summary><p>A local Texas title company. They check ownership, hold the earnest money and pay everyone at closing.</p></details>
+    <details><summary>Do you buy as-is?</summary><p>Yes. No repairs, no cleaning, no showings.</p></details>
+    <details><summary>Will you buy it yourselves?</summary><p>We sign the purchase contract, and we may assign that contract to another buyer, such as a builder, for a fee. We tell you this up front and in writing (Texas Occupations Code §1101.0045), and your price stays the price in the contract.</p></details>
+    <details><summary>How fast can you close?</summary><p>It depends on the title search and the property. You pick the date that works for you.</p></details>
+    <details><summary>What happens to my information?</summary><p>We use it only to talk with you about your property or the deal list. We never sell it. See the <a href="privacy.html">privacy page</a>.</p></details>
+  </section>
+</main>
+</div></div>
+
+<div class="x-band reveal"><div class="bg"></div><div class="in">
+ <div class="x-kick" style="color:#F2C9B6">No obligation</div>
+ <h2>Find out what your property is worth to a direct buyer.</h2>
+ <p style="opacity:.88;font-size:18px;margin:0 0 30px">Two minutes, a written number, and you decide.</p>
+ <div class="x-cta"><a class="x-btn pri" href="#offer">Get my written offer</a><a class="x-btn ghost" href="sms:+17139791939">Text us</a></div>
+</div></div>
+
+<footer class="x-foot"><div class="x-wrap">
+ <div class="cols">
+  <div><div class="word">Hearth Acre</div><p style="margin:0 0 14px">Direct cash offers on houses and land. Houston and Southeast Texas · Dallas-Fort Worth (Dallas and Tarrant counties) · Texas land · Memphis through partners.</p></div>
+  <div><h4>Sellers</h4><a href="#offer">Get an offer</a><a href="#how-x">How it works</a><a href="#compare">Direct vs. listing</a><a href="#faq">Questions</a></div>
+  <div><h4>Buyers</h4><a href="#buyers">Join the buyer list</a><a href="#call">Book a call</a><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener">Video walkthrough</a></div>
+  <div><h4>Contact</h4><a href="tel:+17139791939">(713) 979-1939</a><a href="mailto:hearthacreinvestments@gmail.com">hearthacreinvestments@gmail.com</a><span>Text or call, 9 AM to 9 PM Central</span></div>
+ </div>
+ <div class="legal">© 2026 Hearth Acre Investments · Thiep Weang, real estate investor. We buy as a principal and do not list properties. We make offers to buy, and we may assign our purchase contract to another buyer for a fee. Nothing on this page is a public offer of any property. Photos are illustrative. <a href="privacy.html">Privacy and consent</a> · Reply STOP to any text to opt out.</div>
+</div></footer>
+
+<div class="x-mbar"><a class="x-btn pri" href="#offer">Get offer</a><a class="x-btn line" style="background:#fff" href="tel:+17139791939">Call</a></div>
+<script>
+/* Public contacts. Leave "" to hide a button. */
+var HEARTHACRE = { phone: "713-979-1939", email: "hearthacreinvestments@gmail.com", booking: "" };
+var CALL_SLOTS=["12:15 PM", "12:30 PM", "12:45 PM", "1:00 PM", "1:15 PM", "1:30 PM", "1:45 PM", "2:00 PM", "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM"];
+(function(){ var ds=document.querySelectorAll(".callDays"); if(!ds.length) return;
+  var p=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()), base=new Date(p+"T12:00:00Z"), out=[];
+  for(var i=1;out.length<6&&i<14;i++){ var x=new Date(base.getTime()+i*864e5), wd=x.getUTCDay(); if(wd===0||wd===6) continue;
+    var iso=x.toISOString().slice(0,10), lab=x.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric",timeZone:"UTC"}); out.push([iso,lab]); }
+  [].forEach.call(ds,function(d){ var t=d.closest("fieldset").querySelector(".callTimes");
+    d.innerHTML=out.map(function(o,k){ return '<label><input type="radio" name="call_date" value="'+o[0]+'"'+(k?'':' required')+'><span>'+o[1]+'</span></label>'; }).join("");
+    t.innerHTML=CALL_SLOTS.map(function(s,k){ return '<label><input type="radio" name="call_time" value="'+s+' CT"'+(k?'':' required')+'><span>'+s+'</span></label>'; }).join(""); });
+  if(HEARTHACRE.booking){ var f=document.querySelector('form[name="call"]'); if(f) f.outerHTML='<p><a class="btn primary" href="'+HEARTHACRE.booking+'" target="_blank" rel="noopener"><span>Open the booking page<small>Live calendar, instant confirmation</small></span><span class="ar">&rarr;</span></a></p>'; }
+})();
+(function(){
+  document.documentElement.className+=" js";
+  var c=document.getElementById("contact"), h="";
+  if(HEARTHACRE.phone){ var p=HEARTHACRE.phone.replace(/[^\d+]/g,""); h+='<a href="tel:'+p+'">Call</a><a href="sms:'+p+'">Text</a>'; }
+  if(HEARTHACRE.email) h+='<a href="mailto:'+HEARTHACRE.email+'">Email</a>';
+  c.innerHTML=h; if(!h) c.remove();
+  document.querySelectorAll("form[data-steps]").forEach(function(f){
+    var steps=[].slice.call(f.querySelectorAll("fieldset[data-step]")), bars=[].slice.call(f.querySelectorAll(".prog i")), cur=0,
+        go=f.querySelector(".go"), back=f.querySelector(".back"), err=f.querySelector(".err"), last=go.textContent;
+    function show(i){ cur=i; steps.forEach(function(s,k){ s.classList.toggle("step-hide",k!==i); }); bars.forEach(function(b,k){ b.classList.toggle("on",k<=i); });
+      back.style.display=i?"":"none"; go.textContent=i<steps.length-1?"Next":last; err.textContent=""; }
+    function valid(i){ var bad=null; steps[i].querySelectorAll("input,select,textarea").forEach(function(el){ if(!bad&&!el.checkValidity()) bad=el; });
+      if(bad){ err.textContent=bad.type==="checkbox"?"Please check the consent box to continue.":bad.type==="radio"?"Please pick one option.":"Please fill in: "+(bad.labels&&bad.labels[0]?bad.labels[0].textContent.replace(/\(optional\)/,"").trim():"this field"); try{ bad.focus({preventScroll:false}); }catch(e){} return false; } return true; }
+    back.onclick=function(){ if(cur>0) show(cur-1); };
+    f.addEventListener("submit",function(e){ if(!valid(cur)){ e.preventDefault(); return; }
+      if(cur<steps.length-1){ e.preventDefault(); show(cur+1); f.scrollIntoView({behavior:"smooth",block:"start"}); return; }
+      f.querySelector('[name="submitted_at"]').value=new Date().toISOString(); go.disabled=true; go.textContent="Sending..."; });
+    f.setAttribute("novalidate",""); show(0);
+  });
+})();
+</script>
+<script>
+(function(){var n=document.getElementById("xnav");function s(){n.classList.toggle("solid",window.scrollY>60)}s();addEventListener("scroll",s,{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});})();
+</script>
+<script>(function(){try{var r=document.referrer||"direct";var q=location.search||"";document.querySelectorAll(".ha-ref").forEach(function(e){e.value=r});document.querySelectorAll(".ha-utm").forEach(function(e){e.value=q});}catch(e){}})();</script>
+</body>
+</html>
