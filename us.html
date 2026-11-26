@@ -258,7 +258,40 @@ body,.x-forms,.x-forms input,.x-forms textarea,.x-forms select,.x-forms button,.
 .x-kick{font-weight:700;letter-spacing:.22em}
 .x-hero:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 .x-card{border-radius:26px}
-/* interactive: see your numbers */
+/* walkthrough (replaces the listing-cost calculator, 2026-11-26) */
+.x-walk{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;margin-top:46px;align-items:start}
+.x-walk-stage{position:sticky;top:96px;aspect-ratio:16/10;border-radius:26px;overflow:hidden;background:var(--pine);box-shadow:0 30px 60px rgba(30,59,48,.12)}
+.x-walk-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .8s ease,transform 6s ease}
+.x-walk-stage img.on{opacity:1;transform:scale(1)}
+.x-walk-count{position:absolute;left:18px;bottom:16px;background:rgba(250,246,239,.92);color:var(--pine);padding:6px 14px;border-radius:999px;font-size:14px}
+.x-walk-count b{font-family:var(--serif);font-weight:400;font-size:20px}
+.x-walk-steps{list-style:none;margin:0;padding:0;counter-reset:w}
+.x-walk-steps li{counter-increment:w;padding:34px 0 34px 64px;position:relative;border-top:1px solid var(--line);min-height:38vh;opacity:.45;transition:opacity .5s}
+.x-walk-steps li.on{opacity:1}
+.x-walk-steps li:before{content:counter(w);position:absolute;left:0;top:30px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--pine);color:var(--bone);font-family:var(--serif);font-size:22px}
+.x-walk-steps li.on:before{background:var(--ember)}
+.x-walk-steps b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--pine);margin-bottom:6px}
+.x-walk-steps span{color:var(--ink2);font-size:17px}
+.x-walk-steps img{display:none}
+@media(max-width:900px){.x-walk{grid-template-columns:1fr}.x-walk-stage{display:none}.x-walk-steps li{min-height:0;opacity:1;padding:24px 0 24px 0}.x-walk-steps li:before{position:static;margin-bottom:12px}.x-walk-steps img{display:block;width:100%;height:auto;border-radius:18px;margin:0 0 14px}}
+@media(prefers-reduced-motion:reduce){.x-walk-stage img{transition:none;transform:none}}
+.x-who{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 8px}
+.x-who button{font:600 15px var(--sans);padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--pine);cursor:pointer}
+.x-who button[aria-selected=true],.x-who button.on{background:var(--pine);color:var(--bone);border-color:var(--pine)}
+.x-who-bottom{align-items:center;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}.x-who-bottom span{font-weight:600;color:var(--pine);margin-right:4px}
+.x-path-pane .x-panel h3{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--pine);margin:0 0 8px}
+.x-intake{display:none;margin-top:28px;scroll-margin-top:90px}.x-intake.open{display:block}
+.x-intake form{max-width:760px}.x-intake legend{font-family:var(--serif);font-size:30px;color:var(--pine);margin-bottom:14px;padding:0}
+.x-intake fieldset{border:0;padding:0;margin:0}.x-intake .q{margin-bottom:18px}.x-intake .lab,.x-intake label[for]{display:block;font-weight:600;color:var(--pine);margin-bottom:8px;font-size:15px}
+.x-intake .chips{display:flex;flex-wrap:wrap;gap:8px}.x-intake .chips input{position:absolute;opacity:0}
+.x-intake .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:600px){.x-intake .row2{grid-template-columns:1fr}}
+.x-intake .nav{display:flex;justify-content:space-between;gap:10px;margin-top:10px}.x-intake .nav button{font:600 16px var(--sans);padding:13px 22px;border:0;cursor:pointer}
+.x-intake .back{background:transparent;color:var(--pine)}.x-intake .err{color:var(--ember2);min-height:22px;font-size:14px}
+.x-iprog{display:flex;gap:6px;margin-bottom:18px}.x-iprog i{flex:1;height:4px;background:var(--line)}.x-iprog i.on{background:var(--ember)}
+.x-drop{display:block;border:2px dashed rgba(30,59,48,.3);border-radius:18px;padding:26px;text-align:center;cursor:pointer;background:var(--bone2);color:var(--pine);font-weight:600;margin-bottom:12px}.x-drop input{display:none}
+.x-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.x-thumbs img{width:84px;height:84px;object-fit:cover;border-radius:12px}
+.x-result h3{font-family:var(--serif);font-weight:400;font-size:34px;color:var(--pine);margin:6px 0 10px}.x-rsteps{padding-left:20px;margin:12px 0 18px}.x-rsteps li{margin:6px 0}
+/* (old calculator styles kept unused) */
 .x-calc{display:grid;grid-template-columns:380px 1fr;gap:36px;margin-top:50px;align-items:start}
 @media(max-width:960px){.x-calc{grid-template-columns:1fr}}
 .x-panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:0 30px 60px rgba(30,59,48,.06)}
@@ -293,7 +326,7 @@ main.wrap{max-width:none;padding:0}
 <body>
 <div class="x-nav" id="xnav"><div class="x-wrap">
  <a class="x-brand" href="#top"><img src="logo.svg" alt=""><div><b>Hearth Acre</b><small>Investments</small></div></a>
- <nav><a href="#how-x">How it works</a><a href="#compare">Why direct</a><a href="#numbers">Your numbers</a><a href="#markets">Where we buy</a><a href="#about">About</a><a href="#buyers">Buyers</a></nav>
+ <nav><a href="#how-x">How it works</a><a href="#compare">Why direct</a><a href="#walkthrough">Walkthrough</a><a href="#markets">Where we buy</a><a href="#about">About</a><a href="#buyers">Buyers</a></nav>
  <a class="x-btn pri" href="#offer">Get my offer</a>
 </div></div>
 
@@ -358,41 +391,141 @@ main.wrap{max-width:none;padding:0}
 </div></section>
 
 
-<section class="x-sec" id="numbers" style="background:var(--bone)"><div class="x-wrap">
- <div class="x-kick reveal">See your numbers</div>
- <h2 class="x-h2 reveal">What listing really costs, before you decide.</h2>
- <p class="x-lede reveal">Move the sliders to match your house. This shows what usually comes out of a traditional sale, and how long it takes. Then compare it with our written offer.</p>
- <div class="x-calc">
-  <div class="x-panel reveal">
-   <div class="x-sl"><label>Home value if fixed up <output id="o-v">$250,000</output></label><input type="range" id="c-v" min="80000" max="600000" step="5000" value="250000"></div>
-   <div class="x-sl"><label>Condition</label><div class="x-cond" id="c-c"><button data-r="0.02">Good</button><button data-r="0.08" class="on">Dated</button><button data-r="0.18">Major repairs</button></div><small>Repairs buyers or agents usually expect before listing (Estimate).</small></div>
-   <div class="x-sl"><label>Still owed on the house <output id="o-o">$90,000</output></label><input type="range" id="c-o" min="0" max="500000" step="5000" value="90000"></div>
-   <div class="x-sl"><label>Monthly holding costs <output id="o-h">$1,800</output></label><input type="range" id="c-h" min="300" max="5000" step="100" value="1800"><small>Mortgage, taxes, insurance, utilities while it sits.</small></div>
-   <div class="x-sl" style="margin:0"><label>Months to sell by listing <output id="o-m">4</output></label><input type="range" id="c-m" min="1" max="9" step="1" value="4"></div>
-  </div>
-  <div class="x-panel x-viz reveal">
-   <h3>Where a listing price goes</h3>
-   <div class="x-bar" id="c-bar"></div>
-   <div class="x-legend"><span><i style="background:#1E3B30"></i>You keep</span><span><i style="background:#C65D3A"></i>Commissions 6%</span><span><i style="background:#D99A6C"></i>Seller closing 2%</span><span><i style="background:#8A9A8F"></i>Repairs</span><span><i style="background:#B8AE9C"></i>Holding costs</span><span><i style="background:#3F4A43"></i>Loan payoff</span></div>
-   <div class="x-kpis"><div><b class="big" id="k-net">$0</b><span>Estimated cash to you by listing</span></div><div><b class="big" id="k-cost">$0</b><span>Costs before you get paid</span></div><div><b class="big" id="k-days">0</b><span>Days, list to closing</span></div></div>
-   <div class="x-tl"><div class="row"><span>Listing</span><div class="track"><div class="fill" id="t-l" style="background:#C65D3A"><b id="t-lb"></b></div></div></div><div class="row"><span>Hearth Acre</span><div class="track"><div class="fill" id="t-d" style="background:#1E3B30"><b>14 to 21 days</b></div></div></div></div>
-   <div class="x-cta" style="margin-top:26px"><a class="x-btn pri" href="#offer">Compare with my written offer</a></div>
-   <p class="x-fine">Illustration only, not an offer or an appraisal. Uses typical Texas costs: 6% commissions, about 2% seller closing costs, your repair and holding figures, and about 45 days from contract to closing. Your real numbers will differ.</p>
-  </div>
+<section class="x-sec" id="walkthrough" style="background:var(--bone)"><div class="x-wrap">
+ <div class="x-kick reveal">Walk through it</div>
+ <h2 class="x-h2 reveal">From a few photos to closing day.</h2>
+ <p class="x-lede reveal">Here is exactly what happens, step by step, using a typical brick ranch like the ones we buy. Tell us who you are and we will show you your path.</p>
+ <div class="x-who reveal" id="start" role="tablist" aria-label="Which describes you">
+  <button type="button" role="tab" data-path="seller" aria-selected="true">I'm selling a property</button>
+  <button type="button" role="tab" data-path="investor" aria-selected="false">I'm an investor, builder, buyer or wholesaler</button>
  </div>
+ <div class="x-path-pane" data-pane="investor" hidden>
+  <div class="x-panel"><h3>Investors, builders, buyers and wholesalers</h3><p>Join the list and tell us what you buy: areas, price range, beds, rehab level, duplex, triplex or quad, and how fast you close. Wholesalers with a deal in our markets can send it the same way.</p><div class="x-cta"><a class="x-btn pri" href="#buyers">Join the buyer list</a><a class="x-btn line" href="#call">Book a 15-min call</a></div></div>
+ </div>
+
+ <div class="x-path-pane" data-pane="seller">
+ <div class="x-walk">
+  <div class="x-walk-stage" aria-hidden="true">
+   <img src="img/walk/1-photos.webp" alt="" class="on" data-i="0" width="1600" height="1000">
+   <img src="img/walk/2-inside.webp" alt="" data-i="1" width="1600" height="1000" loading="lazy">
+   <img src="img/walk/3-big-four.webp" alt="" data-i="2" width="1600" height="1000" loading="lazy">
+   <img src="img/walk/4-offer.webp" alt="" data-i="3" width="1600" height="1000" loading="lazy">
+   <img src="img/walk/5-walkthrough.webp" alt="" data-i="4" width="1600" height="1000" loading="lazy">
+   <img src="img/walk/6-closing.webp" alt="" data-i="5" width="1600" height="1000" loading="lazy">
+   <div class="x-walk-count"><b id="wk-n">1</b> / 6</div>
+  </div>
+  <ol class="x-walk-steps">
+   <li data-i="0"><img src="img/walk/1-photos.webp" alt="Front of a brick ranch house seen from the street" loading="lazy" width="1600" height="1000"><b>Send a few photos</b><span>The front of the house, each room, and anything that needs work. Phone photos are fine.</span><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:14px">Upload photos and answer a few questions</a></li>
+   <li data-i="1"><img src="img/walk/2-inside.webp" alt="A dated kitchen with oak cabinets and a tiled floor" loading="lazy" width="1600" height="1000"><b>Show us the inside</b><span>Kitchen, bathrooms, bedrooms and floors, just as they are. We buy as is, so there is no cleaning or fixing first.</span></li>
+   <li data-i="2"><img src="img/walk/3-big-four.webp" alt="Side of the house with the roof and the AC unit" loading="lazy" width="1600" height="1000"><b>The big four</b><span>Roof, AC, water heater and electrical panel. Their age shapes the number, so we ask about them up front.</span></li>
+   <li data-i="3"><img src="img/walk/4-offer.webp" alt="An envelope and a pen on the kitchen counter" loading="lazy" width="1600" height="1000"><b>Your written offer</b><span>We look at the house and recent sales nearby, then send a clear number in writing. If it does not work for you, you say no and that is the end of it.</span></li>
+   <li data-i="4"><img src="img/walk/5-walkthrough.webp" alt="The front door of the house" loading="lazy" width="1600" height="1000"><b>One walkthrough</b><span>One visit, at a time that works for you. No open houses, no stream of showings.</span></li>
+   <li data-i="5"><img src="img/walk/6-closing.webp" alt="House keys on the kitchen counter in evening light" loading="lazy" width="1600" height="1000"><b>Close on your date</b><span>A local Texas title company checks the paperwork, holds the money and pays you at closing.</span></li>
+  </ol>
+ </div>
+
+ <div class="x-intake" id="intake">
+  <form name="seller-intake" method="POST" action="thanks.html?intake=1" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="x-panel" novalidate>
+   <input type="hidden" name="form-name" value="seller-intake">
+   <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+   <input type="hidden" name="submitted_at" value=""><input type="hidden" name="recommended_path" value=""><input type="hidden" name="source_link" value="">
+   <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+   <div class="x-iprog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+   <fieldset data-s="1"><legend>The property</legend>
+    <div class="q"><span class="lab">What are you selling?</span><div class="chips"><label><input type="radio" name="property_type" value="House" required><span>House</span></label><label><input type="radio" name="property_type" value="Land"><span>Land</span></label><label><input type="radio" name="property_type" value="Duplex or more"><span>Duplex or more</span></label></div></div>
+    <div class="q"><label for="i_addr">Property address</label><input type="text" id="i_addr" name="property" autocomplete="street-address" required></div>
+    <div class="row2"><div class="q"><label for="i_city">City</label><input type="text" id="i_city" name="city" required></div><div class="q"><label for="i_state">State</label><select id="i_state" name="state" required><option value="">Choose</option><option>Texas</option><option>Tennessee</option><option>Other</option></select></div></div>
+    <div class="q"><label for="i_bb">Beds and baths, or acres <span class="opt">(optional)</span></label><input type="text" id="i_bb" name="size"></div>
+   </fieldset>
+   <fieldset data-s="2" hidden><legend>Who signs</legend>
+    <div class="q"><span class="lab">How are you connected to the property?</span><div class="chips"><label><input type="radio" name="relation" value="I own it" required><span>I own it</span></label><label><input type="radio" name="relation" value="I own it with others"><span>I own it with others</span></label><label><input type="radio" name="relation" value="Family member's property"><span>A family member's</span></label><label><input type="radio" name="relation" value="Inherited or estate"><span>Inherited / estate</span></label></div></div>
+    <div class="q"><span class="lab">Can everyone on the title sign when the time comes?</span><div class="chips"><label><input type="radio" name="signers" value="Yes, just me" required><span>Yes, just me</span></label><label><input type="radio" name="signers" value="Yes, all agree"><span>Yes, we all agree</span></label><label><input type="radio" name="signers" value="Others still need to agree"><span>Others still need to agree</span></label><label><input type="radio" name="signers" value="Not sure"><span>Not sure</span></label></div></div>
+    <div class="q"><span class="lab">Who lives there now?</span><div class="chips"><label><input type="radio" name="occupancy" value="I do" required><span>I do</span></label><label><input type="radio" name="occupancy" value="Tenant"><span>Tenant</span></label><label><input type="radio" name="occupancy" value="Family"><span>Family</span></label><label><input type="radio" name="occupancy" value="Vacant"><span>Nobody</span></label></div></div>
+   </fieldset>
+   <fieldset data-s="3" hidden><legend>Condition</legend>
+    <div class="q"><span class="lab">Overall condition</span><div class="chips"><label><input type="radio" name="condition" value="Move-in ready" required><span>Move-in ready</span></label><label><input type="radio" name="condition" value="Needs updates"><span>Needs updates</span></label><label><input type="radio" name="condition" value="Needs major repairs"><span>Needs major repairs</span></label><label><input type="radio" name="condition" value="Not livable"><span>Not livable</span></label></div></div>
+    <div class="q"><span class="lab">Anything that needs work? <span class="opt">(pick any)</span></span><div class="chips"><label><input type="checkbox" name="needs_work" value="Roof"><span>Roof</span></label><label><input type="checkbox" name="needs_work" value="AC or heat"><span>AC or heat</span></label><label><input type="checkbox" name="needs_work" value="Water heater"><span>Water heater</span></label><label><input type="checkbox" name="needs_work" value="Electrical"><span>Electrical</span></label><label><input type="checkbox" name="needs_work" value="Plumbing"><span>Plumbing</span></label><label><input type="checkbox" name="needs_work" value="Foundation"><span>Foundation</span></label><label><input type="checkbox" name="needs_work" value="Kitchen or baths"><span>Kitchen or baths</span></label><label><input type="checkbox" name="needs_work" value="Flood or water damage"><span>Flood or water</span></label></div></div>
+   </fieldset>
+   <fieldset data-s="4" hidden><legend>Your situation</legend>
+    <div class="q"><span class="lab">How soon would you like to sell?</span><div class="chips"><label><input type="radio" name="timeline" value="ASAP" required><span>ASAP</span></label><label><input type="radio" name="timeline" value="Within 30 days"><span>Within 30 days</span></label><label><input type="radio" name="timeline" value="1-3 months"><span>1-3 months</span></label><label><input type="radio" name="timeline" value="3+ months"><span>3+ months</span></label><label><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label></div></div>
+    <div class="q"><span class="lab">What's going on? <span class="opt">(pick any)</span></span><div class="chips"><label><input type="checkbox" name="situation" value="Inherited"><span>Inherited it</span></label><label><input type="checkbox" name="situation" value="Behind on taxes"><span>Behind on taxes</span></label><label><input type="checkbox" name="situation" value="Foreclosure notice"><span>Foreclosure notice</span></label><label><input type="checkbox" name="situation" value="Repairs cost too much"><span>Repairs cost too much</span></label><label><input type="checkbox" name="situation" value="Tired landlord"><span>Tired landlord</span></label><label><input type="checkbox" name="situation" value="Moving or relocating"><span>Moving</span></label><label><input type="checkbox" name="situation" value="Divorce or family change"><span>Family change</span></label></div></div>
+    <div class="row2"><div class="q"><span class="lab">Mortgage?</span><div class="chips"><label><input type="radio" name="mortgage" value="Paid off" required><span>Paid off</span></label><label><input type="radio" name="mortgage" value="Current"><span>Yes, current</span></label><label><input type="radio" name="mortgage" value="Behind"><span>Yes, behind</span></label><label><input type="radio" name="mortgage" value="Not sure"><span>Not sure</span></label></div></div>
+     <div class="q"><label for="i_num">A number in mind? <span class="opt">(optional)</span></label><input type="text" id="i_num" name="asking" inputmode="decimal"></div></div>
+   </fieldset>
+   <fieldset data-s="5" hidden><legend>Photos</legend>
+    <p class="x-fine" style="margin-top:0">Up to 8 photos: the front, the kitchen, bathrooms, and anything that needs work. We shrink them on your phone before sending. Optional, but photos speed up your written offer.</p>
+    <label class="x-drop"><input type="file" id="i_pics" accept="image/*" multiple><span>Tap to add photos</span></label>
+    <div class="x-thumbs" id="i_thumbs"></div>
+    <input type="file" name="photo1" hidden><input type="file" name="photo2" hidden><input type="file" name="photo3" hidden><input type="file" name="photo4" hidden><input type="file" name="photo5" hidden><input type="file" name="photo6" hidden><input type="file" name="photo7" hidden><input type="file" name="photo8" hidden>
+    <div class="q"><span class="lab">What works best for the next step?</span><div class="chips"><label><input type="radio" name="next_pref" value="Video walkthrough" required><span>Video walkthrough</span></label><label><input type="radio" name="next_pref" value="In-person visit"><span>In-person visit</span></label><label><input type="radio" name="next_pref" value="Phone call"><span>Phone call</span></label><label><input type="radio" name="next_pref" value="Just send the offer"><span>Just send the offer</span></label></div></div>
+   </fieldset>
+   <fieldset data-s="6" hidden><legend>Where to send your offer</legend>
+    <div class="q"><label for="i_name">Your name</label><input type="text" id="i_name" name="name" autocomplete="name" required></div>
+    <div class="row2"><div class="q"><label for="i_phone">Best phone</label><input type="tel" id="i_phone" name="phone" autocomplete="tel" required></div><div class="q"><label for="i_email">Email <span class="opt">(optional)</span></label><input type="email" id="i_email" name="email" autocomplete="email"></div></div>
+    <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me automated texts or use a recorded or AI voice for updates about my property. Not required to get an offer; reply STOP anytime.</span></label>
+    <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>I agree that Thiep Weang (Hearth Acre Investments) may call or text me at the number above about my property. Consent isn't required to sell. I can say or reply STOP anytime.</span></label>
+   </fieldset>
+   <div class="err" role="alert"></div>
+   <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Next</button></div>
+  </form>
+  <div class="x-panel x-result" id="i_result" hidden></div>
+ </div>
+ </div>
+ <p class="x-fine">Illustration: a 3D model of a typical Texas brick ranch, not a real property or listing. We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing.</p>
+ <div class="x-who x-who-bottom"><span>Which are you?</span><button type="button" data-path="seller">Seller</button><button type="button" data-path="investor">Investor, builder, buyer or wholesaler</button></div>
 </div></section>
 <script>
-(function(){var $=function(i){return document.getElementById(i)},r=0.08,f=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
-document.querySelectorAll("#c-c button").forEach(function(b){b.onclick=function(){document.querySelectorAll("#c-c button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");r=+b.dataset.r;go()}});
-["c-v","c-o","c-h","c-m"].forEach(function(i){$(i).oninput=go});
-function go(){var v=+$("c-v").value,o=+$("c-o").value,h=+$("c-h").value,m=+$("c-m").value;
- var com=v*.06,cl=v*.02,rep=v*r,hold=h*(m+1.5),pay=Math.min(o,v),net=Math.max(0,v-com-cl-rep-hold-pay),cost=com+cl+rep+hold;
- $("o-v").textContent=f(v);$("o-o").textContent=f(o);$("o-h").textContent=f(h);$("o-m").textContent=m;
- var parts=[[net,"#1E3B30","You keep"],[com,"#C65D3A","6%"],[cl,"#D99A6C","2%"],[rep,"#8A9A8F","Repairs"],[hold,"#B8AE9C","Holding"],[pay,"#3F4A43","Payoff"]],tot=parts.reduce(function(a,p){return a+p[0]},0)||1;
- $("c-bar").innerHTML=parts.map(function(p){var w=p[0]/tot*100;return '<div style="width:'+w+'%;background:'+p[1]+'">'+(w>9?p[2]:"")+'</div>'}).join("");
- $("k-net").textContent=f(net);$("k-cost").textContent=f(cost);var d=Math.round(m*30+45);$("k-days").textContent=d;
- $("t-l").style.width=Math.min(100,d/330*100)+"%";$("t-lb").textContent=d+" days";$("t-d").style.width="20%"}
-go()})();
+(function(){var st=document.querySelector(".x-walk-stage");if(!st||!("IntersectionObserver" in window))return;
+var imgs=st.querySelectorAll("img"),n=document.getElementById("wk-n"),items=document.querySelectorAll(".x-walk-steps li");
+function show(i){imgs.forEach(function(m){m.classList.toggle("on",m.dataset.i==i)});items.forEach(function(li){li.classList.toggle("on",li.dataset.i==i)});n.textContent=(+i+1)}
+var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)show(e.target.dataset.i)})},{rootMargin:"-45% 0px -45% 0px"});
+items.forEach(function(li){ob.observe(li)});show(0)})();
+</script>
+<script>
+(function(){
+var BOOK="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK";
+var panes=document.querySelectorAll(".x-path-pane"),tabs=document.querySelectorAll(".x-who button");
+function path(p,scroll){panes.forEach(function(x){x.hidden=x.dataset.pane!==p});tabs.forEach(function(t){t.setAttribute("aria-selected",t.dataset.path===p);t.classList.toggle("on",t.dataset.path===p)});
+ if(scroll){document.getElementById("start").scrollIntoView({behavior:"smooth",block:"start"})}}
+tabs.forEach(function(t){t.addEventListener("click",function(){path(t.dataset.path,t.closest(".x-who-bottom"))})});
+var f=document.querySelector('form[name="seller-intake"]');if(!f)return;
+var steps=[].slice.call(f.querySelectorAll("fieldset[data-s]")),bars=[].slice.call(f.querySelectorAll(".x-iprog i")),cur=0,go=f.querySelector(".go"),back=f.querySelector(".back"),err=f.querySelector(".err");
+var box=document.getElementById("intake");
+function openIntake(){box.classList.add("open");box.scrollIntoView({behavior:"smooth",block:"start"})}
+document.querySelectorAll(".x-open-intake").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();path("seller");openIntake()})});
+function show(i){cur=i;steps.forEach(function(s,k){s.hidden=k!==i});bars.forEach(function(b,k){b.classList.toggle("on",k<=i)});back.style.visibility=i?"visible":"hidden";go.textContent=i<steps.length-1?"Next":"Send and see my best option";err.textContent=""}
+function valid(i){var bad=null;steps[i].querySelectorAll("input[required],select[required]").forEach(function(el){if(!bad&&!el.checkValidity())bad=el});
+ if(bad){err.textContent=bad.type==="checkbox"?"Please check the consent box to continue.":bad.type==="radio"?"Please pick one option for each question.":"Please fill in the highlighted field.";try{bad.focus()}catch(x){}return false}return true}
+back.onclick=function(){if(cur>0)show(cur-1)};
+// photos: shrink on device, max 8
+var pics=[],thumbs=document.getElementById("i_thumbs");
+document.getElementById("i_pics").addEventListener("change",function(e){[].slice.call(e.target.files).forEach(function(file){if(pics.length>=8)return;shrink(file,1600,.78).then(function(b){pics.push(b);var u=URL.createObjectURL(b);thumbs.insertAdjacentHTML("beforeend",'<img src="'+u+'" alt="">')})});e.target.value=""});
+function shrink(file,max,q){return new Promise(function(res){var img=new Image();img.onload=function(){var s=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement("canvas");c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext("2d").drawImage(img,0,0,c.width,c.height);c.toBlob(function(b){res(b||file)},"image/jpeg",q)};img.onerror=function(){res(file)};img.src=URL.createObjectURL(file)})}
+function val(n){var el=f.querySelector('[name="'+n+'"]:checked')||f.querySelector('[name="'+n+'"]:not([type=radio]):not([type=checkbox])');return el?el.value:""}
+function vals(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(x){return x.value})}
+function recommend(){var t=val("timeline"),c=val("condition"),sig=val("signers"),st=val("state"),pref=val("next_pref"),sit=vals("situation"),m=val("mortgage"),rel=val("relation");
+ var urgent=t==="ASAP"||t==="Within 30 days"||sit.indexOf("Behind on taxes")>=0||sit.indexOf("Foreclosure notice")>=0||m==="Behind";
+ var rough=c==="Needs major repairs"||c==="Not livable"||vals("needs_work").indexOf("Foundation")>=0;
+ var r={k:"",h:"",p:"",steps:[],cta:[]};
+ if(st==="Other"){r.k="outside";r.h="We will tell you honestly if we can help";r.p="We buy in Texas and in Memphis through partners. If your property is somewhere else, we will check whether a trusted local buyer can make you an offer, and say so if not.";r.cta=[["Call or text (713) 979-1939","tel:+17139791939"]];return r}
+ if(c==="Move-in ready"&&(t==="3+ months"||t==="Just exploring")&&!urgent){r.k="compare";r.h="Listing may net you more. Here is how to compare.";r.p="Your house sounds ready to show and you are not in a rush. Listing with an agent often brings a higher price in that case. We are still glad to send a written cash offer so you can compare the two side by side, with no obligation.";r.steps=["We review your photos and recent sales nearby","You get a written number to compare with a listing","You choose; no pressure either way"];r.cta=[["Book a 30-min video walkthrough",BOOK]];return r}
+ if(sig==="Others still need to agree"||sig==="Not sure"||rel==="Inherited or estate"){r.k="signers";r.h="Best next step: one call with everyone who decides";r.p="Every owner on the title, or the estate's representative, needs to agree before closing. Inherited houses often still have the late owner's name on the title; the title company sorts out what is needed and we walk you through it. A short call with everyone together saves weeks.";r.steps=["We set up one call or video with all decision-makers","We look at the house and recent sales nearby","Written offer to all owners, then the title company confirms who signs"];r.cta=[["Book a 30-min video call",BOOK],["Call (713) 979-1939","tel:+17139791939"]];if(urgent){r.p+=" Because there is a tax or foreclosure deadline, call or text us today so we can start before the date.";r.cta.reverse()}return r}
+ if(rough||pref==="In-person visit"){r.k="visit";r.h="Best next step: one in-person walkthrough";r.p="Big repairs are hard to judge from photos. We set one visit at a time that works for you, then send a written offer. You do not clean or fix anything first.";r.steps=["We call you to set the visit","One walkthrough, about 30 minutes","Written offer, then you pick the closing date"];r.cta=[["Call (713) 979-1939","tel:+17139791939"]];return r}
+ if(urgent){r.k="fast";r.h="Best next step: a fast written cash offer";r.p="You need this handled soon. We review your details and recent sales nearby and aim to call you with a number quickly. A local Texas title company handles the paperwork and the money, and you pick the closing date.";r.steps=["We review your photos and nearby sales","We call with your number, usually within a day","Simple agreement, title company, your closing date"];r.cta=[["Book a 30-min video walkthrough",BOOK],["Call now: (713) 979-1939","tel:+17139791939"]];return r}
+ r.k="video";r.h="Best next step: a 30-minute video walkthrough";r.p="Show us the house on a video call from your phone. It is the fastest way to a written offer without anyone coming over.";r.steps=["Pick a time for the video call","We look at recent sales nearby","Written offer; you decide"];r.cta=[["Pick a time for the video call",BOOK]];return r}
+f.addEventListener("submit",function(e){e.preventDefault();if(!valid(cur))return;if(cur<steps.length-1){show(cur+1);box.scrollIntoView({behavior:"smooth",block:"start"});return}
+ var r=recommend();f.querySelector('[name="recommended_path"]').value=r.k;f.querySelector('[name="submitted_at"]').value=new Date().toISOString();f.querySelector('[name="source_link"]').value=location.search;
+ var fd=new FormData(f);pics.forEach(function(b,i){fd.set("photo"+(i+1),b,"photo"+(i+1)+".jpg")});
+ go.disabled=true;go.textContent="Sending...";
+ fetch("/",{method:"POST",body:fd}).then(function(res){if(!res.ok)throw 0;done(r)}).catch(function(){go.disabled=false;go.textContent="Send and see my best option";err.textContent="That did not send. Please try again, or text (713) 979-1939."})});
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function done(r){f.hidden=true;var o=document.getElementById("i_result");o.hidden=false;
+ o.innerHTML='<div class="x-kick">Got it, thank you</div><h3>'+esc(r.h)+'</h3><p>'+esc(r.p)+'</p>'+(r.steps.length?'<ol class="x-rsteps">'+r.steps.map(function(s){return "<li>"+esc(s)+"</li>"}).join("")+'</ol>':"")+'<div class="x-cta">'+r.cta.map(function(c,i){return '<a class="x-btn '+(i?"line":"pri")+'" href="'+esc(c[1])+'"'+(c[1].indexOf("http")===0?' target="_blank" rel="noopener"':"")+'>'+esc(c[0])+'</a>'}).join("")+'</div><p class="x-fine">Thiep will reach out at the number you gave, 9 AM to 9 PM Central. Reply STOP anytime.</p>';
+ o.scrollIntoView({behavior:"smooth",block:"start"})}
+show(0);
+var q=new URLSearchParams(location.search),start=q.get("start");
+if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||location.hash==="#intake"){setTimeout(openIntake,400)}}
+})();
 </script>
 
 <section class="x-sec" id="markets"><div class="x-wrap">
@@ -568,7 +701,7 @@ var CALL_SLOTS=["12:15 PM", "12:30 PM", "12:45 PM", "1:00 PM", "1:15 PM", "1:30 
   var c=document.getElementById("contact"), h="";
   if(HEARTHACRE.phone){ var p=HEARTHACRE.phone.replace(/[^\d+]/g,""); h+='<a href="tel:'+p+'">Call</a><a href="sms:'+p+'">Text</a>'; }
   if(HEARTHACRE.email) h+='<a href="mailto:'+HEARTHACRE.email+'">Email</a>';
-  c.innerHTML=h; if(!h) c.remove();
+  if(c){ c.innerHTML=h; if(!h) c.remove(); }
   document.querySelectorAll("form[data-steps]").forEach(function(f){
     var steps=[].slice.call(f.querySelectorAll("fieldset[data-step]")), bars=[].slice.call(f.querySelectorAll(".prog i")), cur=0,
         go=f.querySelector(".go"), back=f.querySelector(".back"), err=f.querySelector(".err"), last=go.textContent;
