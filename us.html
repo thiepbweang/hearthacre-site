@@ -458,7 +458,7 @@ main.wrap{max-width:none;padding:0}
 .x-qlist{list-style:none;margin:14px 0 6px;padding:0;display:grid;gap:10px}
 .x-qlist li{position:relative;padding:12px 14px 12px 44px;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:16.5px;color:var(--ink)}
 .x-qlist li:before{content:"?";position:absolute;left:12px;top:11px;width:22px;height:22px;border-radius:50%;background:var(--pine);color:var(--bone);font:700 13px/22px var(--sans);text-align:center}
-.x-rail>li.x-tall{min-height:150vh!important}
+.x-rail>li.x-tall{min-height:calc(var(--n,4) * 32vh + 34vh)!important}
 .x-shotblock{position:sticky;top:104px;background:var(--bone);padding:8px 0 4px;z-index:1}
 .x-shotlist{list-style:none;margin:12px 0 10px;padding:0;border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}
 .x-shotlist li{position:relative;padding:14px 16px 14px 58px;border-top:1px solid var(--line);transition:background .3s}
@@ -490,7 +490,7 @@ main.wrap{max-width:none;padding:0}
 .x-req div{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
 .x-req small{display:block;font:700 11.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ember2);margin-bottom:4px}
 .x-req p{margin:0;font-size:15.5px;color:var(--ink)}
-@media(max-width:900px){.x-shotblock{top:calc(88px + (100vw - 48px) * .625)}.x-walk-stage{top:78px!important}.x-rail>li.x-tall{min-height:170vh!important}.x-shotlist li{padding:10px 12px 10px 50px}.x-shotlist li b{font-size:18px}.x-shotlist li span{font-size:13.5px}.x-shotlist li .x-chk{left:12px;top:11px;width:26px;height:26px}.x-know-g,.x-req{grid-template-columns:1fr}.x-qlist li{font-size:15.5px}}
+@media(max-width:900px){.x-shotblock{top:calc(88px + (100vw - 48px) * .625)}.x-walk-stage{top:78px!important}.x-rail>li.x-tall{min-height:calc(var(--n,4) * 38vh + 30vh)!important}.x-shotlist li{padding:10px 12px 10px 50px}.x-shotlist li b{font-size:18px}.x-shotlist li span{font-size:13.5px}.x-shotlist li .x-chk{left:12px;top:11px;width:26px;height:26px}.x-know-g,.x-req{grid-template-columns:1fr}.x-qlist li{font-size:15.5px}}
 #start,#walkthrough{scroll-margin-top:90px}
 </style>
 </head>
@@ -595,13 +595,15 @@ main.wrap{max-width:none;padding:0}
   <div class="x-walk-stage" id="lk-stage" data-frames="[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89]" aria-hidden="true">
    <img src="img/walk/land/l_001.webp" alt="" id="lk-poster" width="960" height="600">
    <canvas id="lk-canvas" width="960" height="600"></canvas>
+   <div class="x-vf" id="lk-vf"><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><i class="g"></i><span class="x-vf-chip" id="lk-chip"></span></div>
    <div class="x-walk-cap"><b id="lk-n">1</b><span id="lk-t">Tell us which parcel</span></div>
    <i class="ld" id="lk-ld"></i>
   </div>
   <ol class="x-land-steps x-rail" id="lk-steps">
    <li data-f="1" data-cap="Tell us which parcel" data-dur="Day 1 &middot; 5 min"><b class="t">Tell us which parcel</b><p>The address if it has one, or the parcel number from your tax bill, plus the acreage if you know it. That is enough for us to pull the county map.</p><details class="x-how"><summary>How to find your parcel number</summary><div><p>It is on your county property tax bill or appraisal notice, usually called the account number, parcel ID or APN. In Harris County it is the 13-digit HCAD account number. You can also search your name or address on the county appraisal district website.</p></div></details></li>
    <li data-f="17" data-cap="We check it like a builder" data-dur="Days 1 to 3"><b class="t">We check what a builder checks</b><p>Road access, water and electric nearby, septic or sewer, flood zone on the FEMA map, wetlands, deed restrictions and back taxes. You do not need to know any of it; we look it up.</p></li>
-   <li data-f="35" data-cap="A few photos, if you can" data-dur="Day 1 &middot; 5 min"><b class="t">Send a few photos if you can</b><ul class="x-shot"><li>The road frontage, standing on the road</li><li>Any corner stakes or survey markers</li><li>Anything on the land: a mobile home, a barn, a fence, dumping</li><li>An old survey or plat, if you have one</li></ul><p class="x-fine">No photos? That is fine for land. Satellite and county maps get us most of the way.</p></li>
+   <li data-f="35" data-shots="1,g:stake,61,g:plat" data-vf="1" class="x-tall" style="--n:4" data-cap="A few photos, if you can" data-dur="Day 1 &middot; 5 min"><b class="t">Send a few photos if you can</b><p>As you scroll, the picture shows each shot to take.</p><div class="x-shotblock"><ul class="x-shotlist"><li data-tip="Stand on the road, whole front of the lot."><i class="x-chk" aria-hidden="true"></i><b>Road frontage</b><span>Stand on the road and get the whole front of the lot.</span></li><li data-tip="Close on any corner stake or flag."><i class="x-chk" aria-hidden="true"></i><b>Corner stakes or survey markers</b><span>Close on any stake, flag or pin you can find.</span></li><li data-tip="One wide shot of anything on the land."><i class="x-chk" aria-hidden="true"></i><b>Anything on the land</b><span>A mobile home, a barn, a fence, dumping: one wide shot each.</span></li><li data-tip="A photo of the survey or plat, if you have it."><i class="x-chk" aria-hidden="true"></i><b>An old survey or plat</b><span>A phone photo of the paper is fine, if you have one.</span></li></ul></div><p class="x-fine">No photos? That is fine for land. Satellite and county maps get us most of the way.</p></li>
+
    <li data-f="53" data-cap="Written offer by email" data-dur="Days 2 to 4"><b class="t">Your written offer arrives by email</b><p>A clear cash number and a vacant land purchase agreement you can read at your own pace and sign online. Say no and that is the end of it.</p></li>
    <li data-f="69" data-cap="Title sorts the paperwork" data-dur="Weeks 1 to 6"><b class="t">The title company sorts out the paperwork</b><p>Back taxes, old liens, heirs who need to sign: the title company handles it and pays them from the sale money. Inherited land with several owners is common, and we are used to it.</p></li>
    <li data-f="83" data-cap="Paid at closing" data-dur="Closing day"><b class="t">You get paid at closing</b><p>By check or wire from the title company, on the date you pick. You never pay us a fee.</p><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Get my written offer for land</a><p class="x-booklink">Want to talk it through first? <a href="#call">Click here to book a call or video meeting</a> and we will walk you through every step for your property.</p></li>
@@ -622,7 +624,7 @@ main.wrap{max-width:none;padding:0}
     <p>A few quick questions by form, text or call. There are no wrong answers, and answering does not commit you to anything.</p>
     <ul class="x-qlist"><li>Why you are thinking of selling, and by when</li><li>Who is on the title, and whether everyone agrees to sell</li><li>Roughly what is owed: mortgage, back taxes or liens</li><li>Whether it is empty, rented, or you live there</li><li>What needs fixing that you already know about</li><li>The number you would be happy with, if you have one</li></ul>
     <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:12px">Answer the questions</a></li>
-   <li data-i="1" data-shots="1,16,28,42" data-vf="1" class="x-tall" data-cap="Four photos of the outside" data-dur="Day 1 &middot; 10 min"><b class="t">Four photos of the outside</b>
+   <li data-i="1" data-shots="1,16,28,42" data-vf="1" class="x-tall" style="--n:4" data-cap="Four photos of the outside" data-dur="Day 1 &middot; 10 min"><b class="t">Four photos of the outside</b>
     <p>Phone photos are fine. Walk around once. As you scroll, the picture shows exactly how to take each shot.</p>
     <div class="x-shotblock"><ul class="x-shotlist">
      <li data-tip="Across the street. Whole house in the frame, roof to driveway."><i class="x-chk" aria-hidden="true"></i><b>The front</b><span>From across the street, phone sideways, roof line to driveway.</span></li>
@@ -634,14 +636,10 @@ main.wrap{max-width:none;padding:0}
     <details class="x-how"><summary>How to tell us about the roof</summary><div>
 <p>Stand in the yard and photo each side of the roof. Zoom in on the worst spot: curled or missing shingles, patches, sagging.</p>
 <p>Know when it was replaced? A receipt, a permit or a rough year is perfect. Inside, photo any brown stains on ceilings. That tells us about leaks.</p></div></details></li>
-   <li data-i="2" data-shots="54" data-cap="The big four" data-dur="Day 1 &middot; 5 min"><b class="t">The big four: AC, water heater, panel, roof</b>
-    <p>Their age shapes the number more than anything else. You do not need to know the years. A clear photo of each label is enough, and we read it for you.</p>
-    <div class="x-collage x-c4">
-     <figure><div class="x-ph x-ph-ac"><img src="img/walk/seq/f_016.webp" alt="Outside AC unit beside a brick house" loading="lazy"><i class="vf"></i></div><figcaption><b>Outside AC unit</b>Whole unit, then step in close on the sticker on its side.</figcaption></figure>
-     <figure><div class="x-ph x-plate"><div><small>Data plate</small><span>MODEL&nbsp;&nbsp;XR14-036</span><span>SERIAL&nbsp;&nbsp;5214E1234</span><span>MFD&nbsp;&nbsp;04/2014</span><em>Photo this sticker</em></div><i class="vf"></i></div><figcaption><b>Water heater and AC labels</b>Fill the frame with the label. The serial tells us the year.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/panel.webp" alt="Electrical panel with the door open showing breakers" loading="lazy"><i class="vf"></i></div><figcaption><b>Electrical panel</b>Door open, all breakers in one shot, then the label inside the door.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/roof.webp" alt="Shingle roof seen from the yard" loading="lazy"><i class="vf"></i></div><figcaption><b>Roof</b>From the yard, each side of the roof. Zoom on the worst spot.</figcaption></figure>
-    </div>
+   <li data-i="2" data-shots="g:ac,g:label,g:panel,g:roof" data-vf="1" class="x-tall" style="--n:4" data-cap="The big four" data-dur="Day 1 &middot; 5 min"><b class="t">The big four: AC, water heater, panel, roof</b>
+    <p>Their age shapes the number more than anything else. You do not need to know the years. As you scroll, the picture shows each shot to take.</p>
+    <div class="x-shotblock"><ul class="x-shotlist"><li data-tip="The whole AC unit, then the sticker on its side."><i class="x-chk" aria-hidden="true"></i><b>Outside AC unit</b><span>The whole unit from a few steps back, then close on the sticker on its side.</span></li><li data-tip="Fill the frame with the label. The serial gives the year."><i class="x-chk" aria-hidden="true"></i><b>Water heater and AC labels</b><span>Fill the frame with each label. The serial number tells us the year.</span></li><li data-tip="Door open, every breaker in one shot."><i class="x-chk" aria-hidden="true"></i><b>Electrical panel</b><span>Door open, all breakers in one shot, then the label inside the door.</span></li><li data-tip="Each side of the roof from the yard."><i class="x-chk" aria-hidden="true"></i><b>Roof</b><span>From the yard, each side of the roof. Zoom in on the worst spot.</span></li></ul></div>
+    
     <details class="x-how"><summary>How to find your AC and heat type</summary><div>
 <p><b>Outside unit:</b> the metal box with a fan on top beside the house. There is a sticker (data plate) on its side with the brand, model and serial. Take one clear, close photo of that sticker. The serial usually tells us the year it was made, so you do not need to know it.</p>
 <p><b>Inside unit:</b> look in a hallway closet, the garage or the attic. If it has a gas pipe and a flue going up, it is a gas furnace. Photo its sticker too.</p>
@@ -654,16 +652,9 @@ main.wrap{max-width:none;padding:0}
 <p><b>City sewer:</b> your water bill has a sewer or wastewater charge on it. Most homes in town are on sewer.</p>
 <p><b>Septic tank:</b> no sewer charge on the bill, and somewhere in the yard (often 10 to 20 feet from the house) there are one or two round lids or a concrete cover. Common in the country and on bigger lots.</p>
 <p>Not sure? Look at an old water bill, or the closing papers from when you bought it. You can also call the county or city utility office and ask. Same for water: city water or a well.</p></div></details></li>
-   <li data-i="3" data-shots="64,73,86" data-cap="Every room, as it is" data-dur="Day 1 &middot; 10 min"><b class="t">Inside: every room, just as it is</b>
-    <p>No cleaning, no fixing. We buy as is. Here is how each inside photo should look.</p>
-    <div class="x-collage x-c6">
-     <figure><div class="x-ph"><img src="img/guide/kitchen.webp" alt="Kitchen photographed wide from the doorway" loading="lazy"><i class="vf"></i></div><figcaption><b>Kitchen</b>From the doorway, wide. Counters, cabinets, stove and sink in one shot.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/bath.webp" alt="Bathroom photographed from the door" loading="lazy"><i class="vf"></i></div><figcaption><b>Each bathroom</b>From the door: tub or shower, toilet and vanity together.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/bedroom.webp" alt="Bedroom photographed from a corner" loading="lazy"><i class="vf"></i></div><figcaption><b>Each bedroom</b>Stand in a corner, lights on, blinds open.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/living.webp" alt="Living room photographed from a corner" loading="lazy"><i class="vf"></i></div><figcaption><b>Living room</b>One wide shot from the corner farthest from the window.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/floor.webp" alt="Close photo of a wood floor" loading="lazy"><i class="vf"></i></div><figcaption><b>Floors up close</b>Point down at the floor. Any damage, stains or soft spots.</figcaption></figure>
-     <figure><div class="x-ph"><img src="img/guide/ceiling.webp" alt="Close photo of a stained, cracked wall" loading="lazy"><i class="vf"></i></div><figcaption><b>Stains and cracks</b>Close on any ceiling stain, wall crack, water or mould.</figcaption></figure>
-    </div>
+   <li data-i="3" data-shots="g:kitchen,g:bath,g:bedroom,g:living,g:floor,g:ceiling" data-vf="1" class="x-tall" style="--n:6" data-cap="Every room, as it is" data-dur="Day 1 &middot; 10 min"><b class="t">Inside: every room, just as it is</b>
+    <p>No cleaning, no fixing. We buy as is. As you scroll, the picture shows how each inside photo should look.</p>
+    <div class="x-shotblock"><ul class="x-shotlist"><li data-tip="Kitchen from the doorway, wide."><i class="x-chk" aria-hidden="true"></i><b>Kitchen</b><span>From the doorway, wide: counters, cabinets, stove and sink.</span></li><li data-tip="Bathroom from the door: tub, toilet, vanity."><i class="x-chk" aria-hidden="true"></i><b>Each bathroom</b><span>From the door: tub or shower, toilet and vanity together.</span></li><li data-tip="Bedroom from a corner, lights on."><i class="x-chk" aria-hidden="true"></i><b>Each bedroom</b><span>Stand in a corner, lights on, blinds open.</span></li><li data-tip="Living room, one wide shot from a corner."><i class="x-chk" aria-hidden="true"></i><b>Living room</b><span>One wide shot from the corner farthest from the window.</span></li><li data-tip="Floor up close: damage, stains, soft spots."><i class="x-chk" aria-hidden="true"></i><b>Floors up close</b><span>Point down at the floor. Any damage, stains or soft spots.</span></li><li data-tip="Close on any stain, crack or water damage."><i class="x-chk" aria-hidden="true"></i><b>Stains and cracks</b><span>Close on any ceiling stain, wall crack, water or mould.</span></li></ul></div>
     <p class="x-fine" style="margin:0 0 10px">Also: the porch and front door, any broken or boarded windows, and the garage and attic if they are easy to get to.</p>
     <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:6px">Upload my photos</a></li>
    <li data-i="4" data-shots="100" data-cap="Your offer arrives by email" data-dur="Days 1 to 2"><b class="t">Your written offer arrives by email</b>
@@ -786,13 +777,14 @@ function player(o){var stage=document.getElementById(o.stage);if(!stage)return;
  var items=[].slice.call(document.querySelectorAll(o.items)),frames={},started=false,N=o.N,shown=0,prev=0,fadeT=0,want=0,anim=0,lastKey="",lastDone=-1;
  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
  items.forEach(function(li){if(li.dataset.dur&&!li.querySelector(".x-dur")){var d=document.createElement("span");d.className="x-dur";d.innerHTML=li.dataset.dur;li.appendChild(d)}});
- var shots=items.map(function(li){return String(li.dataset.shots||li.dataset.f||"1").split(",").map(Number)});
+ var shots=items.map(function(li){return String(li.dataset.shots||li.dataset.f||"1").split(",").map(function(x){x=x.trim();return x.indexOf("g:")===0?x:+x})});
  var NEED=[];shots.forEach(function(a){a.forEach(function(f){if(NEED.indexOf(f)<0)NEED.push(f)})});
  function fitRail(){items.forEach(function(li){var d=li.querySelector(".x-dur");li.style.removeProperty("min-height");if(d){var need=d.offsetTop+d.offsetHeight+56;if(li.offsetHeight<need)li.style.setProperty("min-height",need+"px","important")}})}
- function src(i){return o.dir+("00"+i).slice(-3)+".webp"}
+ function src(i){return typeof i==="string"?"img/guide/"+i.slice(2)+".webp":o.dir+("00"+i).slice(-3)+".webp"}
+ function dr(im){var W=cv.width,H=cv.height,r=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*r,h=im.naturalHeight*r;cx.drawImage(im,(W-w)/2,(H-h)/2,w,h)}
  function load(i,cb){if(frames[i]){cb&&cb();return}var im=new Image();im.decoding="async";im.onload=function(){frames[i]=im;cb&&cb()};im.src=src(i)}
  function start(){if(started)return;started=true;var n=0;NEED.forEach(function(f){load(f,function(){n++;ld.style.width=(n/NEED.length*100)+"%";if(n===NEED.length)ld.style.opacity=0;if(f===want)go(want)})})}
- function paint(){anim=0;var t=reduce?1:Math.min(1,(performance.now()-fadeT)/380);cx.globalAlpha=1;if(prev&&frames[prev]&&t<1){cx.drawImage(frames[prev],0,0,cv.width,cv.height);cx.globalAlpha=t*t*(3-2*t)}if(frames[shown])cx.drawImage(frames[shown],0,0,cv.width,cv.height);cx.globalAlpha=1;poster.style.visibility="hidden";if(t<1)anim=requestAnimationFrame(paint)}
+ function paint(){anim=0;var t=reduce?1:Math.min(1,(performance.now()-fadeT)/380);cx.globalAlpha=1;if(prev&&frames[prev]&&t<1){dr(frames[prev]);cx.globalAlpha=t*t*(3-2*t)}if(frames[shown])dr(frames[shown]);cx.globalAlpha=1;poster.style.visibility="hidden";if(t<1)anim=requestAnimationFrame(paint)}
  function go(f){want=f;if(!frames[f]||f===shown)return;prev=shown;shown=f;fadeT=performance.now();if(!anim)anim=requestAnimationFrame(paint)}
  function compute(){if(stage.offsetParent===null)return;start();
   var mid=window.innerHeight*(window.innerWidth<=900?0.7:0.55),idx=0,p=0;
@@ -803,7 +795,7 @@ function player(o){var stage=document.getElementById(o.stage);if(!stage)return;
    items.forEach(function(x,j){x.classList.toggle("on",j===idx);x.classList.toggle("done",j<idx)});nEl.textContent=idx+1;
    var cap=li.dataset.cap,list=[].slice.call(li.querySelectorAll(".x-shotlist>li"));
    items.forEach(function(x,j){if(j!==idx)[].forEach.call(x.querySelectorAll(".x-shotlist>li"),function(s){s.classList.toggle("done",j<idx);s.classList.remove("on")})});
-   if(list.length){list.forEach(function(s,j){s.classList.toggle("on",j===k);s.classList.toggle("done",j<k)});cap=list[k].dataset.tip;if(chip)chip.textContent="Shot "+(k+1)+" of "+list.length+": "+list[k].querySelector("b").textContent.toLowerCase();
+   if(list.length){list.forEach(function(s,j){s.classList.toggle("on",j===k);s.classList.toggle("done",j<k)});cap=list[k].dataset.tip;if(chip)chip.textContent="Shot "+(k+1)+" of "+list.length+": "+list[k].querySelector("b").textContent;
     if(lastDone>=0&&k>lastDone&&flash&&!reduce){flash.classList.remove("go");void flash.offsetWidth;flash.classList.add("go")}lastDone=k}else lastDone=-1;
    if(vf)vf.classList.toggle("on",!!li.dataset.vf);tEl.textContent=cap;
    var tb=document.querySelectorAll('.x-tl[data-tl="'+o.kind+'"] .x-tl-i'),bb=null;tb.forEach(function(b){if(+b.dataset.step<=idx)bb=b});if(bb&&!bb.classList.contains("on")){tb.forEach(function(x){x.classList.toggle("on",x===bb);x.setAttribute("aria-selected",x===bb)});var P=bb.closest(".x-tl");P.querySelectorAll(".x-tl-p").forEach(function(q){q.hidden=q.dataset.tlp!==bb.dataset.tli})}}}
@@ -814,7 +806,7 @@ function player(o){var stage=document.getElementById(o.stage);if(!stage)return;
  fitRail();onScroll()}
 if("IntersectionObserver" in window){var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target,sib=[].slice.call(f.parentNode.children);setTimeout(function(){f.classList.add("in")},sib.indexOf(f)*90);cio.unobserve(f)}})},{threshold:.2});document.querySelectorAll(".x-collage figure").forEach(function(f){cio.observe(f)})}else document.querySelectorAll(".x-collage figure").forEach(function(f){f.classList.add("in")});
 player({kind:"house",stage:"wk-stage",canvas:"wk-canvas",poster:"wk-poster",ld:"wk-ld",n:"wk-n",t:"wk-t",items:"#wk-steps>li",N:156,STEP:1,vf:"wk-vf",chip:"wk-chip",flash:"wk-flash",dir:"img/walk/seq/f_"});
-player({kind:"land",stage:"lk-stage",canvas:"lk-canvas",poster:"lk-poster",ld:"lk-ld",n:"lk-n",t:"lk-t",items:"#lk-steps>li",N:90,STEP:1,dir:"img/walk/land/l_"});
+player({kind:"land",stage:"lk-stage",canvas:"lk-canvas",poster:"lk-poster",ld:"lk-ld",n:"lk-n",t:"lk-t",items:"#lk-steps>li",N:90,STEP:1,vf:"lk-vf",chip:"lk-chip",flash:"wk-flash",dir:"img/walk/land/l_"});
 })();
 </script>
 <script>
