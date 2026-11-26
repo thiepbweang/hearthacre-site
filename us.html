@@ -260,21 +260,80 @@ body,.x-forms,.x-forms input,.x-forms textarea,.x-forms select,.x-forms button,.
 .x-card{border-radius:26px}
 /* walkthrough (replaces the listing-cost calculator, 2026-11-26) */
 .x-walk{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;margin-top:46px;align-items:start}
-.x-walk-stage{position:sticky;top:96px;aspect-ratio:16/10;border-radius:26px;overflow:hidden;background:var(--pine);box-shadow:0 30px 60px rgba(30,59,48,.12)}
-.x-walk-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .8s ease,transform 6s ease}
-.x-walk-stage img.on{opacity:1;transform:scale(1)}
-.x-walk-count{position:absolute;left:18px;bottom:16px;background:rgba(250,246,239,.92);color:var(--pine);padding:6px 14px;border-radius:999px;font-size:14px}
-.x-walk-count b{font-family:var(--serif);font-weight:400;font-size:20px}
+.x-walk-stage{position:sticky;top:96px;aspect-ratio:16/10;border-radius:26px;overflow:hidden;background:#cfd6cf;box-shadow:0 30px 60px rgba(30,59,48,.12);z-index:3}
+.x-walk-stage canvas,.x-walk-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.x-walk-stage .ld{position:absolute;left:0;bottom:0;height:3px;background:var(--ember);width:0;transition:width .3s}
+.x-walk-cap{position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;background:rgba(250,246,239,.94);color:var(--pine);padding:8px 14px;border-radius:14px;font-size:14px;font-weight:600;line-height:1.3}
+.x-walk-cap b{font-family:var(--serif);font-weight:400;font-size:20px;flex:none}
 .x-walk-steps{list-style:none;margin:0;padding:0;counter-reset:w}
-.x-walk-steps li{counter-increment:w;padding:34px 0 34px 64px;position:relative;border-top:1px solid var(--line);min-height:38vh;opacity:.45;transition:opacity .5s}
-.x-walk-steps li.on{opacity:1}
-.x-walk-steps li:before{content:counter(w);position:absolute;left:0;top:30px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--pine);color:var(--bone);font-family:var(--serif);font-size:22px}
-.x-walk-steps li.on:before{background:var(--ember)}
-.x-walk-steps b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--pine);margin-bottom:6px}
-.x-walk-steps span{color:var(--ink2);font-size:17px}
-.x-walk-steps img{display:none}
-@media(max-width:900px){.x-walk{grid-template-columns:1fr}.x-walk-stage{display:none}.x-walk-steps li{min-height:0;opacity:1;padding:24px 0 24px 0}.x-walk-steps li:before{position:static;margin-bottom:12px}.x-walk-steps img{display:block;width:100%;height:auto;border-radius:18px;margin:0 0 14px}}
-@media(prefers-reduced-motion:reduce){.x-walk-stage img{transition:none;transform:none}}
+.x-walk-steps>li{counter-increment:w;padding:34px 0 34px 64px;position:relative;border-top:1px solid var(--line);min-height:60vh;opacity:.5;transition:opacity .4s}
+.x-walk-steps>li.on{opacity:1}
+.x-walk-steps>li:before{content:counter(w);position:absolute;left:0;top:30px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--pine);color:var(--bone);font-family:var(--serif);font-size:22px}
+.x-walk-steps>li.on:before{background:var(--ember)}
+.x-walk-steps b.t{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--pine);margin-bottom:6px;line-height:1.15}
+.x-walk-steps p{color:var(--ink2);font-size:17px;margin:0 0 12px}
+.x-shot{list-style:none;padding:0;margin:8px 0 12px;display:grid;gap:6px}
+.x-shot li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink)}
+.x-shot li:before{content:"";position:absolute;left:2px;top:5px;width:14px;height:14px;border-radius:4px;border:2px solid var(--ember)}
+.x-how{border:1px solid var(--line);border-radius:14px;background:#fff;margin:8px 0;overflow:hidden}
+.x-how summary{cursor:pointer;padding:12px 14px;font-weight:600;color:var(--pine);font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.x-how summary::-webkit-details-marker{display:none}
+.x-how summary:after{content:"+";font-size:20px;line-height:1;color:var(--ember2)}
+.x-how[open] summary:after{content:"\2212"}
+.x-how div{padding:0 14px 14px;font-size:15px;color:var(--ink2)}
+.x-how div p{font-size:15px!important;margin:0 0 8px!important}
+.x-how div b{color:var(--pine)}
+@media(max-width:900px){
+ .x-walk{grid-template-columns:1fr;gap:0;margin-top:26px}
+ .x-walk-stage{position:sticky;top:60px;border-radius:18px;margin:0 -4px}
+ .x-walk-cap{font-size:13px;padding:6px 10px;left:8px;right:8px;bottom:8px}
+ .x-walk-cap b{font-size:17px}
+ .x-walk-steps>li{min-height:0;opacity:1;padding:26px 0 30px 0}
+ .x-walk-steps>li:before{position:static;margin-bottom:10px;width:38px;height:38px;font-size:19px}
+ .x-walk-steps b.t{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){.x-walk-steps>li{transition:none}}
+.x-doc{border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden;margin-top:6px;box-shadow:0 14px 30px rgba(30,59,48,.08)}.x-doc-h{background:var(--pine);color:var(--bone);padding:14px 16px}.x-doc-h small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}.x-doc-h b{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--bone)!important;display:block;margin:2px 0 0}.x-doc ul{margin:0;padding:12px 16px 4px 34px}.x-doc li{font-size:15px;color:var(--ink2);margin:7px 0}.x-doc li b{color:var(--pine)}.x-doc .x-fine{padding:0 16px 14px}
+html,body{overflow-x:clip}
+@media(max-width:600px){.x-table{width:100%;table-layout:fixed;font-size:13.5px}.x-table th,.x-table td{padding:10px 6px!important;word-break:break-word;hyphens:auto}}
+.x-tl{margin:28px 0 0}
+.x-tl-bar{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:var(--pine);border-radius:18px;padding:6px;box-shadow:0 18px 40px rgba(30,59,48,.25);overflow-x:auto}
+.x-tl-i{position:relative;text-align:left;border:0;background:transparent;color:rgba(243,235,221,.72);padding:12px 14px 12px 14px;border-radius:13px;cursor:pointer;min-width:140px;font:inherit}
+.x-tl-i:after{content:"";position:absolute;right:0;top:22%;bottom:22%;width:1px;background:rgba(243,235,221,.15)}.x-tl-i:last-child:after{display:none}
+.x-tl-i small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#E8AA8C;font-weight:700}
+.x-tl-i b{display:block;font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.2;margin-top:3px}
+.x-tl-i.on{background:var(--bone);color:var(--pine)}.x-tl-i.on small{color:var(--ember2)}
+.x-tl-panels{position:relative}
+.x-tl-p{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:10px;padding:20px 22px;box-shadow:0 20px 44px rgba(30,59,48,.08)}
+.x-tl-ph small{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember2);font-weight:700}.x-tl-ph b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--pine);margin:2px 0 12px}
+.x-tl-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.x-tl-g span{display:block;font-weight:700;font-size:13px;color:var(--pine);margin-bottom:4px}.x-tl-g p{margin:0;color:var(--ink2);font-size:15px}
+@media(max-width:900px){.x-tl{position:static}.x-tl-bar{display:flex}.x-tl-i{min-width:150px}.x-tl-g{grid-template-columns:1fr}}
+.x-walk-land .x-land-steps{grid-template-columns:1fr;margin:0}.x-walk-land .x-land-steps>li{min-height:52vh;opacity:.55;transition:opacity .4s}.x-walk-land .x-land-steps>li.on{opacity:1}@media(max-width:900px){.x-walk-land .x-land-steps>li{min-height:0;opacity:1}}
+.x-kind{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#fff;border:1px solid var(--line);margin:22px 0 4px}
+.x-kind button{font:600 15px var(--sans);padding:10px 18px;border-radius:999px;border:0;background:transparent;color:var(--pine);cursor:pointer}
+.x-kind button[aria-selected=true]{background:var(--pine);color:var(--bone)}
+.x-land-steps{list-style:none;margin:26px 0 0;padding:0;counter-reset:l;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.x-land-steps{grid-template-columns:1fr}}
+.x-land-steps>li{counter-increment:l;background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 24px 22px 76px;position:relative;box-shadow:0 20px 44px rgba(30,59,48,.06)}
+.x-land-steps>li:before{content:counter(l);position:absolute;left:22px;top:22px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--pine);color:var(--bone);font-family:var(--serif);font-size:20px}
+.x-land-steps b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--pine);margin-bottom:6px}
+.x-land-steps p{color:var(--ink2);font-size:16px;margin:0 0 8px}
+.x-inv{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+@media(max-width:900px){.x-inv{grid-template-columns:1fr}}
+.x-inv h3{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--pine);margin:0 0 8px}
+.x-inv p,.x-inv li{font-size:15.5px;color:var(--ink2)}
+.x-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+@media(max-width:600px){.x-split{grid-template-columns:1fr}}
+.x-split div{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--bone2)}
+.x-split small{display:block;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;color:var(--ember2);margin-bottom:6px}
+.x-split strong{display:block;font-family:var(--serif);font-weight:400;font-size:34px;color:var(--pine);line-height:1}
+.x-split span{display:block;font-size:14px;color:var(--ink2);margin-top:6px}
+.x-rules{padding-left:20px;margin:10px 0}.x-rules li{margin:7px 0}
+.x-jvform .q{margin-bottom:12px}.x-jvform label{display:block;font-weight:600;color:var(--pine);font-size:14px;margin-bottom:6px}
+.x-jvform input,.x-jvform select,.x-jvform textarea{width:100%;font:16px var(--sans);padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;box-sizing:border-box}
+.x-jvform .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.x-jvform .row2{grid-template-columns:1fr}}
+.x-jvform .consent{display:flex;gap:10px;font-size:13.5px;color:var(--ink2);margin:10px 0}
+.x-jvform .consent input{width:auto;margin-top:3px}
 .x-who{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 8px}
 .x-who button{font:600 15px var(--sans);padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--pine);cursor:pointer}
 .x-who button[aria-selected=true],.x-who button.on{background:var(--pine);color:var(--bone);border-color:var(--pine)}
@@ -326,15 +385,15 @@ main.wrap{max-width:none;padding:0}
 <body>
 <div class="x-nav" id="xnav"><div class="x-wrap">
  <a class="x-brand" href="#top"><img src="logo.svg" alt=""><div><b>Hearth Acre</b><small>Investments</small></div></a>
- <nav><a href="#how-x">How it works</a><a href="#compare">Why direct</a><a href="#walkthrough">Walkthrough</a><a href="#markets">Where we buy</a><a href="#about">About</a><a href="#buyers">Buyers</a></nav>
- <a class="x-btn pri" href="#offer">Get my offer</a>
+ <nav><a href="#walkthrough">How it works</a><a href="#situations">Situations</a><a href="#compare">Why direct</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#buyers">Investors</a></nav>
+ <a class="x-btn pri" href="#intake">Get my offer</a>
 </div></div>
 
 <header class="x-hero" id="top"><div class="bg"></div><div class="x-wrap">
  <div class="x-kick">Houston · Dallas-Fort Worth · Direct buyer</div>
  <h1>Sell your house <em>as is</em>, on your timeline.</h1>
  <p>Hearth Acre Investments makes direct cash offers on houses and land. No repairs, no showings, no agent commissions. You get a clear written offer, and a local title company handles the closing.</p>
- <div class="x-cta"><a class="x-btn pri" href="#offer">Get my written offer</a><a class="x-btn ghost" href="tel:+17139791939">Call (713) 979-1939</a></div>
+ <div class="x-cta"><a class="x-btn pri" href="#intake">Get my written offer</a><a class="x-btn ghost" href="tel:+17139791939">Call (713) 979-1939</a></div>
  <div class="x-facts"><div><b>Any condition</b><span>We buy as is</span></div><div><b>$0</b><span>Commissions or fees to you</span></div><div><b>Your date</b><span>Close fast or wait for you</span></div><div><b>Title company</b><span>Holds the money and closes</span></div></div>
 </div></header>
 
@@ -359,38 +418,6 @@ main.wrap{max-width:none;padding:0}
  </div>
 </div></section>
 
-<section class="x-sec" id="how-x" style="background:var(--bone);padding-top:110px"><div class="x-wrap x-split">
- <div class="x-photo reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div class="tag"><b>Houston houses</b>Brick ranches, two-stories, rentals and fixer-uppers.</div></div>
- <div>
-  <div class="x-kick reveal">How it works</div>
-  <h2 class="x-h2 reveal">Three steps. No surprises.</h2>
-  <p class="x-lede reveal">You stay in control the whole way. If our number doesn't work for you, you say no and that's the end of it.</p>
-  <ol class="x-steps">
-   <li class="reveal"><b>Tell us about the property</b><span>The short form below, a text or a call. Two minutes is enough to start.</span></li>
-   <li class="reveal"><b>Get a written offer</b><span>We look at the house and recent sales nearby, then send a clear number in writing.</span></li>
-   <li class="reveal"><b>Close on your date</b><span>A local Texas title company checks the paperwork, holds the money and pays you at closing.</span></li>
-  </ol>
-  <a class="x-btn line reveal" href="#offer" style="margin-top:8px">Start in 2 minutes</a>
- </div>
-</div></section>
-
-<section class="x-sec x-dark" id="compare"><div class="x-wrap">
- <div class="x-kick reveal" style="color:#F2C9B6">Straight talk</div>
- <h2 class="x-h2 reveal">Selling direct vs. listing with an agent</h2>
- <p class="x-lede reveal">Listing can bring a higher price. A direct sale trades some of that for speed and certainty. Here is the honest comparison.</p>
- <table class="x-table reveal">
-  <tr><th></th><th class="us">Hearth Acre (direct)</th><th>Listing with an agent</th></tr>
-  <tr><td>Repairs and cleaning</td><td class="us">None. Sold as is</td><td>Usually expected before listing</td></tr>
-  <tr><td>Showings and open houses</td><td class="us">One walkthrough</td><td>Many, on buyers' schedules</td></tr>
-  <tr><td>Commissions</td><td class="us">$0 to you</td><td>Often 5 to 6 percent</td></tr>
-  <tr><td>Closing costs</td><td class="us">Discussed up front in the offer</td><td>Usually paid by the seller</td></tr>
-  <tr><td>Timeline</td><td class="us">Your date, often 2 to 3 weeks</td><td>Often 2 to 4 months</td></tr>
-  <tr><td>Financing risk</td><td class="us">No bank approval needed</td><td>Buyer loans can fall through</td></tr>
- </table>
- <p class="x-note reveal">We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing. We are not real estate agents and we do not list properties.</p>
-</div></section>
-
-
 <section class="x-sec" id="walkthrough" style="background:var(--bone)"><div class="x-wrap">
  <div class="x-kick reveal">Walk through it</div>
  <h2 class="x-h2 reveal">From a few photos to closing day.</h2>
@@ -400,30 +427,128 @@ main.wrap{max-width:none;padding:0}
   <button type="button" role="tab" data-path="investor" aria-selected="false">I'm an investor, builder, buyer or wholesaler</button>
  </div>
  <div class="x-path-pane" data-pane="investor" hidden>
-  <div class="x-panel"><h3>Investors, builders, buyers and wholesalers</h3><p>Join the list and tell us what you buy: areas, price range, beds, rehab level, duplex, triplex or quad, and how fast you close. Wholesalers with a deal in our markets can send it the same way.</p><div class="x-cta"><a class="x-btn pri" href="#buyers">Join the buyer list</a><a class="x-btn line" href="#call">Book a 15-min call</a></div></div>
+  <div class="x-inv">
+   <div class="x-panel"><h3>Buyers and builders</h3><p>Get our deals first. Tell us your areas, price range, beds, rehab level, duplex, triplex or quad, and how fast you close. We send only deals that match.</p><div class="x-cta"><a class="x-btn pri" href="#buyers">Join the buyer list</a><a class="x-btn line" href="#call">Book a 15-min call</a></div></div>
+   <div class="x-panel"><h3>Joint ventures with wholesalers</h3><p>Have a deal under contract, or buyers for ours? We split the net assignment fee under one written agreement (HA-JV-1) signed before any address is shared.</p>
+    <div class="x-split"><div><small>You bring the deal</small><strong>50 / 50</strong><span>You hold the contract and the seller relationship. We bring the buyers, marketing and closing work.</span></div><div><small>We bring the deal</small><strong>50 / 50</strong><span>We hold the contract and the seller relationship. You bring the buyer who closes.</span></div></div>
+    <a class="x-btn pri" href="#jv-form">Send a deal or ask for the agreement</a></div>
+  </div>
+  <div class="x-panel" style="margin-top:18px"><h3>Our JV rules, in writing</h3>
+   <ol class="x-rules">
+    <li><b>Agreement first.</b> Both sides sign HA-JV-1 before the address, the seller's details or our buyer list are shared.</li>
+    <li><b>The split.</b> 50/50 of the net assignment fee (or net double-close spread), after title and closing costs. Any other split is written into the agreement before marketing starts.</li>
+    <li><b>Paid only at closing.</b> The title company pays both sides from the closing statement. No fees up front, no side payments.</li>
+    <li><b>The contract holder runs the seller.</b> One point of contact for the seller. The other side never contacts the seller.</li>
+    <li><b>No going around each other.</b> 12 months: neither side buys, assigns or sells that property or that buyer's deal without the other.</li>
+    <li><b>Only real contracts.</b> We market a deal only with a signed purchase agreement in hand, with the written disclosures the state requires (Texas and Tennessee both have them).</li>
+    <li><b>Buyer deposit.</b> The end buyer puts earnest money with the title company at assignment, usually US$3,000 to US$5,000, set in the assignment.</li>
+    <li><b>Closes through title.</b> Assignment or double close through a title company the contract names. Nothing closes outside title.</li>
+    <li><b>Data stays private.</b> Seller and buyer contact details are used for that deal only, never resold or added to another list.</li>
+    <li><b>Honest numbers.</b> Contract price, ARV, repairs and access are shared in writing, and any change is shared the same day.</li>
+   </ol>
+  </div>
+  <div class="x-panel" id="jv-form" style="margin-top:18px;scroll-margin-top:90px"><h3>Send a deal or ask for HA-JV-1</h3>
+   <form class="x-jvform" name="jv-deal" method="POST" action="thanks.html?jv=1" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="jv-deal"><p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+    <div class="q"><label for="jv_role">I am</label><select id="jv_role" name="role" required><option value="">Choose</option><option>A wholesaler with a deal under contract</option><option>A wholesaler with buyers</option><option>A builder or investor buying</option><option>A lender or agent</option></select></div>
+    <div class="row2"><div class="q"><label for="jv_name">Name</label><input id="jv_name" name="name" autocomplete="name" required></div><div class="q"><label for="jv_co">Company <span class="opt">(optional)</span></label><input id="jv_co" name="company" autocomplete="organization"></div></div>
+    <div class="row2"><div class="q"><label for="jv_ph">Phone</label><input id="jv_ph" name="phone" type="tel" autocomplete="tel" required></div><div class="q"><label for="jv_em">Email</label><input id="jv_em" name="email" type="email" autocomplete="email" required></div></div>
+    <div class="row2"><div class="q"><label for="jv_area">City or zip of the deal</label><input id="jv_area" name="area" placeholder="No full address until HA-JV-1 is signed"></div><div class="q"><label for="jv_type">Property type</label><select id="jv_type" name="type"><option value="">Choose</option><option>House</option><option>Duplex</option><option>Triplex</option><option>Quad</option><option>Land</option></select></div></div>
+    <div class="row2"><div class="q"><label for="jv_cp">Contract price</label><input id="jv_cp" name="contract_price" inputmode="decimal"></div><div class="q"><label for="jv_arv">ARV and repairs</label><input id="jv_arv" name="arv_repairs" placeholder="ARV 250K, repairs 40K"></div></div>
+    <div class="row2"><div class="q"><label for="jv_close">Closing date</label><input id="jv_close" name="close_date" type="date"></div><div class="q"><label for="jv_asg">Assignable?</label><select id="jv_asg" name="assignable"><option value="">Choose</option><option>Yes, assignable</option><option>Double close only</option><option>Not sure</option></select></div></div>
+    <div class="q"><label for="jv_note">Anything else</label><textarea id="jv_note" name="notes" rows="3"></textarea></div>
+    <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>Thiep Weang (Hearth Acre Investments) may call, text or email me about this deal. Reply STOP anytime.</span></label>
+    <button class="x-btn pri" type="submit">Send</button>
+   </form>
+  </div>
  </div>
 
  <div class="x-path-pane" data-pane="seller">
- <div class="x-walk">
-  <div class="x-walk-stage" aria-hidden="true">
-   <img src="img/walk/1-photos.webp" alt="" class="on" data-i="0" width="1600" height="1000">
-   <img src="img/walk/2-inside.webp" alt="" data-i="1" width="1600" height="1000" loading="lazy">
-   <img src="img/walk/3-big-four.webp" alt="" data-i="2" width="1600" height="1000" loading="lazy">
-   <img src="img/walk/4-offer.webp" alt="" data-i="3" width="1600" height="1000" loading="lazy">
-   <img src="img/walk/5-walkthrough.webp" alt="" data-i="4" width="1600" height="1000" loading="lazy">
-   <img src="img/walk/6-closing.webp" alt="" data-i="5" width="1600" height="1000" loading="lazy">
-   <div class="x-walk-count"><b id="wk-n">1</b> / 6</div>
+ <div class="x-kind" role="tablist" aria-label="What are you selling">
+  <button type="button" role="tab" data-kind="house" aria-selected="true">A house</button>
+  <button type="button" role="tab" data-kind="land" aria-selected="false">Land or a lot</button>
+ </div>
+ <div class="x-land" data-kpane="land" hidden>
+ <div class="x-walk x-walk-land">
+  <div class="x-walk-stage" id="lk-stage" data-frames="[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89]" aria-hidden="true">
+   <img src="img/walk/land/l_001.webp" alt="" id="lk-poster" width="960" height="600">
+   <canvas id="lk-canvas" width="960" height="600"></canvas>
+   <div class="x-walk-cap"><b id="lk-n">1</b><span id="lk-t">Tell us which parcel</span></div>
+   <i class="ld" id="lk-ld"></i>
+  </div>
+  <ol class="x-land-steps">
+   <li data-f="1" data-cap="Tell us which parcel"><b>Tell us which parcel</b><p>The address if it has one, or the parcel number from your tax bill, plus the acreage if you know it. That is enough for us to pull the county map.</p><details class="x-how"><summary>How to find your parcel number</summary><div><p>It is on your county property tax bill or appraisal notice, usually called the account number, parcel ID or APN. In Harris County it is the 13-digit HCAD account number. You can also search your name or address on the county appraisal district website.</p></div></details></li>
+   <li data-f="16" data-cap="We check it like a builder"><b>We check what a builder checks</b><p>Road access, water and electric nearby, septic or sewer, flood zone on the FEMA map, wetlands, deed restrictions and back taxes. You do not need to know any of it; we look it up.</p></li>
+   <li data-f="34" data-cap="A few photos, if you can"><b>Send a few photos if you can</b><ul class="x-shot"><li>The road frontage, standing on the road</li><li>Any corner stakes or survey markers</li><li>Anything on the land: a mobile home, a barn, a fence, dumping</li><li>An old survey or plat, if you have one</li></ul><p class="x-fine">No photos? That is fine for land. Satellite and county maps get us most of the way.</p></li>
+   <li data-f="52" data-cap="Written offer by email"><b>Your written offer arrives by email</b><p>A clear cash number and a vacant land purchase agreement you can read at your own pace and sign online. Say no and that is the end of it.</p></li>
+   <li data-f="68" data-cap="Title sorts the paperwork"><b>The title company sorts out the paperwork</b><p>Back taxes, old liens, heirs who need to sign: the title company handles it and pays them from the sale money. Inherited land with several owners is common, and we are used to it.</p></li>
+   <li data-f="82" data-cap="Paid at closing"><b>You get paid at closing</b><p>By check or wire from the title company, on the date you pick. You never pay us a fee.</p><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Get my written offer for land</a></li>
+  </ol>
+ </div>
+<div class="x-tl" data-tl="land"><div class="x-tl-bar" role="tablist" aria-label="Timeline"><button type="button" role="tab" class="x-tl-i on" data-tli="0" data-step="0" aria-selected="true"><small>Day 1</small><b>Tell us which parcel</b></button><button type="button" role="tab" class="x-tl-i" data-tli="1" data-step="1" aria-selected="false"><small>Days 1 to 3</small><b>We check it like a builder</b></button><button type="button" role="tab" class="x-tl-i" data-tli="2" data-step="3" aria-selected="false"><small>Days 2 to 4</small><b>Written offer by email</b></button><button type="button" role="tab" class="x-tl-i" data-tli="3" data-step="3" aria-selected="false"><small>When you are ready</small><b>You sign online</b></button><button type="button" role="tab" class="x-tl-i" data-tli="4" data-step="4" aria-selected="false"><small>Weeks 1 to 6</small><b>Title and survey</b></button><button type="button" role="tab" class="x-tl-i" data-tli="5" data-step="5" aria-selected="false"><small>Closing day</small><b>Get paid</b></button></div><div class="x-tl-panels"><div class="x-tl-p" data-tlp="0"><div class="x-tl-ph"><small>Day 1 &middot; 5 minutes</small><b>Tell us which parcel</b></div><div class="x-tl-g"><div><span>What happens</span><p>The address or parcel number, acreage if you know it, and any photos.</p></div><div><span>What you need</span><p>The parcel number from your tax bill.</p></div><div><span>Helpful tip</span><p>No photos? Fine for land. Maps do most of the work.</p></div></div></div><div class="x-tl-p" data-tlp="1" hidden><div class="x-tl-ph"><small>Days 1 to 3 &middot; We do the work</small><b>We check it like a builder</b></div><div class="x-tl-g"><div><span>What happens</span><p>Road access, utilities nearby, flood zone, wetlands, restrictions and back taxes.</p></div><div><span>What you need</span><p>Nothing.</p></div><div><span>Helpful tip</span><p>Tell us anything you know: old surveys, easements, a well or septic.</p></div></div></div><div class="x-tl-p" data-tlp="2" hidden><div class="x-tl-ph"><small>Days 2 to 4 &middot; Read it at your pace</small><b>Written offer by email</b></div><div class="x-tl-g"><div><span>What happens</span><p>A clear cash number and a vacant land purchase agreement.</p></div><div><span>What you need</span><p>Nothing until you decide.</p></div><div><span>Helpful tip</span><p>Questions are free. Saying no ends it.</p></div></div></div><div class="x-tl-p" data-tlp="3" hidden><div class="x-tl-ph"><small>When you are ready &middot; 10 minutes</small><b>You sign online</b></div><div class="x-tl-g"><div><span>What happens</span><p>Everyone on the title signs; heirs too if it was inherited.</p></div><div><span>What you need</span><p>IDs for each signer later.</p></div><div><span>Helpful tip</span><p>Several heirs? Common with land. The title company guides it.</p></div></div></div><div class="x-tl-p" data-tlp="4" hidden><div class="x-tl-ph"><small>Weeks 1 to 6 &middot; Hands off for you</small><b>Title and survey</b></div><div class="x-tl-g"><div><span>What happens</span><p>The title company clears back taxes and liens and may order a survey.</p></div><div><span>What you need</span><p>Answer title emails.</p></div><div><span>Helpful tip</span><p>Liens and back taxes come out of the sale money.</p></div></div></div><div class="x-tl-p" data-tlp="5" hidden><div class="x-tl-ph"><small>Closing day &middot; About an hour</small><b>Get paid</b></div><div class="x-tl-g"><div><span>What happens</span><p>Sign the deed with the title company or a mobile notary; paid by check or wire.</p></div><div><span>What you need</span><p>Photo ID.</p></div><div><span>Helpful tip</span><p>You pick the date.</p></div></div></div></div></div>
+ </div>
+ <div class="x-walk" data-kpane="house">
+  <div class="x-walk-stage" id="wk-stage" data-frames="[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,131,133,135,137,139,141,143,145,147,149,151,153,155]" aria-hidden="true">
+   <img src="img/walk/seq/f_001.webp" alt="" id="wk-poster" width="960" height="600">
+   <canvas id="wk-canvas" width="960" height="600"></canvas>
+   <div class="x-walk-cap"><b id="wk-n">1</b><span id="wk-t">Start outside</span></div>
+   <i class="ld" id="wk-ld"></i>
   </div>
   <ol class="x-walk-steps">
-   <li data-i="0"><img src="img/walk/1-photos.webp" alt="Front of a brick ranch house seen from the street" loading="lazy" width="1600" height="1000"><b>Send a few photos</b><span>The front of the house, each room, and anything that needs work. Phone photos are fine.</span><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:14px">Upload photos and answer a few questions</a></li>
-   <li data-i="1"><img src="img/walk/2-inside.webp" alt="A dated kitchen with oak cabinets and a tiled floor" loading="lazy" width="1600" height="1000"><b>Show us the inside</b><span>Kitchen, bathrooms, bedrooms and floors, just as they are. We buy as is, so there is no cleaning or fixing first.</span></li>
-   <li data-i="2"><img src="img/walk/3-big-four.webp" alt="Side of the house with the roof and the AC unit" loading="lazy" width="1600" height="1000"><b>The big four</b><span>Roof, AC, water heater and electrical panel. Their age shapes the number, so we ask about them up front.</span></li>
-   <li data-i="3"><img src="img/walk/4-offer.webp" alt="An envelope and a pen on the kitchen counter" loading="lazy" width="1600" height="1000"><b>Your written offer</b><span>We look at the house and recent sales nearby, then send a clear number in writing. If it does not work for you, you say no and that is the end of it.</span></li>
-   <li data-i="4"><img src="img/walk/5-walkthrough.webp" alt="The front door of the house" loading="lazy" width="1600" height="1000"><b>One walkthrough</b><span>One visit, at a time that works for you. No open houses, no stream of showings.</span></li>
-   <li data-i="5"><img src="img/walk/6-closing.webp" alt="House keys on the kitchen counter in evening light" loading="lazy" width="1600" height="1000"><b>Close on your date</b><span>A local Texas title company checks the paperwork, holds the money and pays you at closing.</span></li>
+   <li data-i="0" data-f="1" data-cap="Start outside"><b class="t">Start outside: photos of the house</b>
+    <p>Phone photos are fine. Walk around once and take these. It takes about 10 minutes.</p>
+    <ul class="x-shot"><li>The front, from across the street, whole house in the frame</li><li>Each side and the back of the house</li><li>The driveway, the fence and the yard</li><li>Foundation corners, and any cracks in the brick or slab</li></ul>
+    <details class="x-how"><summary>How to tell us about the roof</summary><div>
+<p>Stand in the yard and photo each side of the roof. Zoom in on the worst spot: curled or missing shingles, patches, sagging.</p>
+<p>Know when it was replaced? A receipt, a permit or a rough year is perfect. Inside, photo any brown stains on ceilings. That tells us about leaks.</p></div></details>
+    <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Start my free offer</a></li>
+   <li data-i="1" data-f="34" data-cap="The big four"><b class="t">The big four: AC, water heater, panel, roof</b>
+    <p>Their age shapes the number more than anything else. You do not need to know the years. A clear photo of each label is enough, and we read it for you.</p>
+    <ul class="x-shot"><li>Outside AC unit and its sticker</li><li>Inside furnace or air handler and its sticker</li><li>Water heater and its label</li><li>Electrical panel, door open, plus the label inside the door</li></ul>
+    <details class="x-how"><summary>How to find your AC and heat type</summary><div>
+<p><b>Outside unit:</b> the metal box with a fan on top beside the house. There is a sticker (data plate) on its side with the brand, model and serial. Take one clear, close photo of that sticker. The serial usually tells us the year it was made, so you do not need to know it.</p>
+<p><b>Inside unit:</b> look in a hallway closet, the garage or the attic. If it has a gas pipe and a flue going up, it is a gas furnace. Photo its sticker too.</p>
+<p><b>Heat pump or not:</b> if the outside sticker says "heat pump", or your thermostat has an "Em Heat" or "Aux" setting, it is a heat pump. Window units or wall units only? Just tell us.</p></div></details><details class="x-how"><summary>How to find your water heater</summary><div>
+<p>Usually in the garage, a utility closet or the attic. A tall round tank, or a small box on the wall if it is tankless.</p>
+<p><b>Gas or electric:</b> a gas one has a pipe with a valve going in near the bottom and a metal flue pipe on top. An electric one has a power cable and no flue.</p>
+<p>Photo the label on the tank. It shows the size in gallons and a serial number that usually tells us the year.</p></div></details><details class="x-how"><summary>How to find the electrical panel</summary><div>
+<p>A grey metal box with a door, usually in the garage, a utility room, a hallway or on an outside wall near the meter.</p>
+<p>Open the door and take one photo of the breakers and one of the label inside the door (it shows the brand). If you see screw-in fuses instead of switches, tell us. That matters for the number.</p></div></details><details class="x-how"><summary>Sewer or septic: what happens when you flush</summary><div>
+<p><b>City sewer:</b> your water bill has a sewer or wastewater charge on it. Most homes in town are on sewer.</p>
+<p><b>Septic tank:</b> no sewer charge on the bill, and somewhere in the yard (often 10 to 20 feet from the house) there are one or two round lids or a concrete cover. Common in the country and on bigger lots.</p>
+<p>Not sure? Look at an old water bill, or the closing papers from when you bought it. You can also call the county or city utility office and ask. Same for water: city water or a well.</p></div></details></li>
+   <li data-i="2" data-f="56" data-cap="Up the walk to the door"><b class="t">Up the walk to the door</b>
+    <p>Show us how the house greets a buyer: the walkway, the porch, the front door, and anything that sticks or leaks.</p>
+    <ul class="x-shot"><li>Walkway and porch, including any cracks or settling</li><li>Front door, open and closed</li><li>Windows that are broken, fogged or boarded</li></ul></li>
+   <li data-i="3" data-f="76" data-cap="Every room, as it is"><b class="t">Inside: every room, just as it is</b>
+    <p>No cleaning, no fixing. We buy as is. Stand in a corner of each room and take one wide photo.</p>
+    <ul class="x-shot"><li>Kitchen: counters, cabinets, stove, fridge, sink</li><li>Each bathroom: tub or shower, toilet, vanity</li><li>Each bedroom and the living room</li><li>Floors up close: carpet, tile, wood or vinyl, and any damage</li><li>Ceilings with stains, walls with cracks, any water or mould</li><li>Garage and attic, if it is easy to get to</li></ul>
+    <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Upload my photos</a></li>
+   <li data-i="4" data-f="96" data-cap="Your offer arrives by email"><b class="t">Your written offer arrives by email</b>
+    <p>We check your photos and answers against recent sales nearby, then email you a clear number and our purchase agreement to read at your own pace. Questions? Call or text us. You sign online only if it works for you. If not, say no and that is the end of it.</p>
+    <div class="x-doc"><div class="x-doc-h"><small>What you sign</small><b>House Purchase and Sale Agreement (As Is)</b></div>
+     <ul>
+      <li><b>Cash price</b>, paid to you at closing through a title company. Not based on a loan.</li>
+      <li><b>Earnest money</b> goes to the title company within 3 days and counts toward the price.</li>
+      <li><b>As is.</b> No repairs, no cleaning. Leave what you do not want.</li>
+      <li><b>30-day inspection period.</b> We can still cancel in that window. After it, if we do not close, you keep the earnest money.</li>
+      <li><b>Liens and back taxes</b> are paid off by the title company from the sale money.</li>
+      <li><b>We may assign the contract</b> to another buyer. Your price and terms do not change, and any fee is paid by that buyer and shown on the closing statement.</li>
+      <li><b>You get a plain-English disclosure</b> about assignment before you sign anything.</li>
+      <li><b>Closing</b> at the title company, usually about 45 days out, or the date you need. Our share of closing costs is capped in writing.</li>
+      <li><b>E-signature</b> counts. The deed itself is signed with the title company.</li>
+     </ul>
+     <p class="x-fine" style="margin:8px 0 0">A short summary of our Texas agreement. The exact numbers and dates are filled in for your house, and the signed agreement is what counts.</p></div></li>
+   <li data-i="5" data-f="108" data-cap="One showing"><b class="t">One showing, at a time you pick</b>
+    <p>After you sign, a buyer or an inspector visits once. You choose the day and time. No open houses and no stream of strangers.</p></li>
+   <li data-i="6" data-f="118" data-cap="The title company pays you"><b class="t">The title company closes it and pays you</b>
+    <p>A local title company checks the title, pays off any mortgage or back taxes from the sale, holds the money, and pays you at closing by check or wire. You never pay us a fee, and who pays closing costs is written into the offer before you sign.</p>
+    <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Get my written offer</a></li>
   </ol>
  </div>
 
+ <div data-kpane="house"><div class="x-tl" data-tl="house"><div class="x-tl-bar" role="tablist" aria-label="Timeline"><button type="button" role="tab" class="x-tl-i on" data-tli="0" data-step="0" aria-selected="true"><small>Day 1</small><b>Photos and a few questions</b></button><button type="button" role="tab" class="x-tl-i" data-tli="1" data-step="4" aria-selected="false"><small>Days 1 to 2</small><b>Written offer by email</b></button><button type="button" role="tab" class="x-tl-i" data-tli="2" data-step="4" aria-selected="false"><small>Day 3 or when you are ready</small><b>You sign online</b></button><button type="button" role="tab" class="x-tl-i" data-tli="3" data-step="5" aria-selected="false"><small>Week 1 to 2</small><b>One showing</b></button><button type="button" role="tab" class="x-tl-i" data-tli="4" data-step="6" aria-selected="false"><small>Weeks 1 to 6</small><b>Title company checks everything</b></button><button type="button" role="tab" class="x-tl-i" data-tli="5" data-step="6" aria-selected="false"><small>Closing day</small><b>Sign and get paid</b></button></div><div class="x-tl-panels"><div class="x-tl-p" data-tlp="0"><div class="x-tl-ph"><small>Day 1 &middot; 15 minutes on your phone</small><b>Photos and a few questions</b></div><div class="x-tl-g"><div><span>What happens</span><p>You send photos of the outside, each room, and the AC, water heater and panel labels, then answer a few questions about the house and your timeline.</p></div><div><span>What you need</span><p>Your phone, the address, who is on the title.</p></div><div><span>Helpful tip</span><p>Do it in daylight with the lights on. Blurry is fine; missing rooms are not.</p></div></div></div><div class="x-tl-p" data-tlp="1" hidden><div class="x-tl-ph"><small>Days 1 to 2 &middot; We do the work</small><b>Written offer by email</b></div><div class="x-tl-g"><div><span>What happens</span><p>We compare your photos and answers with recent sales nearby and email a clear cash number plus the purchase agreement.</p></div><div><span>What you need</span><p>Nothing. Read it when you are ready.</p></div><div><span>Helpful tip</span><p>Call or text with any question. Asking does not commit you to anything.</p></div></div></div><div class="x-tl-p" data-tlp="2" hidden><div class="x-tl-ph"><small>Day 3 or when you are ready &middot; 10 minutes</small><b>You sign online</b></div><div class="x-tl-g"><div><span>What happens</span><p>If the offer works for you, you sign online. You get a copy right away and a plain-English disclosure first.</p></div><div><span>What you need</span><p>Everyone on the title signs (spouse too, if it is a homestead).</p></div><div><span>Helpful tip</span><p>Not sure everyone can sign? Tell us early; the title company can often help.</p></div></div></div><div class="x-tl-p" data-tlp="3" hidden><div class="x-tl-ph"><small>Week 1 to 2 &middot; About an hour</small><b>One showing</b></div><div class="x-tl-g"><div><span>What happens</span><p>A buyer or an inspector visits once, at a time you pick. No open houses.</p></div><div><span>What you need</span><p>Utilities on, and a way in (you, a neighbour or a lockbox).</p></div><div><span>Helpful tip</span><p>Leave the house as it is. No cleaning needed.</p></div></div></div><div class="x-tl-p" data-tlp="4" hidden><div class="x-tl-ph"><small>Weeks 1 to 6 &middot; Hands off for you</small><b>Title company checks everything</b></div><div class="x-tl-g"><div><span>What happens</span><p>The title company checks ownership, orders payoffs for any mortgage, liens or back taxes, and prepares the closing papers.</p></div><div><span>What you need</span><p>Answer a few emails from the title company; ID when they ask.</p></div><div><span>Helpful tip</span><p>Back taxes and liens are paid from the sale money at closing.</p></div></div></div><div class="x-tl-p" data-tlp="5" hidden><div class="x-tl-ph"><small>Closing day &middot; About an hour</small><b>Sign and get paid</b></div><div class="x-tl-g"><div><span>What happens</span><p>You sign the deed with the title company (in person or with a mobile notary) and are paid by check or wire.</p></div><div><span>What you need</span><p>Photo ID, keys, garage openers.</p></div><div><span>Helpful tip</span><p>You pick the date. About 30 to 45 days is typical; faster if title is clean.</p></div></div></div></div></div>
+ </div>
  <div class="x-intake" id="intake">
   <form name="seller-intake" method="POST" action="thanks.html?intake=1" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="x-panel" novalidate>
    <input type="hidden" name="form-name" value="seller-intake">
@@ -453,7 +578,20 @@ main.wrap{max-width:none;padding:0}
      <div class="q"><label for="i_num">A number in mind? <span class="opt">(optional)</span></label><input type="text" id="i_num" name="asking" inputmode="decimal"></div></div>
    </fieldset>
    <fieldset data-s="5" hidden><legend>Photos</legend>
-    <p class="x-fine" style="margin-top:0">Up to 8 photos: the front, the kitchen, bathrooms, and anything that needs work. We shrink them on your phone before sending. Optional, but photos speed up your written offer.</p>
+    <p class="x-fine" style="margin-top:0">Up to 8 photos. Optional, but photos speed up your written offer. We shrink them on your phone before sending. Best 8, in this order:</p>
+    <ul class="x-shot"><li>Front of the house from the street</li><li>Back of the house and the roof</li><li>Kitchen</li><li>Main bathroom</li><li>Living room floor</li><li>Outside AC unit sticker</li><li>Water heater label</li><li>The worst problem (leak, crack, damage)</li></ul>
+    <details class="x-how"><summary>How to find your AC and heat type</summary><div>
+<p><b>Outside unit:</b> the metal box with a fan on top beside the house. There is a sticker (data plate) on its side with the brand, model and serial. Take one clear, close photo of that sticker. The serial usually tells us the year it was made, so you do not need to know it.</p>
+<p><b>Inside unit:</b> look in a hallway closet, the garage or the attic. If it has a gas pipe and a flue going up, it is a gas furnace. Photo its sticker too.</p>
+<p><b>Heat pump or not:</b> if the outside sticker says "heat pump", or your thermostat has an "Em Heat" or "Aux" setting, it is a heat pump. Window units or wall units only? Just tell us.</p></div></details><details class="x-how"><summary>How to find your water heater</summary><div>
+<p>Usually in the garage, a utility closet or the attic. A tall round tank, or a small box on the wall if it is tankless.</p>
+<p><b>Gas or electric:</b> a gas one has a pipe with a valve going in near the bottom and a metal flue pipe on top. An electric one has a power cable and no flue.</p>
+<p>Photo the label on the tank. It shows the size in gallons and a serial number that usually tells us the year.</p></div></details><details class="x-how"><summary>How to find the electrical panel</summary><div>
+<p>A grey metal box with a door, usually in the garage, a utility room, a hallway or on an outside wall near the meter.</p>
+<p>Open the door and take one photo of the breakers and one of the label inside the door (it shows the brand). If you see screw-in fuses instead of switches, tell us. That matters for the number.</p></div></details><details class="x-how"><summary>Sewer or septic: what happens when you flush</summary><div>
+<p><b>City sewer:</b> your water bill has a sewer or wastewater charge on it. Most homes in town are on sewer.</p>
+<p><b>Septic tank:</b> no sewer charge on the bill, and somewhere in the yard (often 10 to 20 feet from the house) there are one or two round lids or a concrete cover. Common in the country and on bigger lots.</p>
+<p>Not sure? Look at an old water bill, or the closing papers from when you bought it. You can also call the county or city utility office and ask. Same for water: city water or a well.</p></div></details>
     <label class="x-drop"><input type="file" id="i_pics" accept="image/*" multiple><span>Tap to add photos</span></label>
     <div class="x-thumbs" id="i_thumbs"></div>
     <input type="file" name="photo1" hidden><input type="file" name="photo2" hidden><input type="file" name="photo3" hidden><input type="file" name="photo4" hidden><input type="file" name="photo5" hidden><input type="file" name="photo6" hidden><input type="file" name="photo7" hidden><input type="file" name="photo8" hidden>
@@ -472,14 +610,46 @@ main.wrap{max-width:none;padding:0}
  </div>
  </div>
  <p class="x-fine">Illustration: a 3D model of a typical Texas brick ranch, not a real property or listing. We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing.</p>
- <div class="x-who x-who-bottom"><span>Which are you?</span><button type="button" data-path="seller">Seller</button><button type="button" data-path="investor">Investor, builder, buyer or wholesaler</button></div>
 </div></section>
 <script>
-(function(){var st=document.querySelector(".x-walk-stage");if(!st||!("IntersectionObserver" in window))return;
-var imgs=st.querySelectorAll("img"),n=document.getElementById("wk-n"),items=document.querySelectorAll(".x-walk-steps li");
-function show(i){imgs.forEach(function(m){m.classList.toggle("on",m.dataset.i==i)});items.forEach(function(li){li.classList.toggle("on",li.dataset.i==i)});n.textContent=(+i+1)}
-var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)show(e.target.dataset.i)})},{rootMargin:"-45% 0px -45% 0px"});
-items.forEach(function(li){ob.observe(li)});show(0)})();
+(function(){document.querySelectorAll(".x-tl").forEach(function(T){var bs=T.querySelectorAll(".x-tl-i"),ps=T.querySelectorAll(".x-tl-p");
+ bs.forEach(function(b){b.addEventListener("click",function(){var i=b.dataset.tli;bs.forEach(function(x){var on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-selected",on)});ps.forEach(function(p){p.hidden=p.dataset.tlp!==i});
+  if(T.dataset.tl==="house"){var li=document.querySelectorAll(".x-walk-steps>li")[+b.dataset.step];if(li&&window.innerWidth>900)li.scrollIntoView({behavior:"smooth",block:"center"})}
+  else{var ll=document.querySelectorAll(".x-land-steps>li")[+b.dataset.step];if(ll)ll.scrollIntoView({behavior:"smooth",block:"center"})}
+  b.scrollIntoView({block:"nearest",inline:"center"})})})})})();
+</script>
+<script>
+(function(){var bs=document.querySelectorAll("[data-kind]");bs.forEach(function(b){b.addEventListener("click",function(){var k=b.dataset.kind;
+ bs.forEach(function(x){x.setAttribute("aria-selected",x===b)});document.querySelectorAll("[data-kpane]").forEach(function(p){p.hidden=p.dataset.kpane!==k});
+ var r=document.querySelector('input[name="property_type"][value="'+(k==="land"?"Land":"House")+'"]');if(r)r.checked=true;window.dispatchEvent(new Event("scroll"))})});
+ if(/[?&]kind=land/.test(location.search)){var l=document.querySelector('[data-kind="land"]');if(l)l.click()}})();
+</script>
+<script>
+(function(){
+function player(o){var stage=document.getElementById(o.stage);if(!stage)return;
+ var cv=document.getElementById(o.canvas),cx=cv.getContext("2d"),poster=document.getElementById(o.poster),ld=document.getElementById(o.ld),nEl=document.getElementById(o.n),tEl=document.getElementById(o.t);
+ var items=[].slice.call(document.querySelectorAll(o.items)),frames={},loaded=0,started=false,want=1,lastKey="",raf=0,N=o.N,STEP=o.STEP;
+ var IDS=[];try{IDS=JSON.parse(stage.dataset.frames||"[]")}catch(e){}if(!IDS.length)for(var i=1;i<=N;i+=STEP)IDS.push(i);
+ var anchors=items.map(function(li){return +li.dataset.f}).concat([N]);
+ function src(i){return o.dir+("00"+i).slice(-3)+".webp"}
+ function near(i,d){var k=i;while(k>=1&&k<=N&&!frames[k])k+=d;return frames[k]?k:0}
+ function draw(f){var a=IDS[0],b=0;for(var q=0;q<IDS.length;q++){if(IDS[q]<=f)a=IDS[q];else{b=IDS[q];break}}var t=b?(f-a)/(b-a):0;var fa=frames[a]?a:near(a,-1)||near(a,1);if(!fa)return;var fb=b&&frames[b]?b:0;
+  var key=fa+":"+fb+":"+t.toFixed(2);if(key===lastKey)return;lastKey=key;cx.globalAlpha=1;cx.drawImage(frames[fa],0,0,cv.width,cv.height);
+  if(fb&&t>0){cx.globalAlpha=t;cx.drawImage(frames[fb],0,0,cv.width,cv.height);cx.globalAlpha=1}poster.style.visibility="hidden"}
+ function load(i){var im=new Image();im.decoding="async";im.onload=function(){frames[i]=im;loaded++;ld.style.width=(loaded/IDS.length*100)+"%";if(loaded===IDS.length)ld.style.opacity=0;lastKey="";draw(want)};im.src=src(i)}
+ function start(){if(started)return;started=true;var order=[],seen={};[16,8,4,2,1].forEach(function(s){for(var i=0;i<IDS.length;i+=s){if(!seen[i]){seen[i]=1;order.push(IDS[i])}}});
+  var q=0;(function pump(){for(var c=0;c<6&&q<order.length;c++)load(order[q++]);if(q<order.length)setTimeout(pump,100)})()}
+ function onScroll(){if(raf)return;raf=requestAnimationFrame(function(){raf=0;if(stage.offsetParent===null)return;start();
+  var mid=window.innerHeight*(window.innerWidth<=900?0.62:0.5),idx=0,frac=0;
+  for(var i=0;i<items.length;i++){var r=items[i].getBoundingClientRect();if(r.top<=mid){idx=i;frac=Math.min(1,Math.max(0,(mid-r.top)/Math.max(1,r.height)))}}
+  var f=anchors[idx]+(anchors[idx+1]-anchors[idx])*frac;if(f<1)f=1;if(f>N)f=N;want=f;draw(f);
+  items.forEach(function(li,k){li.classList.toggle("on",k===idx)});nEl.textContent=idx+1;tEl.textContent=items[idx].dataset.cap;
+  var tb=document.querySelectorAll('.x-tl[data-tl="'+o.kind+'"] .x-tl-i'),best=null;tb.forEach(function(b){if(+b.dataset.step<=idx)best=b});if(best&&!best.classList.contains("on")){tb.forEach(function(x){x.classList.toggle("on",x===best);x.setAttribute("aria-selected",x===best)});var P=best.closest(".x-tl");P.querySelectorAll(".x-tl-p").forEach(function(q){q.hidden=q.dataset.tlp!==best.dataset.tli})}})}
+ if("IntersectionObserver" in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)start()},{rootMargin:"800px 0px"}).observe(stage)}
+ window.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",onScroll);onScroll()}
+player({kind:"house",stage:"wk-stage",canvas:"wk-canvas",poster:"wk-poster",ld:"wk-ld",n:"wk-n",t:"wk-t",items:".x-walk-steps>li",N:156,STEP:2,dir:"img/walk/seq/f_"});
+player({kind:"land",stage:"lk-stage",canvas:"lk-canvas",poster:"lk-poster",ld:"lk-ld",n:"lk-n",t:"lk-t",items:".x-walk-land .x-land-steps>li",N:90,STEP:2,dir:"img/walk/land/l_"});
+})();
 </script>
 <script>
 (function(){
@@ -487,12 +657,12 @@ var BOOK="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4F
 var panes=document.querySelectorAll(".x-path-pane"),tabs=document.querySelectorAll(".x-who button");
 function path(p,scroll){panes.forEach(function(x){x.hidden=x.dataset.pane!==p});tabs.forEach(function(t){t.setAttribute("aria-selected",t.dataset.path===p);t.classList.toggle("on",t.dataset.path===p)});
  if(scroll){document.getElementById("start").scrollIntoView({behavior:"smooth",block:"start"})}}
-tabs.forEach(function(t){t.addEventListener("click",function(){path(t.dataset.path,t.closest(".x-who-bottom"))})});
+tabs.forEach(function(t){t.addEventListener("click",function(){path(t.dataset.path,false)})});
 var f=document.querySelector('form[name="seller-intake"]');if(!f)return;
 var steps=[].slice.call(f.querySelectorAll("fieldset[data-s]")),bars=[].slice.call(f.querySelectorAll(".x-iprog i")),cur=0,go=f.querySelector(".go"),back=f.querySelector(".back"),err=f.querySelector(".err");
 var box=document.getElementById("intake");
 function openIntake(){box.classList.add("open");box.scrollIntoView({behavior:"smooth",block:"start"})}
-document.querySelectorAll(".x-open-intake").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();path("seller");openIntake()})});
+document.querySelectorAll('a[href="#intake"],.x-open-intake').forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();path("seller");openIntake()})});
 function show(i){cur=i;steps.forEach(function(s,k){s.hidden=k!==i});bars.forEach(function(b,k){b.classList.toggle("on",k<=i)});back.style.visibility=i?"visible":"hidden";go.textContent=i<steps.length-1?"Next":"Send and see my best option";err.textContent=""}
 function valid(i){var bad=null;steps[i].querySelectorAll("input[required],select[required]").forEach(function(el){if(!bad&&!el.checkValidity())bad=el});
  if(bad){err.textContent=bad.type==="checkbox"?"Please check the consent box to continue.":bad.type==="radio"?"Please pick one option for each question.":"Please fill in the highlighted field.";try{bad.focus()}catch(x){}return false}return true}
@@ -528,16 +698,22 @@ if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||loca
 })();
 </script>
 
-<section class="x-sec" id="markets"><div class="x-wrap">
- <div class="x-kick reveal">Where we buy</div>
- <h2 class="x-h2 reveal">Houses in Houston and Dallas-Fort Worth. Land across Texas. Memphis through partners.</h2>
- <div class="x-mk">
-  <a href="#offer" class="reveal"><img src="img/house2.jpg" alt="A house with a front porch" loading="lazy"><div><span>Houses</span><h3>Houston</h3><p>Harris, Fort Bend, Montgomery, Brazoria and Galveston counties. Any condition, any situation.</p></div></a>
-   <a href="#offer" class="reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div><span>Houses</span><h3>Dallas-Fort Worth</h3><p>Dallas and Tarrant counties. Any condition, any situation.</p></div></a>
-  <a href="#offer" class="reveal"><img src="img/land1.jpg" alt="Open Texas field at sunset" loading="lazy"><div><span>Land</span><h3>Texas acreage and lots</h3><p>Rural and edge-of-town land around Houston and Southeast Texas (Liberty, Montgomery and San Jacinto counties) and around Dallas-Fort Worth.</p></div></a>
-  <a href="#call" class="reveal"><img src="img/land2.jpg" alt="A home on open land" loading="lazy"><div><span>Houses</span><h3>Memphis, Tennessee</h3><p>Through our partner network. Book a call to start.</p></div></a>
- </div>
+<section class="x-sec x-dark" id="compare"><div class="x-wrap">
+ <div class="x-kick reveal" style="color:#F2C9B6">Straight talk</div>
+ <h2 class="x-h2 reveal">Selling direct vs. listing with an agent</h2>
+ <p class="x-lede reveal">Listing can bring a higher price. A direct sale trades some of that for speed and certainty. Here is the honest comparison.</p>
+ <table class="x-table reveal">
+  <tr><th></th><th class="us">Hearth Acre (direct)</th><th>Listing with an agent</th></tr>
+  <tr><td>Repairs and cleaning</td><td class="us">None. Sold as is</td><td>Usually expected before listing</td></tr>
+  <tr><td>Showings and open houses</td><td class="us">One walkthrough</td><td>Many, on buyers' schedules</td></tr>
+  <tr><td>Commissions</td><td class="us">$0 to you</td><td>Often 5 to 6 percent</td></tr>
+  <tr><td>Closing costs</td><td class="us">Discussed up front in the offer</td><td>Usually paid by the seller</td></tr>
+  <tr><td>Timeline</td><td class="us">Your date, often 2 to 3 weeks</td><td>Often 2 to 4 months</td></tr>
+  <tr><td>Financing risk</td><td class="us">No bank approval needed</td><td>Buyer loans can fall through</td></tr>
+ </table>
+ <p class="x-note reveal">We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing. We are not real estate agents and we do not list properties.</p>
 </div></section>
+
 
 <section class="x-sec" id="about" style="background:var(--bone)"><div class="x-wrap x-founder">
  <figure class="reveal"><img src="img/thiep.jpg" alt="Thiep Weang, founder of Hearth Acre Investments"><figcaption>Founder<b>Thiep Weang</b></figcaption></figure>
@@ -545,7 +721,33 @@ if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||loca
   <div class="x-kick reveal">Meet the buyer</div>
   <p class="x-quote reveal">"You deal with one person from the first message to the closing table. If we can't help, I'll tell you straight."</p>
   <p class="x-lede reveal">Hearth Acre Investments is run by Thiep Weang. We buy as a principal, not as an agent, so no commission comes out of your price and the offer you get is the offer in writing.</p>
-  <div class="x-cta reveal" style="margin-top:28px"><a class="x-btn pri" href="#offer">Get my offer</a><a class="x-btn line" href="#call">Book a 15-min call</a><a class="x-btn line" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener">Book a video walkthrough</a></div>
+  <div class="x-cta reveal" style="margin-top:28px"><a class="x-btn pri" href="#intake">Get my offer</a><a class="x-btn line" href="#call">Book a 15-min call</a><a class="x-btn line" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener">Book a video walkthrough</a></div>
+ </div>
+</div></section>
+
+<section class="x-sec" id="markets"><div class="x-wrap">
+ <div class="x-kick reveal">Where we buy</div>
+ <h2 class="x-h2 reveal">Houses in Houston and Dallas-Fort Worth. Land across Texas. Memphis through partners.</h2>
+ <div class="x-mk">
+  <a href="#intake" class="reveal"><img src="img/house2.jpg" alt="A house with a front porch" loading="lazy"><div><span>Houses</span><h3>Houston</h3><p>Harris, Fort Bend, Montgomery, Brazoria and Galveston counties. Any condition, any situation.</p></div></a>
+   <a href="#intake" class="reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div><span>Houses</span><h3>Dallas-Fort Worth</h3><p>Dallas and Tarrant counties. Any condition, any situation.</p></div></a>
+  <a href="#intake" class="reveal"><img src="img/land1.jpg" alt="Open Texas field at sunset" loading="lazy"><div><span>Land</span><h3>Texas acreage and lots</h3><p>Rural and edge-of-town land around Houston and Southeast Texas (Liberty, Montgomery and San Jacinto counties) and around Dallas-Fort Worth.</p></div></a>
+  <a href="#call" class="reveal"><img src="img/land2.jpg" alt="A home on open land" loading="lazy"><div><span>Houses</span><h3>Memphis, Tennessee</h3><p>Through our partner network. Book a call to start.</p></div></a>
+ </div>
+</div></section>
+
+<section class="x-sec" id="how-x" hidden style="background:var(--bone);padding-top:110px"><div class="x-wrap x-split">
+ <div class="x-photo reveal"><img src="img/house1.jpg" alt="A brick family house in a quiet neighborhood" loading="lazy"><div class="tag"><b>Houston houses</b>Brick ranches, two-stories, rentals and fixer-uppers.</div></div>
+ <div>
+  <div class="x-kick reveal">How it works</div>
+  <h2 class="x-h2 reveal">Three steps. No surprises.</h2>
+  <p class="x-lede reveal">You stay in control the whole way. If our number doesn't work for you, you say no and that's the end of it.</p>
+  <ol class="x-steps">
+   <li class="reveal"><b>Tell us about the property</b><span>The short form below, a text or a call. Two minutes is enough to start.</span></li>
+   <li class="reveal"><b>Get a written offer</b><span>We look at the house and recent sales nearby, then send a clear number in writing.</span></li>
+   <li class="reveal"><b>Close on your date</b><span>A local Texas title company checks the paperwork, holds the money and pays you at closing.</span></li>
+  </ol>
+  <a class="x-btn line reveal" href="#intake" style="margin-top:8px">Start in 2 minutes</a>
  </div>
 </div></section>
 
@@ -555,7 +757,77 @@ if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||loca
 
   
 
-  <section id="offer">
+  <section id="call">
+    <h2>Book a call or a video walkthrough</h2>
+    <p class="lead" style="margin-bottom:14px">Prefer to show us the property on video? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline">Pick a time for a 30-min Google Meet</a> and the link comes to your email. Or use the form below for a phone call.</p>
+    <form class="form" name="call" method="POST" action="thanks.html?call=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="call">
+      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Pick a day and a time (Texas time). Thiep texts you to confirm, then calls you. No obligation.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">Day</span><div class="chips callDays"></div></div>
+        <div class="q"><span class="lab">Time (Texas, Central)</span><div class="chips callTimes"></div></div>
+        <div class="q"><span class="lab">About</span>
+          <div class="chips"><label><input type="radio" name="topic" value="Selling a house" required><span>Selling a house</span></label><label><input type="radio" name="topic" value="Selling land"><span>Selling land</span></label><label><input type="radio" name="topic" value="Buying (builder or investor)"><span>Buying</span></label></div></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="q"><label for="c_name">Your name</label><input type="text" id="c_name" name="name" autocomplete="name" required></div>
+        <div class="row2"><div class="q"><label for="c_phone">Phone</label><input type="tel" id="c_phone" name="phone" autocomplete="tel" required></div>
+          <div class="q"><label for="c_prop">Property or area <span class="opt">(optional)</span></label><input type="text" id="c_prop" name="property"></div></div>
+        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me automated texts or use a recorded or AI voice for updates about my property. Not required to book; reply STOP anytime.</span></label>
+        <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>I agree that Thiep Weang (Hearth Acre Investments) may call or text me at the number above to confirm and hold this call. Consent isn't required to sell. I can say or reply STOP anytime.</span></label>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Request this time</button></div>
+    </form>
+  </section>
+
+  
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>Do I pay any fees?</summary><p>No commissions and no listing fees. Who pays closing costs is written into the offer before you sign anything.</p></details>
+    <details><summary>Who handles the money and paperwork?</summary><p>A local Texas title company. They check ownership, hold the earnest money and pay everyone at closing.</p></details>
+    <details><summary>Do you buy as-is?</summary><p>Yes. No repairs, no cleaning, no showings.</p></details>
+    <details><summary>Will you buy it yourselves?</summary><p>We sign the purchase contract, and we may assign that contract to another buyer, such as a builder, for a fee. We tell you this up front and in writing (Texas Occupations Code §1101.0045), and your price stays the price in the contract.</p></details>
+    <details><summary>How fast can you close?</summary><p>It depends on the title search and the property. You pick the date that works for you.</p></details>
+    <details><summary>What happens to my information?</summary><p>We use it only to talk with you about your property or the deal list. We never sell it. See the <a href="privacy.html">privacy page</a>.</p></details>
+  </section><section id="buyers">
+    <h2>Buyers &amp; builders list</h2>
+    <form class="form" name="buyers" method="POST" action="thanks.html?list=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
+      <input type="hidden" name="form-name" value="buyers">
+      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
+      <input type="hidden" name="submitted_at" value="">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="lead">Builders, investors and land buyers: off-market houses and lots go to this private list first. Tell us your buy box so you only hear about deals that fit.</p>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <fieldset data-step="1">
+        <div class="q"><span class="lab">What do you buy?</span>
+          <div class="chips"><label><input type="radio" name="buys" value="Houses" required><span>Houses</span></label><label><input type="radio" name="buys" value="Land"><span>Land</span></label><label><input type="radio" name="buys" value="Both"><span>Both</span></label></div></div>
+        <div class="q"><span class="lab">Where? <span class="opt">(pick any)</span></span>
+          <div class="chips"><label><input type="checkbox" name="areas" value="Harris (Houston)"><span>Harris (Houston)</span></label><label><input type="checkbox" name="areas" value="Fort Bend"><span>Fort Bend</span></label><label><input type="checkbox" name="areas" value="Dallas"><span>Dallas</span></label><label><input type="checkbox" name="areas" value="Tarrant (Fort Worth)"><span>Tarrant (Fort Worth)</span></label><label><input type="checkbox" name="areas" value="Montgomery"><span>Montgomery</span></label><label><input type="checkbox" name="areas" value="Brazoria"><span>Brazoria</span></label><label><input type="checkbox" name="areas" value="Galveston"><span>Galveston</span></label><label><input type="checkbox" name="areas" value="Liberty"><span>Liberty</span></label><label><input type="checkbox" name="areas" value="Memphis, TN"><span>Memphis, TN</span></label></div>
+          <input type="text" name="areas_other" placeholder="Other counties, states or ZIP codes" style="margin-top:8px"></div>
+        <div class="row2"><div class="q"><label for="b_min">Price from</label><input type="text" id="b_min" name="price_min" inputmode="decimal" placeholder="$"></div><div class="q"><label for="b_max">Price to</label><input type="text" id="b_max" name="price_max" inputmode="decimal" placeholder="$"></div></div>
+        <div class="q"><label for="b_box">Lot size or house type</label><input type="text" id="b_box" name="buy_box" placeholder="e.g. 3-bed rehabs, duplex, triplex or quad, or 1-5 acre lots"></div>
+        <div class="row2"><div class="q"><label for="b_fund">How you close</label><select id="b_fund" name="funding"><option>Cash</option><option>Hard money</option><option>Conventional</option><option>Other</option></select></div>
+          <div class="q"><label for="b_days">How fast</label><select id="b_days" name="close_days"><option>7 days</option><option>14 days</option><option>30 days</option><option>30+ days</option></select></div></div>
+      </fieldset>
+      <fieldset data-step="2">
+        <div class="row2"><div class="q"><label for="b_name">Your name</label><input type="text" id="b_name" name="name" autocomplete="name" required></div><div class="q"><label for="b_co">Company <span class="opt">(optional)</span></label><input type="text" id="b_co" name="company" autocomplete="organization"></div></div>
+        <div class="row2"><div class="q"><label for="b_phone">Phone</label><input type="tel" id="b_phone" name="phone" autocomplete="tel" required></div><div class="q"><label for="b_email">Email</label><input type="email" id="b_email" name="email" autocomplete="email" required></div></div>
+        <div class="q"><label for="b_pof">Proof of funds available?</label><select id="b_pof" name="proof_of_funds"><option>Yes, on request</option><option>Not yet</option></select></div>
+        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me deal alerts by automated text. Not required to join; reply STOP anytime.</span></label>
+        <label class="consent"><input type="checkbox" name="consent_list" value="yes" required><span>Add me to the Hearth Acre Investments private deal list. Thiep Weang (Hearth Acre Investments) may email, call or text me about properties that fit my buy box. I can ask to be removed anytime.</span></label>
+      </fieldset>
+      <div class="err" role="alert"></div>
+      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Join the list</button></div>
+    </form>
+  </section>
+
+  <section id="offer" hidden>
     <h2>Get an offer</h2>
     <form class="form" name="offer" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-steps="3">
       <input type="hidden" name="form-name" value="offer">
@@ -591,77 +863,7 @@ if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||loca
     </form>
   </section>
 
-  <section id="call">
-    <h2>Book a call or a video walkthrough</h2>
-    <p class="lead" style="margin-bottom:14px">Prefer to show us the property on video? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline">Pick a time for a 30-min Google Meet</a> and the link comes to your email. Or use the form below for a phone call.</p>
-    <form class="form" name="call" method="POST" action="thanks.html?call=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
-      <input type="hidden" name="form-name" value="call">
-      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
-      <input type="hidden" name="submitted_at" value="">
-      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
-      <p class="lead">Pick a day and a time (Texas time). Thiep texts you to confirm, then calls you. No obligation.</p>
-      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
-      <fieldset data-step="1">
-        <div class="q"><span class="lab">Day</span><div class="chips callDays"></div></div>
-        <div class="q"><span class="lab">Time (Texas, Central)</span><div class="chips callTimes"></div></div>
-        <div class="q"><span class="lab">About</span>
-          <div class="chips"><label><input type="radio" name="topic" value="Selling a house" required><span>Selling a house</span></label><label><input type="radio" name="topic" value="Selling land"><span>Selling land</span></label><label><input type="radio" name="topic" value="Buying (builder or investor)"><span>Buying</span></label></div></div>
-      </fieldset>
-      <fieldset data-step="2">
-        <div class="q"><label for="c_name">Your name</label><input type="text" id="c_name" name="name" autocomplete="name" required></div>
-        <div class="row2"><div class="q"><label for="c_phone">Phone</label><input type="tel" id="c_phone" name="phone" autocomplete="tel" required></div>
-          <div class="q"><label for="c_prop">Property or area <span class="opt">(optional)</span></label><input type="text" id="c_prop" name="property"></div></div>
-        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me automated texts or use a recorded or AI voice for updates about my property. Not required to book; reply STOP anytime.</span></label>
-        <label class="consent"><input type="checkbox" name="consent_contact" value="yes" required><span>I agree that Thiep Weang (Hearth Acre Investments) may call or text me at the number above to confirm and hold this call. Consent isn't required to sell. I can say or reply STOP anytime.</span></label>
-      </fieldset>
-      <div class="err" role="alert"></div>
-      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Request this time</button></div>
-    </form>
-  </section>
-
   
-
-  <section id="buyers">
-    <h2>Buyers &amp; builders list</h2>
-    <form class="form" name="buyers" method="POST" action="thanks.html?list=1" data-netlify="true" netlify-honeypot="bot-field" data-steps="2">
-      <input type="hidden" name="form-name" value="buyers">
-      <input type="hidden" name="consent_version" value="Hearth Acre consent v2 2026-10-01">
-      <input type="hidden" name="submitted_at" value="">
-      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
-      <p class="lead">Builders, investors and land buyers: off-market houses and lots go to this private list first. Tell us your buy box so you only hear about deals that fit.</p>
-      <div class="prog" aria-hidden="true"><i class="on"></i><i></i></div>
-      <fieldset data-step="1">
-        <div class="q"><span class="lab">What do you buy?</span>
-          <div class="chips"><label><input type="radio" name="buys" value="Houses" required><span>Houses</span></label><label><input type="radio" name="buys" value="Land"><span>Land</span></label><label><input type="radio" name="buys" value="Both"><span>Both</span></label></div></div>
-        <div class="q"><span class="lab">Where? <span class="opt">(pick any)</span></span>
-          <div class="chips"><label><input type="checkbox" name="areas" value="Harris (Houston)"><span>Harris (Houston)</span></label><label><input type="checkbox" name="areas" value="Fort Bend"><span>Fort Bend</span></label><label><input type="checkbox" name="areas" value="Dallas"><span>Dallas</span></label><label><input type="checkbox" name="areas" value="Tarrant (Fort Worth)"><span>Tarrant (Fort Worth)</span></label><label><input type="checkbox" name="areas" value="Montgomery"><span>Montgomery</span></label><label><input type="checkbox" name="areas" value="Brazoria"><span>Brazoria</span></label><label><input type="checkbox" name="areas" value="Galveston"><span>Galveston</span></label><label><input type="checkbox" name="areas" value="Liberty"><span>Liberty</span></label><label><input type="checkbox" name="areas" value="Memphis, TN"><span>Memphis, TN</span></label></div>
-          <input type="text" name="areas_other" placeholder="Other counties, states or ZIP codes" style="margin-top:8px"></div>
-        <div class="row2"><div class="q"><label for="b_min">Price from</label><input type="text" id="b_min" name="price_min" inputmode="decimal" placeholder="$"></div><div class="q"><label for="b_max">Price to</label><input type="text" id="b_max" name="price_max" inputmode="decimal" placeholder="$"></div></div>
-        <div class="q"><label for="b_box">Lot size or house type</label><input type="text" id="b_box" name="buy_box" placeholder="e.g. 3-bed rehabs, duplex, triplex or quad, or 1-5 acre lots"></div>
-        <div class="row2"><div class="q"><label for="b_fund">How you close</label><select id="b_fund" name="funding"><option>Cash</option><option>Hard money</option><option>Conventional</option><option>Other</option></select></div>
-          <div class="q"><label for="b_days">How fast</label><select id="b_days" name="close_days"><option>7 days</option><option>14 days</option><option>30 days</option><option>30+ days</option></select></div></div>
-      </fieldset>
-      <fieldset data-step="2">
-        <div class="row2"><div class="q"><label for="b_name">Your name</label><input type="text" id="b_name" name="name" autocomplete="name" required></div><div class="q"><label for="b_co">Company <span class="opt">(optional)</span></label><input type="text" id="b_co" name="company" autocomplete="organization"></div></div>
-        <div class="row2"><div class="q"><label for="b_phone">Phone</label><input type="tel" id="b_phone" name="phone" autocomplete="tel" required></div><div class="q"><label for="b_email">Email</label><input type="email" id="b_email" name="email" autocomplete="email" required></div></div>
-        <div class="q"><label for="b_pof">Proof of funds available?</label><select id="b_pof" name="proof_of_funds"><option>Yes, on request</option><option>Not yet</option></select></div>
-        <label class="consent"><input type="checkbox" name="consent_automated" value="yes"><span>It's also OK to send me deal alerts by automated text. Not required to join; reply STOP anytime.</span></label>
-        <label class="consent"><input type="checkbox" name="consent_list" value="yes" required><span>Add me to the Hearth Acre Investments private deal list. Thiep Weang (Hearth Acre Investments) may email, call or text me about properties that fit my buy box. I can ask to be removed anytime.</span></label>
-      </fieldset>
-      <div class="err" role="alert"></div>
-      <div class="nav"><button type="button" class="back">Back</button><button type="submit" class="go">Join the list</button></div>
-    </form>
-  </section>
-
-  <section id="faq">
-    <h2>Questions</h2>
-    <details><summary>Do I pay any fees?</summary><p>No commissions and no listing fees. Who pays closing costs is written into the offer before you sign anything.</p></details>
-    <details><summary>Who handles the money and paperwork?</summary><p>A local Texas title company. They check ownership, hold the earnest money and pay everyone at closing.</p></details>
-    <details><summary>Do you buy as-is?</summary><p>Yes. No repairs, no cleaning, no showings.</p></details>
-    <details><summary>Will you buy it yourselves?</summary><p>We sign the purchase contract, and we may assign that contract to another buyer, such as a builder, for a fee. We tell you this up front and in writing (Texas Occupations Code §1101.0045), and your price stays the price in the contract.</p></details>
-    <details><summary>How fast can you close?</summary><p>It depends on the title search and the property. You pick the date that works for you.</p></details>
-    <details><summary>What happens to my information?</summary><p>We use it only to talk with you about your property or the deal list. We never sell it. See the <a href="privacy.html">privacy page</a>.</p></details>
-  </section>
 </main>
 </div></div>
 
@@ -669,20 +871,20 @@ if(start==="investor"){path(start)}else{path("seller");if(start==="seller"||loca
  <div class="x-kick" style="color:#F2C9B6">No obligation</div>
  <h2>Find out what your property is worth to a direct buyer.</h2>
  <p style="opacity:.88;font-size:18px;margin:0 0 30px">Two minutes, a written number, and you decide.</p>
- <div class="x-cta"><a class="x-btn pri" href="#offer">Get my written offer</a><a class="x-btn ghost" href="sms:+17139791939">Text us</a></div>
+ <div class="x-cta"><a class="x-btn pri" href="#intake">Get my written offer</a><a class="x-btn ghost" href="sms:+17139791939">Text us</a></div>
 </div></div>
 
 <footer class="x-foot"><div class="x-wrap">
  <div class="cols">
   <div><div class="word">Hearth Acre</div><p style="margin:0 0 14px">Direct cash offers on houses and land. Houston and Southeast Texas · Dallas-Fort Worth (Dallas and Tarrant counties) · Texas land · Memphis through partners.</p></div>
-  <div><h4>Sellers</h4><a href="#offer">Get an offer</a><a href="#how-x">How it works</a><a href="#compare">Direct vs. listing</a><a href="#faq">Questions</a></div>
+  <div><h4>Sellers</h4><a href="#intake">Get an offer</a><a href="#how-x">How it works</a><a href="#compare">Direct vs. listing</a><a href="#faq">Questions</a></div>
   <div><h4>Buyers</h4><a href="#buyers">Join the buyer list</a><a href="#call">Book a call</a><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2C4FbECRCxpdXcLfS-ZB-AIjnsZOc_wJasEbG3u9xP2TXT-FCHi1SOdl2EU3ahB-eqiyxtremK" target="_blank" rel="noopener">Video walkthrough</a></div>
   <div><h4>Contact</h4><a href="tel:+17139791939">(713) 979-1939</a><a href="mailto:hearthacreinvestments@gmail.com">hearthacreinvestments@gmail.com</a><span>Text or call, 9 AM to 9 PM Central</span></div>
  </div>
  <div class="legal">© 2026 Hearth Acre Investments · Thiep Weang, real estate investor. We buy as a principal and do not list properties. We make offers to buy, and we may assign our purchase contract to another buyer for a fee. Nothing on this page is a public offer of any property. Photos are illustrative. <a href="privacy.html">Privacy and consent</a> · Reply STOP to any text to opt out.</div>
 </div></footer>
 
-<div class="x-mbar"><a class="x-btn pri" href="#offer">Get offer</a><a class="x-btn line" style="background:#fff" href="tel:+17139791939">Call</a></div>
+<div class="x-mbar"><a class="x-btn pri" href="#intake">Get offer</a><a class="x-btn line" style="background:#fff" href="tel:+17139791939">Call</a></div>
 <script>
 /* Public contacts. Leave "" to hide a button. */
 var HEARTHACRE = { phone: "713-979-1939", email: "hearthacreinvestments@gmail.com", booking: "" };
