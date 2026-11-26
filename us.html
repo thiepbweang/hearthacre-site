@@ -454,12 +454,50 @@ main.wrap{max-width:none;padding:0}
 .x-outro b{font:400 clamp(30px,3vw,44px)/1.12 var(--serif);color:var(--pine);margin:10px 0 12px;display:block}
 .x-outro p{font-size:18px;color:var(--ink2);margin:0;max-width:36ch}
 @media(max-width:900px){.x-outro{min-height:48vh}.x-beat{min-height:30vh!important}}
+
+.x-qlist{list-style:none;margin:14px 0 6px;padding:0;display:grid;gap:10px}
+.x-qlist li{position:relative;padding:12px 14px 12px 44px;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:16.5px;color:var(--ink)}
+.x-qlist li:before{content:"?";position:absolute;left:12px;top:11px;width:22px;height:22px;border-radius:50%;background:var(--pine);color:var(--bone);font:700 13px/22px var(--sans);text-align:center}
+.x-rail>li.x-tall{min-height:150vh!important}
+.x-shotblock{position:sticky;top:104px;background:var(--bone);padding:8px 0 4px;z-index:1}
+.x-shotlist{list-style:none;margin:12px 0 10px;padding:0;border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden}
+.x-shotlist li{position:relative;padding:14px 16px 14px 58px;border-top:1px solid var(--line);transition:background .3s}
+.x-shotlist li:first-child{border-top:0}
+.x-shotlist li .x-chk{left:16px;top:15px;width:28px;height:28px;border-radius:9px}
+.x-shotlist li b{display:block;font:400 21px/1.2 var(--serif);color:var(--pine)}
+.x-shotlist li span{display:block;font-size:15px;color:var(--ink2);margin-top:2px}
+.x-shotlist li.on{background:#FBF3EA}.x-shotlist li.on b{color:var(--ember2)}
+.x-shotlist li.done .x-chk{background:var(--ember)}.x-shotlist li.done .x-chk:after{transform:rotate(-45deg) scale(1)}
+.x-booklink{margin:6px 0 0;padding:18px 20px;border:1px dashed #D9C7AE;border-radius:16px;font-size:17px;color:var(--ink2);background:#fffaf3}
+.x-booklink a{color:var(--ember2);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.x-know{margin:40px 0 0}
+.x-know h3{font:400 clamp(28px,2.6vw,38px)/1.1 var(--serif);color:var(--pine);margin:0 0 6px}
+.x-know>p{font-size:18px;color:var(--ink2);margin:0 0 18px}
+.x-know-g{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.x-know-g div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.x-know-g b{display:block;font:400 21px/1.2 var(--serif);color:var(--pine);margin-bottom:6px}
+.x-know-g p{margin:0;font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.x-outro{min-height:0!important;padding-top:28px}
+.x-table td.good{background:rgba(74,163,108,.24);color:#D6F3E0;font-weight:600}
+.x-table td.bad{background:rgba(214,84,70,.26);color:#FBE0DB}
+.x-table td.good:before{content:"\2713  ";color:#7DDB9E;font-weight:800}
+.x-table td.bad:before{content:"\2715  ";color:#F08A7E;font-weight:800}
+.x-table td.us.good{color:#E7FBEE}
+.x-legend{display:flex;gap:18px;margin-top:14px;font-size:14px;color:rgba(243,235,221,.75)}
+.x-legend span:before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.x-legend .g:before{background:#4AA36C}.x-legend .r:before{background:#D65446}
+.x-req{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0 6px}
+.x-req div{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
+.x-req small{display:block;font:700 11.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ember2);margin-bottom:4px}
+.x-req p{margin:0;font-size:15.5px;color:var(--ink)}
+@media(max-width:900px){.x-shotblock{top:calc(88px + (100vw - 48px) * .625)}.x-walk-stage{top:78px!important}.x-rail>li.x-tall{min-height:170vh!important}.x-shotlist li{padding:10px 12px 10px 50px}.x-shotlist li b{font-size:18px}.x-shotlist li span{font-size:13.5px}.x-shotlist li .x-chk{left:12px;top:11px;width:26px;height:26px}.x-know-g,.x-req{grid-template-columns:1fr}.x-qlist li{font-size:15.5px}}
+#start,#walkthrough{scroll-margin-top:90px}
 </style>
 </head>
 <body>
 <div class="x-nav" id="xnav"><div class="x-wrap">
  <a class="x-brand" href="#top"><img src="logo.svg" alt=""><div><b>Hearth Acre</b><small>Investments</small></div></a>
- <nav><a href="#walkthrough">How it works</a><a href="#situations">Situations</a><a href="#compare">Why direct</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#buyers">Investors</a></nav>
+ <nav><a href="#situations">Situations</a><a href="#walkthrough">How it works</a><a href="#compare">Why direct</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#investors">Investors</a></nav>
  <a class="x-btn pri" href="#intake">Get my offer</a>
 </div></div>
 
@@ -498,15 +536,25 @@ main.wrap{max-width:none;padding:0}
  <p class="x-lede reveal">Here is exactly what happens, step by step, using a typical brick ranch like the ones we buy. Tell us who you are and we will show you your path.</p>
  <div class="x-who reveal" id="start" role="tablist" aria-label="Which describes you">
   <button type="button" role="tab" data-path="seller" aria-selected="true">I'm selling a property</button>
-  <button type="button" role="tab" data-path="investor" aria-selected="false">I'm an investor, builder, buyer or wholesaler</button>
+  <button type="button" role="tab" data-path="investor" aria-selected="false">I'm an investor, builder or buyer</button>
  </div>
  <div class="x-path-pane" data-pane="investor" hidden>
   <div class="x-inv">
    <div class="x-panel"><h3>Buyers and builders</h3><p>Get our deals first. Tell us your areas, price range, beds, rehab level, duplex, triplex or quad, and how fast you close. We send only deals that match.</p><div class="x-cta"><a class="x-btn pri" href="#buyers">Join the buyer list</a><a class="x-btn line" href="#call">Book a 15-min call</a></div></div>
-   <div class="x-panel"><h3>Joint ventures with wholesalers</h3><p>Have a deal under contract, or buyers for ours? We split the net assignment fee under one written agreement (HA-JV-1) signed before any address is shared.</p>
+   <div class="x-panel"><h3>Joint ventures with investors</h3><p>Have a deal under contract, or buyers for ours? We split the net assignment fee under one written agreement (HA-JV-1) signed before any address is shared.</p>
     <div class="x-split"><div><small>You bring the deal</small><strong>50 / 50</strong><span>You hold the contract and the seller relationship. We bring the buyers, marketing and closing work.</span></div><div><small>We bring the deal</small><strong>50 / 50</strong><span>We hold the contract and the seller relationship. You bring the buyer who closes.</span></div></div>
     <a class="x-btn pri" href="#jv-form">Send a deal or ask for the agreement</a></div>
   </div>
+  <div class="x-panel" style="margin-top:18px"><h3>Deals that work for us</h3><p>Bring us a deal that fits these, and we can usually tell you yes or no within a day.</p>
+   <div class="x-req">
+    <div><small>Where</small><p>Texas houses: Harris, Fort Bend, Montgomery, Brazoria, Galveston, Dallas and Tarrant first; other Texas counties considered. Land: Liberty, San Jacinto, Montgomery and Southeast Texas.</p></div>
+    <div><small>What</small><p>Single-family, duplex, triplex or quad, any condition. Lots and acreage with road access.</p></div>
+    <div><small>Value</small><p>After-repair value about US$120,000 to US$400,000 for houses.</p></div>
+    <div><small>Equity</small><p>At least 30% equity: the mortgage, liens and back taxes together well under the value.</p></div>
+    <div><small>Paperwork</small><p>A signed purchase agreement that allows assignment, the seller disclosures, clear title so far, and a closing date with time left to market it.</p></div>
+    <div><small>Access and facts</small><p>Photos, one showing for our buyer, and honest numbers in writing: contract price, repairs, occupancy.</p></div>
+   </div>
+   <a class="x-btn pri" href="#jv-form" style="margin-top:8px">Send a deal</a></div>
   <div class="x-panel" style="margin-top:18px"><h3>Our JV rules, in writing</h3>
    <ol class="x-rules">
     <li><b>Agreement first.</b> Both sides sign HA-JV-1 before the address, the seller's details or our buyer list are shared.</li>
@@ -524,7 +572,7 @@ main.wrap{max-width:none;padding:0}
   <div class="x-panel" id="jv-form" style="margin-top:18px;scroll-margin-top:90px"><h3>Send a deal or ask for HA-JV-1</h3>
    <form class="x-jvform" name="jv-deal" method="POST" action="thanks.html?jv=1" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="jv-deal"><p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
-    <div class="q"><label for="jv_role">I am</label><select id="jv_role" name="role" required><option value="">Choose</option><option>A wholesaler with a deal under contract</option><option>A wholesaler with buyers</option><option>A builder or investor buying</option><option>A lender or agent</option></select></div>
+    <div class="q"><label for="jv_role">I am</label><select id="jv_role" name="role" required><option value="">Choose</option><option>An investor with a deal under contract</option><option>An investor with buyers</option><option>A builder or investor buying</option><option>A lender or agent</option></select></div>
     <div class="row2"><div class="q"><label for="jv_name">Name</label><input id="jv_name" name="name" autocomplete="name" required></div><div class="q"><label for="jv_co">Company <span class="opt">(optional)</span></label><input id="jv_co" name="company" autocomplete="organization"></div></div>
     <div class="row2"><div class="q"><label for="jv_ph">Phone</label><input id="jv_ph" name="phone" type="tel" autocomplete="tel" required></div><div class="q"><label for="jv_em">Email</label><input id="jv_em" name="email" type="email" autocomplete="email" required></div></div>
     <div class="row2"><div class="q"><label for="jv_area">City or zip of the deal</label><input id="jv_area" name="area" placeholder="No full address until HA-JV-1 is signed"></div><div class="q"><label for="jv_type">Property type</label><select id="jv_type" name="type"><option value="">Choose</option><option>House</option><option>Duplex</option><option>Triplex</option><option>Quad</option><option>Land</option></select></div></div>
@@ -552,11 +600,11 @@ main.wrap{max-width:none;padding:0}
   </div>
   <ol class="x-land-steps x-rail" id="lk-steps">
    <li data-f="1" data-cap="Tell us which parcel" data-dur="Day 1 &middot; 5 min"><b class="t">Tell us which parcel</b><p>The address if it has one, or the parcel number from your tax bill, plus the acreage if you know it. That is enough for us to pull the county map.</p><details class="x-how"><summary>How to find your parcel number</summary><div><p>It is on your county property tax bill or appraisal notice, usually called the account number, parcel ID or APN. In Harris County it is the 13-digit HCAD account number. You can also search your name or address on the county appraisal district website.</p></div></details></li>
-   <li data-f="16" data-cap="We check it like a builder" data-dur="Days 1 to 3"><b class="t">We check what a builder checks</b><p>Road access, water and electric nearby, septic or sewer, flood zone on the FEMA map, wetlands, deed restrictions and back taxes. You do not need to know any of it; we look it up.</p></li>
-   <li data-f="34" data-cap="A few photos, if you can" data-dur="Day 1 &middot; 5 min"><b class="t">Send a few photos if you can</b><ul class="x-shot"><li>The road frontage, standing on the road</li><li>Any corner stakes or survey markers</li><li>Anything on the land: a mobile home, a barn, a fence, dumping</li><li>An old survey or plat, if you have one</li></ul><p class="x-fine">No photos? That is fine for land. Satellite and county maps get us most of the way.</p></li>
-   <li data-f="52" data-cap="Written offer by email" data-dur="Days 2 to 4"><b class="t">Your written offer arrives by email</b><p>A clear cash number and a vacant land purchase agreement you can read at your own pace and sign online. Say no and that is the end of it.</p></li>
-   <li data-f="68" data-cap="Title sorts the paperwork" data-dur="Weeks 1 to 6"><b class="t">The title company sorts out the paperwork</b><p>Back taxes, old liens, heirs who need to sign: the title company handles it and pays them from the sale money. Inherited land with several owners is common, and we are used to it.</p></li>
-   <li data-f="82" data-cap="Paid at closing" data-dur="Closing day"><b class="t">You get paid at closing</b><p>By check or wire from the title company, on the date you pick. You never pay us a fee.</p><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Get my written offer for land</a></li>
+   <li data-f="17" data-cap="We check it like a builder" data-dur="Days 1 to 3"><b class="t">We check what a builder checks</b><p>Road access, water and electric nearby, septic or sewer, flood zone on the FEMA map, wetlands, deed restrictions and back taxes. You do not need to know any of it; we look it up.</p></li>
+   <li data-f="35" data-cap="A few photos, if you can" data-dur="Day 1 &middot; 5 min"><b class="t">Send a few photos if you can</b><ul class="x-shot"><li>The road frontage, standing on the road</li><li>Any corner stakes or survey markers</li><li>Anything on the land: a mobile home, a barn, a fence, dumping</li><li>An old survey or plat, if you have one</li></ul><p class="x-fine">No photos? That is fine for land. Satellite and county maps get us most of the way.</p></li>
+   <li data-f="53" data-cap="Written offer by email" data-dur="Days 2 to 4"><b class="t">Your written offer arrives by email</b><p>A clear cash number and a vacant land purchase agreement you can read at your own pace and sign online. Say no and that is the end of it.</p></li>
+   <li data-f="69" data-cap="Title sorts the paperwork" data-dur="Weeks 1 to 6"><b class="t">The title company sorts out the paperwork</b><p>Back taxes, old liens, heirs who need to sign: the title company handles it and pays them from the sale money. Inherited land with several owners is common, and we are used to it.</p></li>
+   <li data-f="83" data-cap="Paid at closing" data-dur="Closing day"><b class="t">You get paid at closing</b><p>By check or wire from the title company, on the date you pick. You never pay us a fee.</p><a class="x-btn pri x-open-intake" href="#intake" style="margin-top:10px">Get my written offer for land</a><p class="x-booklink">Want to talk it through first? <a href="#call">Click here to book a call or video meeting</a> and we will walk you through every step for your property.</p></li>
   </ol>
  </div>
 <div class="x-tl" data-tl="land"><div class="x-tl-bar" role="tablist" aria-label="Timeline"><button type="button" role="tab" class="x-tl-i on" data-tli="0" data-step="0" aria-selected="true"><small>Day 1</small><b>Tell us which parcel</b></button><button type="button" role="tab" class="x-tl-i" data-tli="1" data-step="1" aria-selected="false"><small>Days 1 to 3</small><b>We check it like a builder</b></button><button type="button" role="tab" class="x-tl-i" data-tli="2" data-step="3" aria-selected="false"><small>Days 2 to 4</small><b>Written offer by email</b></button><button type="button" role="tab" class="x-tl-i" data-tli="3" data-step="3" aria-selected="false"><small>When you are ready</small><b>You sign online</b></button><button type="button" role="tab" class="x-tl-i" data-tli="4" data-step="4" aria-selected="false"><small>Weeks 1 to 6</small><b>Title and survey</b></button><button type="button" role="tab" class="x-tl-i" data-tli="5" data-step="5" aria-selected="false"><small>Closing day</small><b>Get paid</b></button></div><div class="x-tl-panels"><div class="x-tl-p" data-tlp="0"><div class="x-tl-ph"><small>Day 1 &middot; 5 minutes</small><b>Tell us which parcel</b></div><div class="x-tl-g"><div><span>What happens</span><p>The address or parcel number, acreage if you know it, and any photos.</p></div><div><span>What you need</span><p>The parcel number from your tax bill.</p></div><div><span>Helpful tip</span><p>No photos? Fine for land. Maps do most of the work.</p></div></div></div><div class="x-tl-p" data-tlp="1" hidden><div class="x-tl-ph"><small>Days 1 to 3 &middot; We do the work</small><b>We check it like a builder</b></div><div class="x-tl-g"><div><span>What happens</span><p>Road access, utilities nearby, flood zone, wetlands, restrictions and back taxes.</p></div><div><span>What you need</span><p>Nothing.</p></div><div><span>Helpful tip</span><p>Tell us anything you know: old surveys, easements, a well or septic.</p></div></div></div><div class="x-tl-p" data-tlp="2" hidden><div class="x-tl-ph"><small>Days 2 to 4 &middot; Read it at your pace</small><b>Written offer by email</b></div><div class="x-tl-g"><div><span>What happens</span><p>A clear cash number and a vacant land purchase agreement.</p></div><div><span>What you need</span><p>Nothing until you decide.</p></div><div><span>Helpful tip</span><p>Questions are free. Saying no ends it.</p></div></div></div><div class="x-tl-p" data-tlp="3" hidden><div class="x-tl-ph"><small>When you are ready &middot; 10 minutes</small><b>You sign online</b></div><div class="x-tl-g"><div><span>What happens</span><p>Everyone on the title signs; heirs too if it was inherited.</p></div><div><span>What you need</span><p>IDs for each signer later.</p></div><div><span>Helpful tip</span><p>Several heirs? Common with land. The title company guides it.</p></div></div></div><div class="x-tl-p" data-tlp="4" hidden><div class="x-tl-ph"><small>Weeks 1 to 6 &middot; Hands off for you</small><b>Title and survey</b></div><div class="x-tl-g"><div><span>What happens</span><p>The title company clears back taxes and liens and may order a survey.</p></div><div><span>What you need</span><p>Answer title emails.</p></div><div><span>Helpful tip</span><p>Liens and back taxes come out of the sale money.</p></div></div></div><div class="x-tl-p" data-tlp="5" hidden><div class="x-tl-ph"><small>Closing day &middot; About an hour</small><b>Get paid</b></div><div class="x-tl-g"><div><span>What happens</span><p>Sign the deed with the title company or a mobile notary; paid by check or wire.</p></div><div><span>What you need</span><p>Photo ID.</p></div><div><span>Helpful tip</span><p>You pick the date.</p></div></div></div></div></div>
@@ -570,19 +618,23 @@ main.wrap{max-width:none;padding:0}
    <i class="ld" id="wk-ld"></i>
   </div>
   <ol class="x-walk-steps x-rail" id="wk-steps">
-   <li data-i="0" data-f="1" data-cap="Start outside" data-dur="Day 1 &middot; 10 min"><b class="t">Start outside: four photos of the house</b>
-    <p>Phone photos are fine. Walk around once. Scroll and we will show you each shot, exactly how to take it.</p>
-    <div class="x-beats">
-     <div class="x-beat" data-f="1" data-cap="Shot 1 of 4: the front" data-tip="Across the street. Whole house in the frame, roof to driveway."><i class="x-chk" aria-hidden="true"></i><b>The front</b><p>Stand across the street. Hold the phone sideways and fit the whole house in, roof line to driveway.</p></div>
-     <div class="x-beat" data-f="16" data-cap="Shot 2 of 4: each side" data-tip="Step back until the whole wall fits. AC unit in the shot."><i class="x-chk" aria-hidden="true"></i><b>Each side and the back</b><p>Step back until the whole wall fits. Get the AC unit in the frame on the side that has it.</p></div>
-     <div class="x-beat" data-f="28" data-cap="Shot 3 of 4: foundation corners" data-tip="Crouch low at each corner. Get the brick and the ground in one shot."><i class="x-chk" aria-hidden="true"></i><b>Foundation corners</b><p>Crouch low at each corner so the brick and the ground meet in the photo. Close up on any crack.</p></div>
-     <div class="x-beat" data-f="42" data-cap="Shot 4 of 4: driveway, fence, yard" data-tip="From the street corner. Driveway, fence line and yard together."><i class="x-chk" aria-hidden="true"></i><b>Driveway, fence and yard</b><p>From the corner of the lot, get the driveway, the fence line and the yard together.</p></div>
+   <li data-i="0" data-shots="1" data-cap="Tell us about the house" data-dur="Day 1 &middot; 5 min"><b class="t">Tell us about the house</b>
+    <p>A few quick questions by form, text or call. There are no wrong answers, and answering does not commit you to anything.</p>
+    <ul class="x-qlist"><li>Why you are thinking of selling, and by when</li><li>Who is on the title, and whether everyone agrees to sell</li><li>Roughly what is owed: mortgage, back taxes or liens</li><li>Whether it is empty, rented, or you live there</li><li>What needs fixing that you already know about</li><li>The number you would be happy with, if you have one</li></ul>
+    <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:12px">Answer the questions</a></li>
+   <li data-i="1" data-shots="1,16,28,42" data-vf="1" class="x-tall" data-cap="Four photos of the outside" data-dur="Day 1 &middot; 10 min"><b class="t">Four photos of the outside</b>
+    <p>Phone photos are fine. Walk around once. As you scroll, the picture shows exactly how to take each shot.</p>
+    <div class="x-shotblock"><ul class="x-shotlist">
+     <li data-tip="Across the street. Whole house in the frame, roof to driveway."><i class="x-chk" aria-hidden="true"></i><b>The front</b><span>From across the street, phone sideways, roof line to driveway.</span></li>
+     <li data-tip="Step back until the whole wall fits. AC unit in the shot."><i class="x-chk" aria-hidden="true"></i><b>Each side and the back</b><span>Step back until the whole wall fits. Get the AC unit in the frame.</span></li>
+     <li data-tip="Crouch low at each corner. Brick and ground in one shot."><i class="x-chk" aria-hidden="true"></i><b>Foundation corners</b><span>Crouch low so the brick and the ground meet. Close up on any crack.</span></li>
+     <li data-tip="From the corner of the lot. Driveway, fence and yard together."><i class="x-chk" aria-hidden="true"></i><b>Driveway, fence and yard</b><span>From the corner of the lot, all three in one shot.</span></li>
+    </ul>
     </div>
     <details class="x-how"><summary>How to tell us about the roof</summary><div>
 <p>Stand in the yard and photo each side of the roof. Zoom in on the worst spot: curled or missing shingles, patches, sagging.</p>
-<p>Know when it was replaced? A receipt, a permit or a rough year is perfect. Inside, photo any brown stains on ceilings. That tells us about leaks.</p></div></details>
-    <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:12px">Start my free offer</a></li>
-   <li data-i="1" data-f="45" data-cap="The big four" data-dur="Day 1 &middot; 5 min"><b class="t">The big four: AC, water heater, panel, roof</b>
+<p>Know when it was replaced? A receipt, a permit or a rough year is perfect. Inside, photo any brown stains on ceilings. That tells us about leaks.</p></div></details></li>
+   <li data-i="2" data-shots="54" data-cap="The big four" data-dur="Day 1 &middot; 5 min"><b class="t">The big four: AC, water heater, panel, roof</b>
     <p>Their age shapes the number more than anything else. You do not need to know the years. A clear photo of each label is enough, and we read it for you.</p>
     <div class="x-collage x-c4">
      <figure><div class="x-ph x-ph-ac"><img src="img/walk/seq/f_016.webp" alt="Outside AC unit beside a brick house" loading="lazy"><i class="vf"></i></div><figcaption><b>Outside AC unit</b>Whole unit, then step in close on the sticker on its side.</figcaption></figure>
@@ -602,10 +654,7 @@ main.wrap{max-width:none;padding:0}
 <p><b>City sewer:</b> your water bill has a sewer or wastewater charge on it. Most homes in town are on sewer.</p>
 <p><b>Septic tank:</b> no sewer charge on the bill, and somewhere in the yard (often 10 to 20 feet from the house) there are one or two round lids or a concrete cover. Common in the country and on bigger lots.</p>
 <p>Not sure? Look at an old water bill, or the closing papers from when you bought it. You can also call the county or city utility office and ask. Same for water: city water or a well.</p></div></details></li>
-   <li data-i="2" data-f="54" data-cap="Up the walk to the door" data-dur="Day 1 &middot; 2 min"><b class="t">Up the walk to the door</b>
-    <p>Show us how the house greets a buyer: the walkway, the porch, the front door, and anything that sticks or leaks.</p>
-    <ul class="x-shot"><li>Walkway and porch, including any cracks or settling</li><li>Front door, open and closed</li><li>Windows that are broken, fogged or boarded</li></ul></li>
-   <li data-i="3" data-f="66" data-cap="Every room, as it is" data-dur="Day 1 &middot; 10 min"><b class="t">Inside: every room, just as it is</b>
+   <li data-i="3" data-shots="64,73,86" data-cap="Every room, as it is" data-dur="Day 1 &middot; 10 min"><b class="t">Inside: every room, just as it is</b>
     <p>No cleaning, no fixing. We buy as is. Here is how each inside photo should look.</p>
     <div class="x-collage x-c6">
      <figure><div class="x-ph"><img src="img/guide/kitchen.webp" alt="Kitchen photographed wide from the doorway" loading="lazy"><i class="vf"></i></div><figcaption><b>Kitchen</b>From the doorway, wide. Counters, cabinets, stove and sink in one shot.</figcaption></figure>
@@ -615,9 +664,9 @@ main.wrap{max-width:none;padding:0}
      <figure><div class="x-ph"><img src="img/guide/floor.webp" alt="Close photo of a wood floor" loading="lazy"><i class="vf"></i></div><figcaption><b>Floors up close</b>Point down at the floor. Any damage, stains or soft spots.</figcaption></figure>
      <figure><div class="x-ph"><img src="img/guide/ceiling.webp" alt="Close photo of a stained, cracked wall" loading="lazy"><i class="vf"></i></div><figcaption><b>Stains and cracks</b>Close on any ceiling stain, wall crack, water or mould.</figcaption></figure>
     </div>
-    <p class="x-fine" style="margin:0 0 10px">Garage and attic too, if they are easy to get to.</p>
+    <p class="x-fine" style="margin:0 0 10px">Also: the porch and front door, any broken or boarded windows, and the garage and attic if they are easy to get to.</p>
     <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:6px">Upload my photos</a></li>
-   <li data-i="4" data-f="90" data-cap="Your offer arrives by email" data-dur="Days 1 to 2"><b class="t">Your written offer arrives by email</b>
+   <li data-i="4" data-shots="100" data-cap="Your offer arrives by email" data-dur="Days 1 to 2"><b class="t">Your written offer arrives by email</b>
     <p>We check your photos and answers against recent sales nearby, then email you a clear number and our purchase agreement to read at your own pace. Questions? Call or text us. You sign online only if it works for you. If not, say no and that is the end of it.</p>
     <div class="x-doc"><div class="x-doc-h"><small>What you sign</small><b>House Purchase and Sale Agreement (As Is)</b></div>
      <ul>
@@ -632,16 +681,27 @@ main.wrap{max-width:none;padding:0}
       <li><b>E-signature</b> counts. The deed itself is signed with the title company.</li>
      </ul>
      <p class="x-fine" style="margin:8px 0 0">A short summary of our Texas agreement. The exact numbers and dates are filled in for your house, and the signed agreement is what counts.</p></div></li>
-   <li data-i="5" data-f="106" data-cap="One showing" data-dur="Week 1 to 2 &middot; 1 hour"><b class="t">One showing, at a time you pick</b>
+   <li data-i="5" data-shots="112" data-cap="One showing" data-dur="Week 1 to 2 &middot; 1 hour"><b class="t">One showing, at a time you pick</b>
     <p>After you sign, a buyer or an inspector visits once. You choose the day and time. No open houses and no stream of strangers.</p></li>
-   <li data-i="6" data-f="118" data-cap="The title company pays you" data-dur="Weeks 1 to 6"><b class="t">The title company closes it and pays you</b>
+   <li data-i="6" data-shots="124,156" data-cap="The title company pays you" data-dur="Weeks 1 to 6"><b class="t">The title company closes it and pays you</b>
     <p>A local title company checks the title, pays off any mortgage or back taxes from the sale, holds the money, and pays you at closing by check or wire. You never pay us a fee, and who pays closing costs is written into the offer before you sign.</p>
     <a class="x-btn pri x-open-intake" href="#intake" style="margin-top:12px">Get my written offer</a>
-    <div class="x-outro"><small>That is the whole process</small><b>Your price in writing. Your closing date. No fees to you.</b><p>Most sellers spend about 30 minutes in total: photos, a few questions and one signature. The title company does the rest.</p></div></li>
+    <div class="x-outro"><small>That is the whole process</small><b>Your price in writing. Your closing date. No fees to you.</b><p>Most sellers spend about 30 minutes in total: photos, a few questions and one signature. The title company does the rest.</p></div>
+    <p class="x-booklink">Want to talk it through first? <a href="#call">Click here to book a call or video meeting</a> and we will walk you through every step for your property.</p></li>
   </ol>
  </div>
 
- <div data-kpane="house"><div class="x-tl" data-tl="house"><div class="x-tl-bar" role="tablist" aria-label="Timeline"><button type="button" role="tab" class="x-tl-i on" data-tli="0" data-step="0" aria-selected="true"><small>Day 1</small><b>Photos and a few questions</b></button><button type="button" role="tab" class="x-tl-i" data-tli="1" data-step="4" aria-selected="false"><small>Days 1 to 2</small><b>Written offer by email</b></button><button type="button" role="tab" class="x-tl-i" data-tli="2" data-step="4" aria-selected="false"><small>Day 3 or when you are ready</small><b>You sign online</b></button><button type="button" role="tab" class="x-tl-i" data-tli="3" data-step="5" aria-selected="false"><small>Week 1 to 2</small><b>One showing</b></button><button type="button" role="tab" class="x-tl-i" data-tli="4" data-step="6" aria-selected="false"><small>Weeks 1 to 6</small><b>Title company checks everything</b></button><button type="button" role="tab" class="x-tl-i" data-tli="5" data-step="6" aria-selected="false"><small>Closing day</small><b>Sign and get paid</b></button></div><div class="x-tl-panels"><div class="x-tl-p" data-tlp="0"><div class="x-tl-ph"><small>Day 1 &middot; 15 minutes on your phone</small><b>Photos and a few questions</b></div><div class="x-tl-g"><div><span>What happens</span><p>You send photos of the outside, each room, and the AC, water heater and panel labels, then answer a few questions about the house and your timeline.</p></div><div><span>What you need</span><p>Your phone, the address, who is on the title.</p></div><div><span>Helpful tip</span><p>Do it in daylight with the lights on. Blurry is fine; missing rooms are not.</p></div></div></div><div class="x-tl-p" data-tlp="1" hidden><div class="x-tl-ph"><small>Days 1 to 2 &middot; We do the work</small><b>Written offer by email</b></div><div class="x-tl-g"><div><span>What happens</span><p>We compare your photos and answers with recent sales nearby and email a clear cash number plus the purchase agreement.</p></div><div><span>What you need</span><p>Nothing. Read it when you are ready.</p></div><div><span>Helpful tip</span><p>Call or text with any question. Asking does not commit you to anything.</p></div></div></div><div class="x-tl-p" data-tlp="2" hidden><div class="x-tl-ph"><small>Day 3 or when you are ready &middot; 10 minutes</small><b>You sign online</b></div><div class="x-tl-g"><div><span>What happens</span><p>If the offer works for you, you sign online. You get a copy right away and a plain-English disclosure first.</p></div><div><span>What you need</span><p>Everyone on the title signs (spouse too, if it is a homestead).</p></div><div><span>Helpful tip</span><p>Not sure everyone can sign? Tell us early; the title company can often help.</p></div></div></div><div class="x-tl-p" data-tlp="3" hidden><div class="x-tl-ph"><small>Week 1 to 2 &middot; About an hour</small><b>One showing</b></div><div class="x-tl-g"><div><span>What happens</span><p>A buyer or an inspector visits once, at a time you pick. No open houses.</p></div><div><span>What you need</span><p>Utilities on, and a way in (you, a neighbour or a lockbox).</p></div><div><span>Helpful tip</span><p>Leave the house as it is. No cleaning needed.</p></div></div></div><div class="x-tl-p" data-tlp="4" hidden><div class="x-tl-ph"><small>Weeks 1 to 6 &middot; Hands off for you</small><b>Title company checks everything</b></div><div class="x-tl-g"><div><span>What happens</span><p>The title company checks ownership, orders payoffs for any mortgage, liens or back taxes, and prepares the closing papers.</p></div><div><span>What you need</span><p>Answer a few emails from the title company; ID when they ask.</p></div><div><span>Helpful tip</span><p>Back taxes and liens are paid from the sale money at closing.</p></div></div></div><div class="x-tl-p" data-tlp="5" hidden><div class="x-tl-ph"><small>Closing day &middot; About an hour</small><b>Sign and get paid</b></div><div class="x-tl-g"><div><span>What happens</span><p>You sign the deed with the title company (in person or with a mobile notary) and are paid by check or wire.</p></div><div><span>What you need</span><p>Photo ID, keys, garage openers.</p></div><div><span>Helpful tip</span><p>You pick the date. About 30 to 45 days is typical; faster if title is clean.</p></div></div></div></div></div>
+ <div data-kpane="house" class="x-know reveal"><h3>Good to know before you start</h3><p>The questions most sellers ask us, answered plainly.</p><div class="x-know-g">
+ <div><b>How we set the price</b><p>We compare your house with recent sales nearby, take off what the repairs in your photos will cost, and leave room for the buyer who does them. You see the number in writing before you decide anything.</p></div>
+ <div><b>What it costs you</b><p>No commission and no fee to us. Who pays which closing costs is written into the offer before you sign. Your mortgage, back taxes or liens are paid out of the sale money, not out of your pocket.</p></div>
+ <div><b>Behind on payments or taxes</b><p>That is common and fine. The title company gets the exact payoff amounts and clears them at closing. If a tax sale or foreclosure date is close, tell us the date first so we can work to it.</p></div>
+ <div><b>Tenants, or you still live there</b><p>We buy houses that are empty, rented or lived in. Tell us about any lease. Need time to move? Ask before you sign, and if it works the move-out date goes into the agreement in writing.</p></div>
+ <div><b>Inherited, or more than one owner</b><p>Everyone on the title signs, including heirs. If the estate is not settled yet, the title company tells us what papers are needed, and we can wait for them.</p></div>
+ <div><b>Changing your mind</b><p>Before you sign, say no at any time and that is the end of it. Once you sign, the agreement binds both sides, so read it first and ask us anything. Our 30-day inspection period is written in it.</p></div>
+ <div><b>What you leave behind</b><p>Take what you want and leave the rest. No cleaning out, no hauling.</p></div>
+ <div><b>Your information</b><p>Used only to talk with you about your property. Never sold. See the <a href="privacy.html">privacy page</a>.</p></div>
+</div></div>
+<div data-kpane="house"><div class="x-tl" data-tl="house"><div class="x-tl-bar" role="tablist" aria-label="Timeline"><button type="button" role="tab" class="x-tl-i on" data-tli="0" data-step="0" aria-selected="true"><small>Day 1</small><b>Photos and a few questions</b></button><button type="button" role="tab" class="x-tl-i" data-tli="1" data-step="4" aria-selected="false"><small>Days 1 to 2</small><b>Written offer by email</b></button><button type="button" role="tab" class="x-tl-i" data-tli="2" data-step="4" aria-selected="false"><small>Day 3 or when you are ready</small><b>You sign online</b></button><button type="button" role="tab" class="x-tl-i" data-tli="3" data-step="5" aria-selected="false"><small>Week 1 to 2</small><b>One showing</b></button><button type="button" role="tab" class="x-tl-i" data-tli="4" data-step="6" aria-selected="false"><small>Weeks 1 to 6</small><b>Title company checks everything</b></button><button type="button" role="tab" class="x-tl-i" data-tli="5" data-step="6" aria-selected="false"><small>Closing day</small><b>Sign and get paid</b></button></div><div class="x-tl-panels"><div class="x-tl-p" data-tlp="0"><div class="x-tl-ph"><small>Day 1 &middot; 15 minutes on your phone</small><b>Photos and a few questions</b></div><div class="x-tl-g"><div><span>What happens</span><p>You send photos of the outside, each room, and the AC, water heater and panel labels, then answer a few questions about the house and your timeline.</p></div><div><span>What you need</span><p>Your phone, the address, who is on the title.</p></div><div><span>Helpful tip</span><p>Do it in daylight with the lights on. Blurry is fine; missing rooms are not.</p></div></div></div><div class="x-tl-p" data-tlp="1" hidden><div class="x-tl-ph"><small>Days 1 to 2 &middot; We do the work</small><b>Written offer by email</b></div><div class="x-tl-g"><div><span>What happens</span><p>We compare your photos and answers with recent sales nearby and email a clear cash number plus the purchase agreement.</p></div><div><span>What you need</span><p>Nothing. Read it when you are ready.</p></div><div><span>Helpful tip</span><p>Call or text with any question. Asking does not commit you to anything.</p></div></div></div><div class="x-tl-p" data-tlp="2" hidden><div class="x-tl-ph"><small>Day 3 or when you are ready &middot; 10 minutes</small><b>You sign online</b></div><div class="x-tl-g"><div><span>What happens</span><p>If the offer works for you, you sign online. You get a copy right away and a plain-English disclosure first.</p></div><div><span>What you need</span><p>Everyone on the title signs (spouse too, if it is a homestead).</p></div><div><span>Helpful tip</span><p>Not sure everyone can sign? Tell us early; the title company can often help.</p></div></div></div><div class="x-tl-p" data-tlp="3" hidden><div class="x-tl-ph"><small>Week 1 to 2 &middot; About an hour</small><b>One showing</b></div><div class="x-tl-g"><div><span>What happens</span><p>A buyer or an inspector visits once, at a time you pick. No open houses.</p></div><div><span>What you need</span><p>Utilities on, and a way in (you, a neighbour or a lockbox).</p></div><div><span>Helpful tip</span><p>Leave the house as it is. No cleaning needed.</p></div></div></div><div class="x-tl-p" data-tlp="4" hidden><div class="x-tl-ph"><small>Weeks 1 to 6 &middot; Hands off for you</small><b>Title company checks everything</b></div><div class="x-tl-g"><div><span>What happens</span><p>The title company checks ownership, orders payoffs for any mortgage, liens or back taxes, and prepares the closing papers.</p></div><div><span>What you need</span><p>Answer a few emails from the title company; ID when they ask.</p></div><div><span>Helpful tip</span><p>Back taxes and liens are paid from the sale money at closing.</p></div></div></div><div class="x-tl-p" data-tlp="5" hidden><div class="x-tl-ph"><small>Closing day &middot; About an hour</small><b>Sign and get paid</b></div><div class="x-tl-g"><div><span>What happens</span><p>You sign the deed with the title company (in person or with a mobile notary) and are paid by check or wire.</p></div><div><span>What you need</span><p>Photo ID, keys, garage openers.</p></div><div><span>Helpful tip</span><p>You pick the date. About 30 to 45 days is typical; faster if title is clean.</p></div></div></div></div></div>
  </div>
  <div class="x-intake" id="intake">
   <form name="seller-intake" method="POST" action="thanks.html?intake=1" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="x-panel" novalidate>
@@ -723,46 +783,35 @@ main.wrap{max-width:none;padding:0}
 function player(o){var stage=document.getElementById(o.stage);if(!stage)return;
  var cv=document.getElementById(o.canvas),cx=cv.getContext("2d"),poster=document.getElementById(o.poster),ld=document.getElementById(o.ld),nEl=document.getElementById(o.n),tEl=document.getElementById(o.t);
  var vf=o.vf?document.getElementById(o.vf):null,chip=o.chip?document.getElementById(o.chip):null,flash=o.flash?document.getElementById(o.flash):null;
- var items=[].slice.call(document.querySelectorAll(o.items)),frames={},loaded=0,started=false,N=o.N,cur=-1,target=1,anim=0,lastDrawn=-1,lastDone=-1,lastIdx=-1,lastAb=-2;
- var IDS=[];try{IDS=JSON.parse(stage.dataset.frames||"[]")}catch(e){}if(!IDS.length)for(var i=1;i<=N;i+=o.STEP)IDS.push(i);
+ var items=[].slice.call(document.querySelectorAll(o.items)),frames={},started=false,N=o.N,shown=0,prev=0,fadeT=0,want=0,anim=0,lastKey="",lastDone=-1;
  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
  items.forEach(function(li){if(li.dataset.dur&&!li.querySelector(".x-dur")){var d=document.createElement("span");d.className="x-dur";d.innerHTML=li.dataset.dur;li.appendChild(d)}});
- var beats=[].slice.call(items[0]?items[0].querySelectorAll(".x-beat"):[]);
- var anchors=[];items.forEach(function(li,k){var bs=k===0&&beats.length?beats:[li];bs.forEach(function(el){anchors.push({el:el,f:+el.dataset.f,y:0})})});
- var itemY=[],itemH=[],beatY=[],endY=0;
- function pageTop(el){return el.getBoundingClientRect().top+window.pageYOffset}
- function measure(){anchors.forEach(function(a){a.y=pageTop(a.el)});itemY=items.map(pageTop);itemH=items.map(function(li){return li.offsetHeight});beatY=beats.map(pageTop);var L=items.length-1;endY=itemY[L]+itemH[L]-window.innerHeight*0.15;if(endY<=itemY[L])endY=itemY[L]+itemH[L]*0.7;spline()}
- var XS=[],FS=[],MS=[];function spline(){XS=anchors.map(function(a){return a.y}).concat([endY]);FS=anchors.map(function(a){return a.f}).concat([N]);var n=XS.length,d=[],m=new Array(n);for(var i=0;i<n-1;i++)d.push((FS[i+1]-FS[i])/Math.max(1,XS[i+1]-XS[i]));m[0]=d[0];m[n-1]=d[n-2];for(i=1;i<n-1;i++){m[i]=(d[i-1]*d[i]<=0)?0:2/(1/d[i-1]+1/d[i])}MS=m}
- function fAt(y){var n=XS.length;if(y<=XS[0])return FS[0];if(y>=XS[n-1])return FS[n-1];var k=0;while(k<n-2&&y>XS[k+1])k++;var h=Math.max(1,XS[k+1]-XS[k]),t=(y-XS[k])/h,t2=t*t,t3=t2*t;return (2*t3-3*t2+1)*FS[k]+(t3-2*t2+t)*h*MS[k]+(-2*t3+3*t2)*FS[k+1]+(t3-t2)*h*MS[k+1]}
+ var shots=items.map(function(li){return String(li.dataset.shots||li.dataset.f||"1").split(",").map(Number)});
+ var NEED=[];shots.forEach(function(a){a.forEach(function(f){if(NEED.indexOf(f)<0)NEED.push(f)})});
+ function fitRail(){items.forEach(function(li){var d=li.querySelector(".x-dur");li.style.removeProperty("min-height");if(d){var need=d.offsetTop+d.offsetHeight+56;if(li.offsetHeight<need)li.style.setProperty("min-height",need+"px","important")}})}
  function src(i){return o.dir+("00"+i).slice(-3)+".webp"}
- function best(f){var b=-1,bd=1e9;for(var q=0;q<IDS.length;q++){var id=IDS[q];if(frames[id]){var d=Math.abs(id-f);if(d<bd){bd=d;b=id}}}return b}
- function draw(f){var id=best(f);if(id<0||id===lastDrawn)return;lastDrawn=id;cx.drawImage(frames[id],0,0,cv.width,cv.height);poster.style.visibility="hidden"}
- function load(i){var im=new Image();im.decoding="async";im.onload=function(){(im.decode?im.decode():Promise.resolve()).catch(function(){}).then(function(){frames[i]=im;loaded++;ld.style.width=(loaded/IDS.length*100)+"%";if(loaded===IDS.length)ld.style.opacity=0;lastDrawn=-1;draw(cur<0?target:cur)})};im.src=src(i)}
- function start(){if(started)return;started=true;var order=[],seen={};[16,8,4,2,1].forEach(function(s){for(var i=0;i<IDS.length;i+=s){if(!seen[i]){seen[i]=1;order.push(IDS[i])}}});
-  var q=0;(function pump(){for(var c=0;c<8&&q<order.length;c++)load(order[q++]);if(q<order.length)setTimeout(pump,60)})()}
- function tick(){anim=0;if(cur<0)cur=target;var d=target-cur;if(Math.abs(d)<0.05||reduce){cur=target}else{cur+=d*0.2;anim=requestAnimationFrame(tick)}draw(cur)}
+ function load(i,cb){if(frames[i]){cb&&cb();return}var im=new Image();im.decoding="async";im.onload=function(){frames[i]=im;cb&&cb()};im.src=src(i)}
+ function start(){if(started)return;started=true;var n=0;NEED.forEach(function(f){load(f,function(){n++;ld.style.width=(n/NEED.length*100)+"%";if(n===NEED.length)ld.style.opacity=0;if(f===want)go(want)})})}
+ function paint(){anim=0;var t=reduce?1:Math.min(1,(performance.now()-fadeT)/380);cx.globalAlpha=1;if(prev&&frames[prev]&&t<1){cx.drawImage(frames[prev],0,0,cv.width,cv.height);cx.globalAlpha=t*t*(3-2*t)}if(frames[shown])cx.drawImage(frames[shown],0,0,cv.width,cv.height);cx.globalAlpha=1;poster.style.visibility="hidden";if(t<1)anim=requestAnimationFrame(paint)}
+ function go(f){want=f;if(!frames[f]||f===shown)return;prev=shown;shown=f;fadeT=performance.now();if(!anim)anim=requestAnimationFrame(paint)}
  function compute(){if(stage.offsetParent===null)return;start();
-  var sy=window.pageYOffset,mid=sy+window.innerHeight*(window.innerWidth<=900?0.66:0.52),f;
-  f=fAt(mid);target=Math.max(1,Math.min(N,f));if(!anim)anim=requestAnimationFrame(tick);
-  var idx=0;for(var j=0;j<itemY.length;j++)if(itemY[j]<=mid)idx=j;
-  if(idx!==lastIdx){items.forEach(function(li,k){li.classList.toggle("on",k===idx);li.classList.toggle("done",k<idx);if(k!==idx)li.style.setProperty("--p",k<idx?"100%":"0%")});nEl.textContent=idx+1;lastIdx=idx;
-   var tb=document.querySelectorAll('.x-tl[data-tl="'+o.kind+'"] .x-tl-i'),bb=null;tb.forEach(function(b){if(+b.dataset.step<=idx)bb=b});if(bb&&!bb.classList.contains("on")){tb.forEach(function(x){x.classList.toggle("on",x===bb);x.setAttribute("aria-selected",x===bb)});var P=bb.closest(".x-tl");P.querySelectorAll(".x-tl-p").forEach(function(q){q.hidden=q.dataset.tlp!==bb.dataset.tli})}}
-  items[idx].style.setProperty("--p",Math.max(0,Math.min(100,(mid-itemY[idx])/Math.max(1,itemH[idx])*100)).toFixed(0)+"%");
-  var ab=-1,cap=items[idx].dataset.cap;
-  if(beats.length){if(idx===0&&mid>=beatY[0]){var bd=1e9;beats.forEach(function(b,k){var d=Math.abs(+b.dataset.f-target);if(d<bd){bd=d;ab=k}})}
-   var doneN=idx>0?beats.length:Math.max(0,ab);
-   if(ab!==lastAb||doneN!==lastDone){beats.forEach(function(b,k){b.classList.toggle("on",idx===0&&k===ab);b.classList.toggle("done",k<doneN)});
-    if(doneN>lastDone&&lastDone>=0&&flash&&!reduce){flash.classList.remove("go");void flash.offsetWidth;flash.classList.add("go")}
-    if(vf)vf.classList.toggle("on",ab>=0);if(ab>=0&&chip)chip.textContent=beats[ab].dataset.cap;lastAb=ab;lastDone=doneN}
-   if(ab>=0)cap=beats[ab].dataset.tip}
-  if(tEl.textContent!==cap)tEl.textContent=cap}
+  var mid=window.innerHeight*(window.innerWidth<=900?0.7:0.55),idx=0,p=0;
+  for(var i=0;i<items.length;i++){var r=items[i].getBoundingClientRect();if(r.top<=mid){idx=i;p=Math.max(0,Math.min(0.999,(mid-r.top)/Math.max(1,r.height)))}}
+  var a=shots[idx],k=Math.min(a.length-1,Math.floor(p*a.length));go(a[k]);
+  var li=items[idx],key=idx+":"+k;
+  if(key!==lastKey){lastKey=key;
+   items.forEach(function(x,j){x.classList.toggle("on",j===idx);x.classList.toggle("done",j<idx)});nEl.textContent=idx+1;
+   var cap=li.dataset.cap,list=[].slice.call(li.querySelectorAll(".x-shotlist>li"));
+   items.forEach(function(x,j){if(j!==idx)[].forEach.call(x.querySelectorAll(".x-shotlist>li"),function(s){s.classList.toggle("done",j<idx);s.classList.remove("on")})});
+   if(list.length){list.forEach(function(s,j){s.classList.toggle("on",j===k);s.classList.toggle("done",j<k)});cap=list[k].dataset.tip;if(chip)chip.textContent="Shot "+(k+1)+" of "+list.length+": "+list[k].querySelector("b").textContent.toLowerCase();
+    if(lastDone>=0&&k>lastDone&&flash&&!reduce){flash.classList.remove("go");void flash.offsetWidth;flash.classList.add("go")}lastDone=k}else lastDone=-1;
+   if(vf)vf.classList.toggle("on",!!li.dataset.vf);tEl.textContent=cap;
+   var tb=document.querySelectorAll('.x-tl[data-tl="'+o.kind+'"] .x-tl-i'),bb=null;tb.forEach(function(b){if(+b.dataset.step<=idx)bb=b});if(bb&&!bb.classList.contains("on")){tb.forEach(function(x){x.classList.toggle("on",x===bb);x.setAttribute("aria-selected",x===bb)});var P=bb.closest(".x-tl");P.querySelectorAll(".x-tl-p").forEach(function(q){q.hidden=q.dataset.tlp!==bb.dataset.tli})}}}
  var rq=0;function onScroll(){if(rq)return;rq=requestAnimationFrame(function(){rq=0;compute()})}
- function remeasure(){measure();onScroll()}
  if("IntersectionObserver" in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)start()},{rootMargin:"1200px 0px"}).observe(stage)}
- if("ResizeObserver" in window){new ResizeObserver(function(){remeasure()}).observe(items[0].parentNode)}
- window.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",remeasure);window.addEventListener("load",remeasure);
- document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest("[data-kind]"))setTimeout(remeasure,60)});
- measure();onScroll()}
+ window.addEventListener("scroll",onScroll,{passive:true});window.addEventListener("resize",function(){fitRail();onScroll()});window.addEventListener("load",function(){fitRail();onScroll()});
+ document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest("[data-kind]"))setTimeout(function(){fitRail();onScroll()},60)});
+ fitRail();onScroll()}
 if("IntersectionObserver" in window){var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target,sib=[].slice.call(f.parentNode.children);setTimeout(function(){f.classList.add("in")},sib.indexOf(f)*90);cio.unobserve(f)}})},{threshold:.2});document.querySelectorAll(".x-collage figure").forEach(function(f){cio.observe(f)})}else document.querySelectorAll(".x-collage figure").forEach(function(f){f.classList.add("in")});
 player({kind:"house",stage:"wk-stage",canvas:"wk-canvas",poster:"wk-poster",ld:"wk-ld",n:"wk-n",t:"wk-t",items:"#wk-steps>li",N:156,STEP:1,vf:"wk-vf",chip:"wk-chip",flash:"wk-flash",dir:"img/walk/seq/f_"});
 player({kind:"land",stage:"lk-stage",canvas:"lk-canvas",poster:"lk-poster",ld:"lk-ld",n:"lk-n",t:"lk-t",items:"#lk-steps>li",N:90,STEP:1,dir:"img/walk/land/l_"});
@@ -811,7 +860,7 @@ function done(r){f.hidden=true;var o=document.getElementById("i_result");o.hidde
  o.scrollIntoView({behavior:"smooth",block:"start"})}
 show(0);
 var q=new URLSearchParams(location.search),start=q.get("start");
-if(start==="investor"||location.hash==="#jv-form"){path("investor");if(location.hash==="#jv-form")setTimeout(function(){var j=document.getElementById("jv-form");if(j)j.scrollIntoView({block:"start"})},350)}else{path("seller");if(start==="seller"||location.hash==="#intake"){setTimeout(openIntake,400)}}
+if(start==="investor"||location.hash==="#jv-form"||location.hash==="#investors"){path("investor");if(location.hash==="#investors")setTimeout(function(){document.getElementById("start").scrollIntoView({block:"start"})},350);if(location.hash==="#jv-form")setTimeout(function(){var j=document.getElementById("jv-form");if(j)j.scrollIntoView({block:"start"})},350)}else{path("seller");if(start==="seller"||location.hash==="#intake"){setTimeout(openIntake,400)}}
 })();
 </script>
 
@@ -821,13 +870,15 @@ if(start==="investor"||location.hash==="#jv-form"){path("investor");if(location.
  <p class="x-lede reveal">Listing can bring a higher price. A direct sale trades some of that for speed and certainty. Here is the honest comparison.</p>
  <table class="x-table reveal">
   <tr><th></th><th class="us">Hearth Acre (direct)</th><th>Listing with an agent</th></tr>
-  <tr><td>Repairs and cleaning</td><td class="us">None. Sold as is</td><td>Usually expected before listing</td></tr>
-  <tr><td>Showings and open houses</td><td class="us">One walkthrough</td><td>Many, on buyers' schedules</td></tr>
-  <tr><td>Commissions</td><td class="us">$0 to you</td><td>Often 5 to 6 percent</td></tr>
-  <tr><td>Closing costs</td><td class="us">Discussed up front in the offer</td><td>Usually paid by the seller</td></tr>
-  <tr><td>Timeline</td><td class="us">Your date, often 2 to 3 weeks</td><td>Often 2 to 4 months</td></tr>
-  <tr><td>Financing risk</td><td class="us">No bank approval needed</td><td>Buyer loans can fall through</td></tr>
+  <tr><td>Repairs and cleaning</td><td class="us good">None. Sold as is</td><td class="bad">Usually expected before listing</td></tr>
+  <tr><td>Showings</td><td class="us good">One visit, at a time you pick</td><td class="bad">Many, on buyers' schedules</td></tr>
+  <tr><td>Commissions</td><td class="us good">$0 to you</td><td class="bad">Often 5 to 6 percent</td></tr>
+  <tr><td>Closing costs</td><td class="us good">Written into the offer up front</td><td class="bad">Usually paid by the seller</td></tr>
+  <tr><td>Timeline</td><td class="us good">Your date, often 30 to 45 days</td><td class="bad">Often 2 to 4 months, plus prep</td></tr>
+  <tr><td>Financing risk</td><td class="us good">No bank approval needed</td><td class="bad">Buyer loans can fall through</td></tr>
+  <tr><td>Top sale price</td><td class="us bad">Usually lower than a retail sale</td><td class="good">Often the highest price, if the house is ready</td></tr>
  </table>
+ <div class="x-legend reveal"><span class="g">Better for you</span><span class="r">Costs you more time, money or certainty</span></div>
  <p class="x-note reveal">We buy as a principal and may assign our purchase contract to another buyer, as disclosed in writing. We are not real estate agents and we do not list properties.</p>
 </div></section>
 
@@ -1029,5 +1080,6 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});})();
 </script>
 <script>(function(){try{var r=document.referrer||"direct";var q=location.search||"";document.querySelectorAll(".ha-ref").forEach(function(e){e.value=r});document.querySelectorAll(".ha-utm").forEach(function(e){e.value=q});}catch(e){}})();</script>
+<script>document.querySelectorAll('a[href="#investors"]').forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var b=document.querySelector('#start [data-path="investor"]');if(b)b.click();var t=document.getElementById("start");if(t)t.scrollIntoView({behavior:"smooth",block:"start"})})});</script>
 </body>
 </html>
